@@ -4,6 +4,7 @@ Public portfolio site for business systems, data analytics, automation, and inte
 
 ## Current case studies
 
+- LocalLoop Fundraising, a founder-led local product fundraising platform
 - Channel Spend Analytics, a Power BI portfolio reconstruction using synthetic data
 - OCR data extraction and validation
 - ETL and business systems integration
