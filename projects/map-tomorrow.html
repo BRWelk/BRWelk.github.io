@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Map Tomorrow product case study by Brian Welk, connecting spending, budgets, retirement planning, and travel-living decisions."
+    />
+    <meta name="theme-color" content="#101a24" />
+    <title>Map Tomorrow Case Study | Brian Welk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header case-header">
+      <a class="nameplate" href="../index.html" aria-label="Return to Brian Welk's portfolio">
+        <span class="nameplate-mark" aria-hidden="true">BW</span>
+        <span>Brian Welk</span>
+      </a>
+      <nav aria-label="Case study navigation">
+        <a href="../index.html">← Portfolio</a>
+        <a href="#product-views">Product views</a>
+      </nav>
+    </header>
+
+    <main class="case-main" id="main">
+      <section class="case-hero">
+        <div>
+          <p class="eyebrow">Life-planning platform</p>
+          <h1>Map Tomorrow</h1>
+          <p class="case-hero-summary">
+            A personal planning application that connects what a household spends today
+            with the retirement, travel, and lifestyle choices it wants to make tomorrow.
+          </p>
+        </div>
+        <dl class="case-facts">
+          <div>
+            <dt>Role</dt>
+            <dd>Founder, product designer, and full-stack developer</dd>
+          </div>
+          <div>
+            <dt>Platform</dt>
+            <dd>React, Next.js, TypeScript, Cloudflare, Drizzle, Plaid, and Stripe</dd>
+          </div>
+          <div>
+            <dt>Portfolio data</dt>
+            <dd>Fictional household, spending, benefits, balances, and travel assumptions</dd>
+          </div>
+        </dl>
+      </section>
+
+      <figure class="case-cover report-cover">
+        <img src="../assets/map-tomorrow/retirement-overview.jpg" alt="Map Tomorrow retirement overview with current assets, retirement assets, funding status, and three projection scenarios" />
+      </figure>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">The challenge</p>
+          <h2>Make daily money decisions support a future life plan.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            Spending trackers usually explain the past, while retirement calculators ask
+            for a separate set of assumptions about the future. That separation makes it
+            difficult to see how today's budget, large upcoming expenses, retirement
+            timing, and travel goals affect one another.
+          </p>
+          <p>
+            Map Tomorrow was designed to keep those decisions connected while preserving
+            clear ownership of every assumption. The application does not invent income,
+            benefits, balances, or spending targets for the user.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">The solution</p>
+          <h2>One workspace from daily spending to long-range runway.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            The experience combines a practical daily spending guide with category
+            budgets, occasional expenses, household retirement planning, and a
+            location-based Travel Living planner.
+          </p>
+          <ul class="outcome-list">
+            <li>Daily spending pace recalculated from the money remaining in the month</li>
+            <li>Category limits separated from planned flights, insurance, and other large expenses</li>
+            <li>Manual, CSV, and optional read-only account workflows</li>
+            <li>Separate work-exit and Social Security dates for each household member</li>
+            <li>Contribution plans assigned to each person with employee and employer percentages</li>
+            <li>Expected, conservative, and favorable retirement return scenarios</li>
+            <li>Travel-year modeling with rent, everyday costs, transitions, currency context, and a safety cushion</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">My contribution</p>
+          <h2>Product strategy, modeling, integrations, and safeguards.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            I defined the product workflow, financial-planning logic, user experience,
+            data model, and staged commercial architecture. The application uses a
+            modern React and TypeScript interface, server-side validation, household-level
+            data isolation, and explicit assumptions that remain visible to the user.
+          </p>
+          <p>
+            Financial connections are optional and read-only. Imported files are reviewed
+            before their snapshot values are submitted, access tokens are encrypted before
+            storage, and the application does not implement transfers or payments.
+          </p>
+          <ul class="tag-list" aria-label="Project capabilities">
+            <li>Product Strategy</li>
+            <li>React</li>
+            <li>Next.js</li>
+            <li>TypeScript</li>
+            <li>Cloudflare Workers</li>
+            <li>Drizzle ORM</li>
+            <li>Plaid</li>
+            <li>Stripe</li>
+            <li>Financial Modeling</li>
+            <li>Data Privacy</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-gallery report-gallery" id="product-views" aria-labelledby="gallery-title">
+        <div class="gallery-heading">
+          <p class="eyebrow">Product walkthrough</p>
+          <h2 id="gallery-title">Four connected planning views</h2>
+          <p>
+            These screens come from the current staging application using a fictional
+            household and demonstration data. No personal financial account is connected.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item gallery-wide">
+            <img src="../assets/map-tomorrow/spend-dashboard.jpg" alt="Map Tomorrow spending dashboard with daily pace, monthly amount remaining, and a Hua Hin travel currency tool" />
+            <figcaption><strong>Daily spending</strong>The daily guide recalculates from the monthly budget, current activity, and money reserved for larger expenses.</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-wide">
+            <img src="../assets/map-tomorrow/retirement-overview.jpg" alt="Map Tomorrow retirement forecast with asset cards and expected, conservative, and favorable projections" />
+            <figcaption><strong>Retirement overview</strong>Household assumptions become a month-by-month view of assets, income, spending, taxes, withdrawals, and long-term funding.</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-wide">
+            <img src="../assets/map-tomorrow/travel-living.jpg" alt="Map Tomorrow Travel Living planner with a complete twelve-month plan and annual cost summary" />
+            <figcaption><strong>Travel Living</strong>Destinations, rent, everyday costs, moves, airfare, and a safety cushion form one editable annual plan.</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-wide">
+            <img src="../assets/map-tomorrow/plan-setup.jpg" alt="Map Tomorrow household plan setup with fictional members, benefits, salaries, and retirement contribution plans" />
+            <figcaption><strong>Household setup</strong>Each person's salary, benefits, retirement timing, and contribution plans remain explicit and independently editable.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-next">
+        <p class="eyebrow">Portfolio note</p>
+        <h2>Built to make complex planning understandable and actionable.</h2>
+        <a class="button button-primary" href="../index.html#work">View more work</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>Brian Welk · Business Systems &amp; Data Portfolio</p>
+      <p>Colorado, United States</p>
+    </footer>
+  </body>
+</html>

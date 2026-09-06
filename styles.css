@@ -307,6 +307,12 @@ h3 {
   background: #f4f4f4;
 }
 
+.project-image-link img.app-cover {
+  object-fit: contain;
+  object-position: left top;
+  background: #f4f6fb;
+}
+
 .project-image-link:hover img,
 .project-image-link:focus-visible img {
   transform: scale(1.018);
