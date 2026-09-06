@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Channel Pricing Integration Lab case study by Brian Welk, connecting floor-plan design, field surveys, quoting, purchasing, and accounting workflows."
+    />
+    <meta name="theme-color" content="#101a24" />
+    <title>Channel Pricing Integration Lab Case Study | Brian Welk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header case-header">
+      <a class="nameplate" href="../index.html" aria-label="Return to Brian Welk's portfolio">
+        <span class="nameplate-mark" aria-hidden="true">BW</span>
+        <span>Brian Welk</span>
+      </a>
+      <nav aria-label="Case study navigation">
+        <a href="../index.html">← Portfolio</a>
+        <a href="#product-views">Product views</a>
+      </nav>
+    </header>
+
+    <main class="case-main" id="main">
+      <section class="case-hero">
+        <div>
+          <p class="eyebrow">Field-to-purchase integration</p>
+          <h1>Channel Pricing Integration Lab</h1>
+          <p class="case-hero-summary">
+            An API-driven workspace that carries a system design from floor plan and field
+            survey through quoting, purchasing, and accounting reconciliation.
+          </p>
+        </div>
+        <dl class="case-facts">
+          <div>
+            <dt>Role</dt>
+            <dd>Product designer and full-stack developer</dd>
+          </div>
+          <div>
+            <dt>Platform</dt>
+            <dd>Python, Flask, REST integrations, and QuickBooks Online sandbox</dd>
+          </div>
+          <div>
+            <dt>Portfolio data</dt>
+            <dd>Demonstration project, sandbox accounting records, and read-only vendor pricing</dd>
+          </div>
+        </dl>
+      </section>
+
+      <figure class="case-cover report-cover">
+        <img src="../assets/channel-pricing/floor-plan.png" alt="Channel Pricing Integration Lab floor plan with camera, controlled-door, reader, and cable-drop systems placed across a demonstration office" />
+      </figure>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">The challenge</p>
+          <h2>Keep design, pricing, and purchasing aligned.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            Complex field projects often begin with drawings and notes, then move through
+            separate estimating, catalog, purchasing, and accounting tools. Re-entering
+            the same equipment at each stage introduces delays, inconsistent quantities,
+            and pricing errors.
+          </p>
+          <p>
+            The workflow also needs firm boundaries. Vendor pricing must remain read-only,
+            while accounting transactions should be created only inside the authorized
+            customer sandbox after every line has been reviewed.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">The solution</p>
+          <h2>One traceable workflow from drawing to document.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            I designed the application around a six-stage project lifecycle. Systems placed
+            on a floor plan become editable field-survey packages, quoted equipment, a
+            controlled purchasing BOM, and reconciled accounting documents.
+          </p>
+          <ul class="outcome-list">
+            <li>Visual floor-plan placement for cameras, controlled doors, readers, and cable runs</li>
+            <li>Reusable equipment packages with room-level quantities and installation details</li>
+            <li>Catalog matching and margin-aware pricing inside the estimating workflow</li>
+            <li>Saved quotes and projects that preserve equipment counts and prices</li>
+            <li>Purchasing BOM controls for vendor choice, procurement treatment, and item mapping</li>
+            <li>Purchase-order and bill tracking with vendor transaction writes permanently disabled</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">My contribution</p>
+          <h2>Workflow architecture, interface design, integrations, and safeguards.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            I translated the operational process into a connected product experience,
+            including the data model, staged workflow, visual takeoff tools, catalog
+            matching, pricing logic, project handoffs, and document status views.
+          </p>
+          <p>
+            The demonstration uses a QuickBooks Online sandbox and enforces a read-only
+            boundary for upstream vendor pricing. The public case study does not expose
+            credentials, private API details, or any employer-specific implementation.
+          </p>
+          <ul class="tag-list" aria-label="Project capabilities">
+            <li>Product Design</li>
+            <li>Python</li>
+            <li>Flask</li>
+            <li>REST APIs</li>
+            <li>QuickBooks Online</li>
+            <li>Workflow Automation</li>
+            <li>Data Validation</li>
+            <li>Purchasing Controls</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-gallery report-gallery" id="product-views" aria-labelledby="gallery-title">
+        <div class="gallery-heading">
+          <p class="eyebrow">Product walkthrough</p>
+          <h2 id="gallery-title">Four stages of a connected project lifecycle</h2>
+          <p>
+            These screens show a demonstration project in the sandbox environment.
+            Vendor pricing is read-only, and the public case study omits supplier catalog
+            and line-level purchasing screens.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item gallery-wide">
+            <img src="../assets/channel-pricing/floor-plan.png" alt="Interactive floor plan with 24 camera, controlled-door, reader, and cable-drop symbols placed across a demonstration office" />
+            <figcaption><strong>Visual system design</strong>Placed system packages and annotations turn a drawing into a live, countable project takeoff.</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-wide">
+            <img src="../assets/channel-pricing/field-survey.png" alt="Field survey workspace with reusable equipment packages, a thirteen-system on-site estimate, costs, price, and gross margin" />
+            <figcaption><strong>Field survey and estimate</strong>Reusable packages, catalog matches, room organization, quantities, and commercial totals stay together.</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-wide">
+            <img src="../assets/channel-pricing/quotes-projects.png" alt="Quotes and projects view showing an active demonstration project with system count, equipment units, cost, selling price, and gross margin" />
+            <figcaption><strong>Quote-to-project handoff</strong>Approved scope becomes a durable project while preserving equipment counts, saved prices, and margin visibility.</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-wide">
+            <img src="../assets/channel-pricing/orders-documents.png" alt="Orders and documents control center showing purchase order, bill, and reconciliation status for sandbox transactions" />
+            <figcaption><strong>Purchasing document control</strong>Purchase orders and bills are tracked through reconciliation while upstream vendor transaction writes remain disabled.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-next">
+        <p class="eyebrow">Portfolio note</p>
+        <h2>Built to connect field execution with controlled purchasing.</h2>
+        <a class="button button-primary" href="../index.html#work">View more work</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>Brian Welk · Business Systems &amp; Data Portfolio</p>
+      <p>Colorado, United States</p>
+    </footer>
+  </body>
+</html>
