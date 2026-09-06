@@ -301,6 +301,12 @@ h3 {
   transition: transform 260ms ease;
 }
 
+.project-image-link img.powerbi-cover {
+  object-fit: contain;
+  object-position: center;
+  background: #f4f4f4;
+}
+
 .project-image-link:hover img,
 .project-image-link:focus-visible img {
   transform: scale(1.018);
@@ -541,6 +547,16 @@ h3 {
   aspect-ratio: 16 / 10;
   object-fit: cover;
   object-position: top left;
+}
+
+.report-cover,
+.report-gallery .gallery-item {
+  background: #f4f4f4;
+}
+
+.report-gallery .gallery-item img {
+  aspect-ratio: auto;
+  object-fit: contain;
 }
 
 .gallery-item figcaption {

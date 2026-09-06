@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Channel Spend Analytics Power BI case study by Brian Welk, covering POS spend, channel participation, share of wallet, and purchasing patterns."
+    />
+    <meta name="theme-color" content="#101a24" />
+    <title>Channel Spend Analytics Case Study | Brian Welk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header case-header">
+      <a class="nameplate" href="../index.html" aria-label="Return to Brian Welk's portfolio">
+        <span class="nameplate-mark" aria-hidden="true">BW</span>
+        <span>Brian Welk</span>
+      </a>
+      <nav aria-label="Case study navigation">
+        <a href="../index.html">← Portfolio</a>
+        <a href="#report-pages">Report pages</a>
+      </nav>
+    </header>
+
+    <main class="case-main" id="main">
+      <section class="case-hero">
+        <div>
+          <p class="eyebrow">Power BI analytics</p>
+          <h1>Channel Spend Analytics</h1>
+          <p class="case-hero-summary">
+            A seven-page POS spend report designed to reveal channel capture,
+            outside-channel purchasing, share-of-wallet opportunity, and the vendors and
+            manufacturers driving customer spend.
+          </p>
+        </div>
+        <dl class="case-facts">
+          <div>
+            <dt>Role</dt>
+            <dd>Business intelligence developer and report designer</dd>
+          </div>
+          <div>
+            <dt>Tools</dt>
+            <dd>Power BI, Power Query, DAX, and dimensional modeling</dd>
+          </div>
+          <div>
+            <dt>Portfolio data</dt>
+            <dd>Fully synthetic customer, vendor, manufacturer, product, and spend data</dd>
+          </div>
+        </dl>
+      </section>
+
+      <figure class="case-cover report-cover">
+        <img src="../assets/channel-spend/pos-tree-expanded.png" alt="Channel Spend Analytics decomposition tree showing spend drivers across category, subcategory, vendor, and customer" />
+      </figure>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">The challenge</p>
+          <h2>Turn transaction detail into actionable channel opportunity.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            POS data can show what customers purchased, but the commercial question is
+            larger: how much spend is captured through the channel, where customers buy
+            outside it, and which gaps represent realistic share-of-wallet opportunity.
+          </p>
+          <p>
+            The report needed to support several paths through the same data, from annual
+            vendor trends and detailed transaction views to category mix, manufacturer
+            concentration, and customer-level spend drivers.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">The solution</p>
+          <h2>One model, seven connected analytical views.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            I structured the experience around consistent navigation and shared slicers so
+            users can move between summary, trend, hierarchy, and detail views without
+            changing the analytical context.
+          </p>
+          <ul class="outcome-list">
+            <li>Member, vendor, manufacturer, category, subcategory, year, and quarter filtering</li>
+            <li>Vendor trend analysis across 2020 through 2026</li>
+            <li>Treemaps for vendor concentration and manufacturer-product mix</li>
+            <li>A matrix view comparing spend across vendor classifications</li>
+            <li>A decomposition tree for drilling from category to customer-level drivers</li>
+            <li>Market share cards that respond to the current category and subcategory context</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">My contribution</p>
+          <h2>From business question to interactive report.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            I translated the spend-analysis requirements into the report structure,
+            analytical model, measures, slicers, drill paths, page navigation, and visual
+            hierarchy. The portfolio edition recreates that work with fictional entities
+            and a synthetic transaction model.
+          </p>
+          <p>
+            The demonstration dataset covers 2020 through 2026 and totals $391.5 million.
+            Names are fictional and figures are synthetic, while the dimensions,
+            relationships, and analysis patterns are designed to reflect a realistic POS
+            channel-spend scenario.
+          </p>
+          <ul class="tag-list" aria-label="Project capabilities">
+            <li>Power BI</li>
+            <li>Power Query</li>
+            <li>DAX</li>
+            <li>Star Schema</li>
+            <li>Data Visualization</li>
+            <li>Market Share Analysis</li>
+            <li>Drilldown Design</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-gallery report-gallery" id="report-pages" aria-labelledby="gallery-title">
+        <div class="gallery-heading">
+          <p class="eyebrow">Report walkthrough</p>
+          <h2 id="gallery-title">Seven views of the same spend story</h2>
+          <p>
+            Every screen below is rendered from the portfolio-safe Power BI report. All
+            displayed organizations and products are fictional.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item gallery-wide">
+            <img src="../assets/channel-spend/pos-spend.png" alt="POS Spend detail table with year, customer, vendor, manufacturer, and total spend" />
+            <figcaption><strong>POS Spend</strong>A detailed, filterable view of customer spend by vendor and manufacturer.</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-wide">
+            <img src="../assets/channel-spend/pos-graph.png" alt="POS Graph comparing vendor spend by year from 2020 through 2026" />
+            <figcaption><strong>POS Graph</strong>Year-over-year vendor comparisons make shifts in purchasing concentration visible.</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-wide">
+            <img src="../assets/channel-spend/pos-vendor-map.png" alt="POS Vendor Map treemap showing relative spend by vendor" />
+            <figcaption><strong>POS Vendor Map</strong>A treemap highlights the vendors capturing the largest portions of total spend.</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-wide">
+            <img src="../assets/channel-spend/pos-detail-map.png" alt="POS Detail Map treemap showing manufacturer and product spend" />
+            <figcaption><strong>POS Detail Map</strong>Manufacturer and product detail reveal concentration and assortment opportunity.</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-wide">
+            <img src="../assets/channel-spend/pos-matrix.png" alt="POS Matrix comparing annual spend across vendor classifications" />
+            <figcaption><strong>POS Matrix</strong>Annual spend is compared across direct manufacturers, distributors, independent suppliers, and other vendor types.</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-wide">
+            <img src="../assets/channel-spend/pos-tree-expanded.png" alt="POS Tree decomposition analysis from category through customer" />
+            <figcaption><strong>POS Tree</strong>An interactive decomposition path moves from category to subcategory, vendor, and customer drivers.</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-wide">
+            <img src="../assets/channel-spend/category-market-share.png" alt="Category Market Share report with spend detail and responsive KPI cards" />
+            <figcaption><strong>Category Market Share</strong>Detail and KPI cards quantify selected spend, market share, category share, and subcategory share.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-next">
+        <p class="eyebrow">Portfolio note</p>
+        <h2>Built for realistic analysis without confidential data.</h2>
+        <a class="button button-primary" href="../index.html#work">View more work</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>Brian Welk · Business Systems &amp; Data Portfolio</p>
+      <p>Colorado, United States</p>
+    </footer>
+  </body>
+</html>
