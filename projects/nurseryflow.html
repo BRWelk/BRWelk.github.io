@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="NurseryFlow case study by Brian Welk, connecting nursery CRM records, supplier pricing, document intake, quoting, purchasing, and accounting workflows."
+    />
+    <meta name="theme-color" content="#101a24" />
+    <title>NurseryFlow CRM &amp; Automation Case Study | Brian Welk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header case-header">
+      <a class="nameplate" href="../index.html" aria-label="Return to Brian Welk's portfolio">
+        <span class="nameplate-mark" aria-hidden="true">BW</span>
+        <span>Brian Welk</span>
+      </a>
+      <nav aria-label="Case study navigation">
+        <a href="../index.html">← Portfolio</a>
+        <a href="#product-views">Product views</a>
+      </nav>
+    </header>
+
+    <main class="case-main" id="main">
+      <section class="case-hero">
+        <div>
+          <p class="eyebrow">Nursery CRM &amp; workflow automation</p>
+          <h1>NurseryFlow</h1>
+          <p class="case-hero-summary">
+            A local-first operations system connecting customers, jobs, quotes, supplier
+            pricing, customer order intake, weekly pickup requirements, and controlled
+            accounting synchronization.
+          </p>
+        </div>
+        <dl class="case-facts">
+          <div>
+            <dt>Role</dt>
+            <dd>Product designer and full-stack developer</dd>
+          </div>
+          <div>
+            <dt>Platform</dt>
+            <dd>Next.js, TypeScript, SQLite, and a deterministic local query engine</dd>
+          </div>
+          <div>
+            <dt>Portfolio data</dt>
+            <dd>Synthetic CRM records with simulated Evergreen Connect and Xero adapters</dd>
+          </div>
+        </dl>
+      </section>
+
+      <figure class="case-cover report-cover">
+        <img src="../assets/nurseryflow/dashboard.png" alt="NurseryFlow operations dashboard showing open jobs, quote status, supplier pickup value, synchronization status, and recent price changes" />
+      </figure>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">The challenge</p>
+          <h2>Replace fragmented nursery administration with one dependable workflow.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            Nursery and plant brokerage work can span customer notes, job requirements,
+            spreadsheet quotes, changing supplier price lists, emailed order documents,
+            pickup coordination, and accounting records. When each step lives in a
+            different tool, staff repeat data entry and pricing or quantity errors become
+            difficult to trace.
+          </p>
+          <p>
+            The workflow also needs deliberate review points. Supplier updates and
+            customer documents should be extracted and matched automatically, but a person
+            must be able to compare the proposed changes with the source before they affect
+            a quote, purchase requirement, or accounting record.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">The solution</p>
+          <h2>Automate the preparation, preserve the approval.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            I designed NurseryFlow as a working local MVP with application-owned workflows
+            and SQLite persistence. It demonstrates the complete operating model before
+            production credentials, external APIs, or recurring usage costs are introduced.
+          </p>
+          <ul class="outcome-list">
+            <li>Customer, job, quote, follow-up, and operational status tracking in one CRM</li>
+            <li>CSV and XLSX supplier price-list staging with matching, change previews, approval, and history</li>
+            <li>PDF, CSV, and XLSX customer-order intake with customer and PO extraction plus line-by-line verification</li>
+            <li>Supplier-aware quote pricing, gross-margin visibility, and stale-price warnings</li>
+            <li>Weekly supplier pickup lists consolidated from approved quote requirements</li>
+            <li>Controlled accounting synchronization with external IDs, duplicate prevention, retries, and error records</li>
+            <li>Read-only operational questions answered locally without an LLM, API key, or token charge</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">My contribution</p>
+          <h2>Product architecture, interface design, data modeling, and workflow safeguards.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            I translated the business brief into a connected CRM and automation product,
+            including its SQLite schema, operational dashboards, supplier-import controls,
+            document-review workflow, pricing logic, pickup aggregation, local query engine,
+            and accounting synchronization model.
+          </p>
+          <p>
+            The current portfolio build is intentionally local. Evergreen Connect and Xero
+            are represented by controlled adapters rather than live credentials. In a
+            production phase, those boundaries can be replaced with supported authenticated
+            connections while the workflow and review controls remain intact.
+          </p>
+          <ul class="tag-list" aria-label="Project capabilities">
+            <li>Product Design</li>
+            <li>Next.js</li>
+            <li>TypeScript</li>
+            <li>SQLite</li>
+            <li>Document Ingestion</li>
+            <li>Pricing Automation</li>
+            <li>Workflow Controls</li>
+            <li>Integration Architecture</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-gallery app-gallery" id="product-views" aria-labelledby="gallery-title">
+        <div class="gallery-heading">
+          <p class="eyebrow">Product walkthrough</p>
+          <h2 id="gallery-title">A connected view of the nursery operation</h2>
+          <p>
+            These screens use synthetic business records in a local demonstration
+            environment. They show the operating workflow and control points without
+            exposing customer credentials or representing demo integrations as live.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="../assets/nurseryflow/customers.png" alt="NurseryFlow customer records with contacts, business types, open values, statuses, and related record counts" />
+            <figcaption><strong>Customer records</strong>Contacts, account status, related jobs, quotes, and open value stay together.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="../assets/nurseryflow/jobs.png" alt="NurseryFlow job pipeline with customers, required dates, fulfilment methods, estimates, and statuses" />
+            <figcaption><strong>Job pipeline</strong>Customer requirements remain visible from enquiry through ordering, pickup, and completion.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="../assets/nurseryflow/quotes.png" alt="NurseryFlow quote list showing customer jobs, totals, gross margins, pricing warnings, Xero state, and approval status" />
+            <figcaption><strong>Quote controls</strong>Current costs, margin, approval state, and accounting status are visible before handoff.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="../assets/nurseryflow/supplier-products.png" alt="NurseryFlow supplier product catalogue showing staged and applied price-list imports" />
+            <figcaption><strong>Supplier pricing</strong>Price lists are staged with a change preview and audit status before catalogue updates are applied.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="../assets/nurseryflow/orders-pickup.png" alt="NurseryFlow weekly pickup list consolidated from approved quote requirements" />
+            <figcaption><strong>Orders and pickup</strong>Approved quote lines become consolidated supplier requirements and weekly pickup lists.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="../assets/nurseryflow/accounting-sync.png" alt="NurseryFlow controlled Xero synchronization simulation with external IDs and status history" />
+            <figcaption><strong>Accounting synchronization</strong>External IDs, duplicate prevention, retry state, and outcomes make every attempted sync traceable.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="../assets/nurseryflow/local-assistant.png" alt="NurseryFlow local operations assistant answering a Weigela inventory question from SQLite records" />
+            <figcaption><strong>Token-free assistant</strong>A deterministic local engine answers common CRM questions directly from application records.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="../assets/nurseryflow/activity-errors.png" alt="NurseryFlow activity and error log filtered to a recoverable accounting synchronization failure" />
+            <figcaption><strong>Audit and recovery</strong>Operational actions and recoverable failures share one searchable source of truth.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="../assets/nurseryflow/settings.png" alt="NurseryFlow settings showing local services and future integration adapters" />
+            <figcaption><strong>Integration boundaries</strong>Local services and future production connections are clearly separated and labeled.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-next">
+        <p class="eyebrow">Portfolio note</p>
+        <h2>Built to make nursery quoting and fulfilment faster, safer, and easier to verify.</h2>
+        <a class="button button-primary" href="../index.html#work">View more work</a>
+      </section>
+    </main>
+
+    <footer>
+      <p>Brian Welk · Business Systems &amp; Data Portfolio</p>
+      <p>Colorado, United States</p>
+    </footer>
+  </body>
+</html>

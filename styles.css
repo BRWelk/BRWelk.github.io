@@ -565,6 +565,16 @@ h3 {
   object-fit: contain;
 }
 
+.app-gallery .gallery-item {
+  background: #f4f6fb;
+}
+
+.app-gallery .gallery-item img {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  object-position: top left;
+}
+
 .gallery-item figcaption {
   padding: 1rem 1.2rem;
   color: var(--muted);
