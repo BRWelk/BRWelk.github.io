@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Multichannel Replenishment Control Tower dashboard</title>
+  <desc id="desc">Stylized portfolio cover showing a supply chain control tower with navigation, executive KPIs, inventory health, and sales trend visualizations.</desc>
+  <rect width="1600" height="900" fill="#f4f7f8"/>
+  <rect width="1600" height="28" fill="#f5c24f"/>
+  <text x="800" y="19" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.8" fill="#2b2415">SYNTHETIC DEMONSTRATION ENVIRONMENT • NO LIVE ORDERS OR INTEGRATIONS</text>
+  <rect x="0" y="28" width="205" height="872" fill="#0f3432"/>
+  <rect x="18" y="50" width="34" height="34" rx="9" fill="#f2c45b"/>
+  <text x="35" y="74" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" fill="#153936">N</text>
+  <text x="62" y="67" font-family="Georgia, serif" font-size="19" font-weight="700" fill="#ffffff">Northstar</text>
+  <text x="62" y="81" font-family="Arial, sans-serif" font-size="8" letter-spacing="1.2" fill="#7bc2b8">REPLENISHMENT OS</text>
+
+  <text x="18" y="126" font-family="Arial, sans-serif" font-size="8" font-weight="700" letter-spacing="1.4" fill="#76b8b0">COMMAND CENTER</text>
+  <rect x="10" y="138" width="185" height="32" rx="8" fill="#245651"/>
+  <text x="40" y="158" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Executive overview</text>
+  <text x="40" y="194" font-family="Arial, sans-serif" font-size="11" fill="#d5ebE7">Inventory control</text>
+  <text x="40" y="230" font-family="Arial, sans-serif" font-size="11" fill="#d5ebE7">Replenishment planner</text>
+  <rect x="166" y="217" width="27" height="16" rx="8" fill="#e96b51"/>
+  <text x="179.5" y="229" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="#ffffff">194</text>
+
+  <text x="18" y="270" font-family="Arial, sans-serif" font-size="8" font-weight="700" letter-spacing="1.4" fill="#76b8b0">EXECUTION</text>
+  <text x="40" y="300" font-family="Arial, sans-serif" font-size="11" fill="#d5ebE7">Purchase orders</text>
+  <text x="40" y="336" font-family="Arial, sans-serif" font-size="11" fill="#d5ebE7">FBA transfers</text>
+  <text x="40" y="372" font-family="Arial, sans-serif" font-size="11" fill="#d5ebE7">Shipments</text>
+  <text x="40" y="408" font-family="Arial, sans-serif" font-size="11" fill="#d5ebE7">Receiving</text>
+
+  <text x="18" y="452" font-family="Arial, sans-serif" font-size="8" font-weight="700" letter-spacing="1.4" fill="#76b8b0">INTELLIGENCE</text>
+  <text x="40" y="482" font-family="Arial, sans-serif" font-size="11" fill="#d5ebE7">Supplier performance</text>
+  <text x="40" y="518" font-family="Arial, sans-serif" font-size="11" fill="#d5ebE7">Amazon health</text>
+  <text x="40" y="554" font-family="Arial, sans-serif" font-size="11" fill="#d5ebE7">Growth scenarios</text>
+  <text x="40" y="590" font-family="Arial, sans-serif" font-size="11" fill="#d5ebE7">Automation center</text>
+  <text x="40" y="626" font-family="Arial, sans-serif" font-size="11" fill="#d5ebE7">Audit history</text>
+  <text x="40" y="662" font-family="Arial, sans-serif" font-size="11" fill="#d5ebE7">Data &amp; sync status</text>
+
+  <rect x="205" y="28" width="1395" height="62" fill="#ffffff"/>
+  <text x="230" y="54" font-family="Arial, sans-serif" font-size="9" fill="#71808c">Northstar Strap Co.</text>
+  <text x="230" y="73" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#101b24">Executive overview</text>
+  <circle cx="1364" cy="58" r="4" fill="#2eac79"/>
+  <text x="1375" y="62" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#17212a">Mock data current</text>
+  <rect x="1460" y="44" width="108" height="31" rx="8" fill="#ffffff" stroke="#cfd8dd"/>
+  <text x="1514" y="63" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#24313a">Run mock sync</text>
+
+  <text x="255" y="132" font-family="Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="1.6" fill="#7a827d">SATURDAY, JULY 18, 2026</text>
+  <text x="255" y="165" font-family="Georgia, serif" font-size="29" font-weight="700" fill="#16242c">Good morning, Brian.</text>
+  <text x="255" y="188" font-family="Arial, sans-serif" font-size="11" fill="#667680">Here is where the network needs attention today.</text>
+
+  <rect x="1290" y="145" width="95" height="30" rx="15" fill="#e6f4ef" stroke="#c4dfd6"/>
+  <text x="1337" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#176b59">Assisted mode</text>
+  <rect x="1396" y="145" width="146" height="30" rx="7" fill="#14745f"/>
+  <text x="1469" y="164" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#ffffff">Review recommendations</text>
+
+  <rect x="255" y="215" width="1288" height="58" rx="10" fill="#fff8e9" stroke="#e8bf58"/>
+  <circle cx="284" cy="244" r="14" fill="#f6dc95"/>
+  <text x="284" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#986b0f">!</text>
+  <text x="311" y="240" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#202d35">39 SKUs face a stockout inside 7 days</text>
+  <text x="311" y="257" font-family="Arial, sans-serif" font-size="9" fill="#7b715d">Most exposure is concentrated in Amazon US and the Ontario 3PL.</text>
+
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(255 290)">
+      <rect width="195" height="105" rx="10" fill="#ffffff" stroke="#dfe5e8"/>
+      <text x="14" y="25" font-size="9" font-weight="700" fill="#687784">Revenue today</text>
+      <text x="14" y="58" font-family="Georgia, serif" font-size="22" fill="#17242c">$15,027</text>
+      <text x="14" y="78" font-size="9" font-weight="700" fill="#16815e">+8.4% vs prior Sat</text>
+      <rect x="14" y="91" width="165" height="3" rx="2" fill="#e3e8ea"/>
+      <rect x="14" y="91" width="118" height="3" rx="2" fill="#17725e"/>
+    </g>
+    <g transform="translate(462 290)">
+      <rect width="195" height="105" rx="10" fill="#ffffff" stroke="#dfe5e8"/>
+      <text x="14" y="25" font-size="9" font-weight="700" fill="#687784">Revenue this month</text>
+      <text x="14" y="58" font-family="Georgia, serif" font-size="22" fill="#17242c">$229,584</text>
+      <text x="14" y="78" font-size="9" font-weight="700" fill="#16815e">+12.1% vs plan</text>
+      <rect x="14" y="91" width="165" height="3" rx="2" fill="#e3e8ea"/>
+      <rect x="14" y="91" width="135" height="3" rx="2" fill="#17725e"/>
+    </g>
+    <g transform="translate(669 290)">
+      <rect width="195" height="105" rx="10" fill="#ffffff" stroke="#dfe5e8"/>
+      <text x="14" y="25" font-size="9" font-weight="700" fill="#687784">Orders today</text>
+      <text x="14" y="58" font-family="Georgia, serif" font-size="22" fill="#17242c">572</text>
+      <text x="14" y="78" font-size="9" font-weight="700" fill="#16815e">+6.2% vs forecast</text>
+      <rect x="14" y="91" width="165" height="3" rx="2" fill="#e3e8ea"/>
+      <rect x="14" y="91" width="123" height="3" rx="2" fill="#17725e"/>
+    </g>
+    <g transform="translate(876 290)">
+      <rect width="195" height="105" rx="10" fill="#ffffff" stroke="#dfe5e8"/>
+      <text x="14" y="25" font-size="9" font-weight="700" fill="#687784">Units sold MTD</text>
+      <text x="14" y="58" font-family="Georgia, serif" font-size="22" fill="#17242c">8,831</text>
+      <text x="14" y="78" font-size="9" font-weight="700" fill="#16815e">+9.7% vs prior period</text>
+      <rect x="14" y="91" width="165" height="3" rx="2" fill="#e3e8ea"/>
+      <rect x="14" y="91" width="132" height="3" rx="2" fill="#17725e"/>
+    </g>
+    <g transform="translate(1083 290)">
+      <rect width="195" height="105" rx="10" fill="#ffffff" stroke="#dfe5e8"/>
+      <text x="14" y="25" font-size="9" font-weight="700" fill="#687784">Gross margin</text>
+      <text x="14" y="58" font-family="Georgia, serif" font-size="22" fill="#17242c">61.8%</text>
+      <text x="14" y="78" font-size="9" font-weight="700" fill="#16815e">+1.3 pts vs plan</text>
+      <rect x="14" y="91" width="165" height="3" rx="2" fill="#e3e8ea"/>
+      <rect x="14" y="91" width="119" height="3" rx="2" fill="#17725e"/>
+    </g>
+    <g transform="translate(1290 290)">
+      <rect width="253" height="105" rx="10" fill="#ffffff" stroke="#dfe5e8"/>
+      <text x="14" y="25" font-size="9" font-weight="700" fill="#687784">Available inventory</text>
+      <text x="14" y="58" font-family="Georgia, serif" font-size="22" fill="#17242c">$188,018</text>
+      <text x="14" y="78" font-size="9" font-weight="700" fill="#5f6f77">Across 8 fulfillment nodes</text>
+      <rect x="14" y="91" width="223" height="3" rx="2" fill="#e3e8ea"/>
+      <rect x="14" y="91" width="182" height="3" rx="2" fill="#17725e"/>
+    </g>
+  </g>
+
+  <rect x="255" y="420" width="940" height="385" rx="12" fill="#ffffff" stroke="#dfe5e8"/>
+  <text x="278" y="451" font-family="Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="1.4" fill="#70867e">COMMERCIAL PERFORMANCE</text>
+  <text x="278" y="480" font-family="Georgia, serif" font-size="23" fill="#1a272f">Revenue &amp; units</text>
+  <line x1="295" y1="720" x2="1165" y2="720" stroke="#e4e9eb"/>
+  <line x1="295" y1="650" x2="1165" y2="650" stroke="#e4e9eb"/>
+  <line x1="295" y1="580" x2="1165" y2="580" stroke="#e4e9eb"/>
+  <polyline fill="none" stroke="#6172c8" stroke-width="3" points="295,695 350,645 410,640 470,690 530,680 590,686 650,688 710,645 770,648 830,688 890,690 950,670 1010,686 1070,675 1120,625 1165,633"/>
+  <polyline fill="none" stroke="#5eb6a9" stroke-width="3" points="295,700 350,640 410,635 470,687 530,678 590,684 650,686 710,642 770,645 830,685 890,688 950,668 1010,684 1070,671 1120,620 1165,630"/>
+  <circle cx="1120" cy="620" r="4" fill="#5eb6a9"/>
+
+  <rect x="1212" y="420" width="331" height="385" rx="12" fill="#ffffff" stroke="#dfe5e8"/>
+  <text x="1236" y="451" font-family="Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="1.4" fill="#70867e">NETWORK EXPOSURE</text>
+  <text x="1236" y="480" font-family="Georgia, serif" font-size="23" fill="#1a272f">Inventory health</text>
+  <circle cx="1378" cy="610" r="75" fill="none" stroke="#6374c9" stroke-width="25" stroke-dasharray="210 500" transform="rotate(-90 1378 610)"/>
+  <circle cx="1378" cy="610" r="75" fill="none" stroke="#4aa087" stroke-width="25" stroke-dasharray="205 500" stroke-dashoffset="-210" transform="rotate(-90 1378 610)"/>
+  <circle cx="1378" cy="610" r="75" fill="none" stroke="#3f86c4" stroke-width="25" stroke-dasharray="45 500" stroke-dashoffset="-415" transform="rotate(-90 1378 610)"/>
+  <circle cx="1378" cy="610" r="75" fill="none" stroke="#d04f49" stroke-width="25" stroke-dasharray="20 500" stroke-dashoffset="-460" transform="rotate(-90 1378 610)"/>
+  <text x="1378" y="604" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#18262e">1,152</text>
+  <text x="1378" y="621" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#6b7880">positions</text>
+  <circle cx="1240" cy="735" r="5" fill="#d04f49"/><text x="1252" y="739" font-family="Arial, sans-serif" font-size="9" fill="#4e5f68">Critical 39</text>
+  <circle cx="1340" cy="735" r="5" fill="#d99a32"/><text x="1352" y="739" font-family="Arial, sans-serif" font-size="9" fill="#4e5f68">High 49</text>
+  <circle cx="1240" cy="760" r="5" fill="#3f86c4"/><text x="1252" y="764" font-family="Arial, sans-serif" font-size="9" fill="#4e5f68">Inbound 81</text>
+  <circle cx="1340" cy="760" r="5" fill="#4aa087"/><text x="1352" y="764" font-family="Arial, sans-serif" font-size="9" fill="#4e5f68">Healthy 574</text>
+
+  <text x="255" y="850" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#183b36">MULTICHANNEL REPLENISHMENT CONTROL TOWER</text>
+  <text x="255" y="872" font-family="Arial, sans-serif" font-size="10" fill="#667780">Explainable inventory planning • governed approvals • supplier POs • FBA transfers • audit history</text>
+</svg>
