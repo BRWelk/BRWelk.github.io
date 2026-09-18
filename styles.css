@@ -751,3 +751,86 @@ footer p {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* Multichannel Replenishment Control Tower case study */
+.control-tower-card-preview {
+  width: 100%;
+  height: 100%;
+  min-height: 31rem;
+  overflow: hidden;
+  background: #f4f7f6;
+}
+.control-tower-card-preview iframe {
+  width: 1600px;
+  height: 1000px;
+  border: 0;
+  transform: scale(0.58);
+  transform-origin: top left;
+  pointer-events: none;
+}
+.control-tower-cover {
+  overflow: hidden;
+  background: #f4f7f6;
+}
+.control-tower-cover iframe {
+  width: 100%;
+  height: min(72vw, 820px);
+  min-height: 620px;
+  display: block;
+  border: 0;
+  background: #f4f7f6;
+}
+.control-tower-cover figcaption {
+  padding: 0.9rem 1.2rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.case-actions {
+  width: min(calc(100% - 2.5rem), var(--max-width));
+  margin: -3.5rem auto 6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.control-tower-gallery .gallery-grid {
+  gap: 1.5rem;
+}
+.control-tower-gallery .gallery-item {
+  overflow: hidden;
+}
+.app-frame {
+  height: 440px;
+  overflow: hidden;
+  background: #f4f7f6;
+}
+.app-frame iframe {
+  width: 1600px;
+  height: 1000px;
+  border: 0;
+  transform: scale(0.55);
+  transform-origin: top left;
+  pointer-events: none;
+}
+.gallery-item.gallery-wide .app-frame {
+  height: 590px;
+}
+.gallery-item.gallery-wide .app-frame iframe {
+  transform: scale(0.73);
+}
+.case-next-links {
+  justify-content: center;
+}
+@media (max-width: 800px) {
+  .control-tower-card-preview { min-height: 24rem; }
+  .control-tower-card-preview iframe { transform: scale(0.45); }
+  .control-tower-cover iframe { min-height: 520px; }
+  .app-frame, .gallery-item.gallery-wide .app-frame { height: 420px; }
+  .app-frame iframe, .gallery-item.gallery-wide .app-frame iframe { transform: scale(0.48); }
+}
+@media (max-width: 560px) {
+  .control-tower-cover iframe { min-height: 420px; }
+  .case-actions { margin-top: -4rem; }
+  .app-frame, .gallery-item.gallery-wide .app-frame { height: 330px; }
+  .app-frame iframe, .gallery-item.gallery-wide .app-frame iframe { transform: scale(0.34); }
+}
