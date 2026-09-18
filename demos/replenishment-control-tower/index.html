@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Portfolio UI walkthrough for the Multichannel Replenishment Control Tower." />
+  <title>Replenishment Control Tower | Portfolio Walkthrough</title>
+  <style>
+    :root{
+      --green:#123d38;--green-2:#1d5a52;--mint:#e9f4f0;--ink:#172329;--muted:#6b777d;
+      --bg:#f4f7f6;--card:#fff;--line:#dfe6e4;--amber:#f3c760;--amber-bg:#fff7e4;
+      --red:#d65b50;--blue:#5a6fc6;--teal:#4f9b88;--shadow:0 10px 28px rgba(30,50,47,.08)
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif;font-size:14px}
+    button{font:inherit}
+    .env{height:28px;display:grid;place-items:center;background:#f0c45d;color:#322916;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .shell{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 28px)}
+    .sidebar{background:var(--green);color:#d7ebe6;padding:18px 12px;position:sticky;top:0;height:calc(100vh - 28px);overflow:auto}
+    .brand{display:flex;align-items:center;gap:10px;padding:4px 8px 20px}.brand-mark{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;background:var(--amber);color:var(--green);font-family:Georgia,serif;font-weight:800;font-size:22px}
+    .brand strong{display:block;color:#fff;font-family:Georgia,serif;font-size:18px}.brand small{display:block;color:#83bbb2;font-size:9px;letter-spacing:.11em;text-transform:uppercase;margin-top:2px}
+    .label{padding:14px 10px 6px;color:#7fb6ae;font-size:9px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+    .nav{width:100%;border:0;background:transparent;color:#d6e7e3;text-align:left;border-radius:8px;padding:9px 10px;margin:2px 0;cursor:pointer;font-size:12px}.nav:hover,.nav.active{background:#285f58;color:#fff}
+    .side-note{margin-top:22px;padding:12px;border-top:1px solid rgba(255,255,255,.12);font-size:10px;color:#9dc7c0}
+    .main{min-width:0}.topbar{height:62px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 26px;position:sticky;top:0;z-index:3}
+    .crumb small{display:block;color:#87949a;font-size:10px}.crumb strong{display:block;margin-top:4px;font-size:14px}
+    .top-meta{display:flex;align-items:center;gap:14px;font-size:11px;color:#5f6d72}.dot{width:8px;height:8px;border-radius:50%;background:#3aa477;display:inline-block;margin-right:5px}
+    .content{padding:26px;max-width:1460px;margin:auto}
+    .intro{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:20px}.intro small{color:#7b898e;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.intro h1{font:700 30px/1.15 Georgia,serif;margin:7px 0 5px}.intro p{margin:0;color:var(--muted)}
+    .pill{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:#e7f3ef;border:1px solid #c9e2da;color:#276c5c;font-weight:700;font-size:11px}
+    .alert{display:flex;gap:12px;align-items:center;background:var(--amber-bg);border:1px solid #edc969;border-radius:10px;padding:12px 15px;margin-bottom:16px}.alert b{font-size:13px}.alert span{color:#7c6f55;font-size:11px}
+    .grid{display:grid;gap:12px}.kpis{grid-template-columns:repeat(6,minmax(0,1fr));margin-bottom:16px}.kpi,.card{background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}.kpi{padding:13px}.kpi label{display:block;color:#738188;font-size:10px;font-weight:700}.kpi strong{display:block;font:700 21px/1.1 Georgia,serif;margin:9px 0 6px}.kpi small{color:#258264;font-size:10px;font-weight:700}
+    .bar{height:4px;background:#edf1f0;border-radius:999px;overflow:hidden;margin-top:10px}.bar i{display:block;height:100%;background:var(--teal)}
+    .two{grid-template-columns:minmax(0,1.7fr) minmax(280px,.7fr)}.card{padding:16px}.card h2{font:700 20px Georgia,serif;margin:4px 0 14px}.eyebrow{color:#789089;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .chart{height:210px;position:relative;border-left:1px solid #e6ecea;border-bottom:1px solid #e6ecea;margin:16px 8px 2px;background:repeating-linear-gradient(to bottom,transparent 0,transparent 49px,#edf1f0 50px)}
+    .chart svg{position:absolute;inset:0;width:100%;height:100%}
+    .legend{display:flex;gap:16px;font-size:10px;color:#69777c;margin-top:12px}.legend i{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px}
+    .donut{width:164px;height:164px;border-radius:50%;background:conic-gradient(var(--blue) 0 40%,var(--teal) 40% 78%,#4c91c3 78% 90%,var(--red) 90%);margin:26px auto;position:relative}.donut:after{content:"1,152\A positions";white-space:pre;position:absolute;inset:24px;border-radius:50%;background:#fff;display:grid;place-items:center;text-align:center;font:700 19px Georgia,serif;color:#233138;line-height:1.25}
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}.input,.select,.btn{height:34px;border:1px solid #cfd9d6;border-radius:7px;background:#fff;padding:0 10px;color:#334047;font-size:11px}.input{min-width:230px}.btn{font-weight:700;cursor:pointer}.btn.primary{background:#176f5e;color:#fff;border-color:#176f5e}
+    table{width:100%;border-collapse:collapse;font-size:10px}th{padding:9px 8px;text-align:left;color:#66757b;font-size:9px;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--line);background:#f8faf9}td{padding:10px 8px;border-bottom:1px solid #edf1f0;vertical-align:top}tr:last-child td{border-bottom:0}
+    .badge{display:inline-flex;padding:3px 7px;border-radius:999px;font-size:9px;font-weight:800;background:#edf2f1;color:#536268}.critical{background:#fdebea;color:#a3433d}.high{background:#fff2da;color:#966516}.healthy{background:#e6f4ef;color:#28745f}.inbound{background:#e9f0fb;color:#4964a4}.pending{background:#fff1d9;color:#906218}.approved{background:#e6f4ef;color:#26715e}
+    .metric-row{display:grid;grid-template-columns:1fr auto;gap:8px;padding:9px 0;border-bottom:1px solid #edf1f0}.metric-row:last-child{border-bottom:0}.metric-row span{color:#69777d}.metric-row strong{font-size:11px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:12px}.scenario-controls{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.range{padding:12px;border:1px solid var(--line);border-radius:9px;background:#fff}.range label{display:flex;justify-content:space-between;font-size:10px;font-weight:700;margin-bottom:10px}.track{height:5px;border-radius:99px;background:#e7ecea}.track i{display:block;height:100%;border-radius:99px;background:#19715f}
+    .automation-modes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.mode{padding:14px;border:1px solid var(--line);border-radius:9px;background:#fff}.mode.active{border-color:#3c8f7d;box-shadow:0 0 0 2px rgba(60,143,125,.1)}.mode strong{display:block;margin-bottom:5px}.mode p{margin:0;color:#738087;font-size:10px}
+    .audit-line{display:grid;grid-template-columns:120px 120px 1fr 140px 100px;gap:10px;padding:10px 0;border-bottom:1px solid #edf1f0;font-size:10px}.audit-line.header{font-size:9px;font-weight:800;color:#6c797f;text-transform:uppercase}
+    .footnote{margin-top:16px;color:#839097;font-size:9px}
+    @media(max-width:980px){.shell{grid-template-columns:170px 1fr}.kpis{grid-template-columns:repeat(3,1fr)}.two,.split{grid-template-columns:1fr}.scenario-controls{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:720px){.shell{display:block}.sidebar{display:none}.content{padding:16px}.kpis{grid-template-columns:repeat(2,1fr)}.automation-modes{grid-template-columns:1fr}.topbar{padding:0 16px}.intro{align-items:start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="env">Synthetic Demonstration Environment · No Live Orders or Integrations</div>
+  <div class="shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">N</div><div><strong>Northstar</strong><small>Replenishment OS</small></div></div>
+      <div class="label">Command center</div>
+      <button class="nav" data-view="overview">Executive overview</button>
+      <button class="nav" data-view="inventory">Inventory control</button>
+      <button class="nav" data-view="replenishment">Replenishment planner</button>
+      <div class="label">Execution</div>
+      <button class="nav" data-view="purchase-orders">Purchase orders</button>
+      <button class="nav" data-view="fba">FBA transfers</button>
+      <button class="nav" data-view="shipments">Shipments</button>
+      <button class="nav" data-view="receiving">Receiving</button>
+      <div class="label">Intelligence</div>
+      <button class="nav" data-view="scenario">Growth scenarios</button>
+      <button class="nav" data-view="automation">Automation center</button>
+      <button class="nav" data-view="audit">Audit history</button>
+      <div class="side-note">Portfolio UI walkthrough<br />Synthetic data only</div>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div class="crumb"><small>Northstar Strap Co.</small><strong id="pageTitle">Executive overview</strong></div>
+        <div class="top-meta"><span><i class="dot"></i>Mock data current</span><span>Jul 18, 2026 · 9:42 AM</span></div>
+      </header>
+      <div class="content" id="screen"></div>
+    </main>
+  </div>
+<script>
+const title = {
+  overview:"Executive overview",inventory:"Inventory control",replenishment:"Replenishment planner",
+  "purchase-orders":"Purchase orders",fba:"FBA transfers",shipments:"Shipments",receiving:"Receiving",
+  scenario:"Growth scenarios",automation:"Automation center",audit:"Audit history"
+};
+
+const kpi = (label,value,delta,width=70) => `<div class="kpi"><label>${label}</label><strong>${value}</strong><small>${delta}</small><div class="bar"><i style="width:${width}%"></i></div></div>`;
+const rows = (items) => items.join("");
+
+function intro(kicker,h,p,action="Assisted mode"){
+  return `<div class="intro"><div><small>${kicker}</small><h1>${h}</h1><p>${p}</p></div><span class="pill">${action}</span></div>`;
+}
+
+function overview(){
+ return intro("Saturday, July 18, 2026","Good morning, Brian.","Here is where the network needs attention today.")+
+ `<div class="alert"><div>⚠</div><div><b>39 SKUs face a stockout inside 7 days</b><br><span>Most exposure is concentrated in Amazon US and the Ontario 3PL.</span></div></div>
+ <div class="grid kpis">
+  ${kpi("Revenue today","$15,027","+8.4% vs prior Sat",72)}
+  ${kpi("Revenue this month","$229,584","+12.1% vs plan",82)}
+  ${kpi("Orders today","572","+6.2% vs forecast",68)}
+  ${kpi("Units sold MTD","8,831","+9.7% vs prior",77)}
+  ${kpi("Gross margin","61.8%","+1.3 pts vs plan",64)}
+  ${kpi("Available inventory","$188,018","Across 8 nodes",88)}
+ </div>
+ <div class="grid two">
+  <section class="card"><div class="eyebrow">Commercial performance</div><h2>Revenue & units</h2>
+   <div class="chart"><svg viewBox="0 0 900 210" preserveAspectRatio="none"><polyline fill="none" stroke="#5b6fc6" stroke-width="3" points="0,160 70,110 130,104 195,152 260,140 330,145 390,94 455,102 520,150 580,142 645,120 710,145 775,125 835,72 900,84"/><polyline fill="none" stroke="#51a18f" stroke-width="3" points="0,170 70,118 130,112 195,157 260,145 330,150 390,102 455,110 520,155 580,148 645,126 710,150 775,132 835,80 900,90"/></svg></div>
+   <div class="legend"><span><i style="background:#5b6fc6"></i>Revenue</span><span><i style="background:#51a18f"></i>Units</span></div>
+  </section>
+  <section class="card"><div class="eyebrow">Network exposure</div><h2>Inventory health</h2><div class="donut"></div>
+   <div class="metric-row"><span>Critical</span><strong>39 positions</strong></div><div class="metric-row"><span>High</span><strong>49 positions</strong></div><div class="metric-row"><span>Healthy</span><strong>574 positions</strong></div>
+  </section>
+ </div>`;
+}
+
+function inventory(){
+ const data=[
+ ["STR-1004","Classic Strap · Black","US-3PL","Webstore","18","4","0","5.8 days","Critical"],
+ ["STR-1028","Classic Strap · Saddle","Amazon US","FBA","11","2","24","4.6 days","Critical"],
+ ["STR-1062","Sport Strap · Navy","Ontario 3PL","Wholesale","22","8","40","8.2 days","High"],
+ ["STR-1091","Sport Strap · Stone","Amazon CA","FBA","34","6","0","11.7 days","High"],
+ ["STR-1120","Heritage Strap · Brown","US-3PL","Webstore","81","14","48","29.4 days","Healthy"],
+ ["STR-1157","Field Strap · Olive","EU-3PL","Wholesale","67","9","0","31.1 days","Healthy"]
+ ];
+ return intro("Inventory control","Position-level inventory","Search risk, location, inbound supply, and projected coverage across the network.","1,152 positions")+
+ `<div class="toolbar"><input class="input" value="Search SKU, product, region..." aria-label="Search"><select class="select"><option>All regions</option></select><select class="select"><option>All channels</option></select><select class="select"><option>All risk levels</option></select><button class="btn">Export CSV</button></div>
+ <section class="card"><table><thead><tr><th>SKU</th><th>Product</th><th>Location</th><th>Channel</th><th>On hand</th><th>Reserved</th><th>Inbound</th><th>Projected cover</th><th>Risk</th></tr></thead><tbody>
+ ${rows(data.map(r=>`<tr>${r.slice(0,8).map(c=>`<td>${c}</td>`).join("")}<td><span class="badge ${r[8].toLowerCase()}">${r[8]}</span></td></tr>`))}
+ </tbody></table></section>
+ <p class="footnote">The working prototype also exposes damaged, quarantined, target stock, reorder point, safety stock, and net requirement details.</p>`;
+}
+
+function replenishment(){
+ const data=[
+ ["REC-2041","STR-1004","Supplier PO","Aster Materials","US-3PL","Critical","1,080","$12,960","Pending Review"],
+ ["REC-2066","STR-1028","FBA Transfer","US-3PL","Amazon US","Critical","240","$2,880","Pending Review"],
+ ["REC-2098","STR-1062","Supplier PO","Harbor Leather","Ontario 3PL","High","720","$8,640","Pending Review"],
+ ["REC-2114","STR-1091","FBA Transfer","Ontario 3PL","Amazon CA","High","180","$2,160","Pending Review"],
+ ["REC-2167","STR-1157","Supplier PO","Peak Components","EU-3PL","Medium","480","$5,760","Pending Review"]
+ ];
+ return intro("Replenishment planner","Explainable recommendations","Review the math before an inventory action becomes eligible for approval.","194 pending")+
+ `<div class="toolbar"><button class="btn primary">Pending Review</button><button class="btn">Approved</button><button class="btn">Deferred</button><button class="btn">Select critical</button><button class="btn primary">Approve selected</button></div>
+ <section class="card"><table><thead><tr><th>Recommendation</th><th>SKU</th><th>Action</th><th>Source</th><th>Destination</th><th>Risk</th><th>Qty</th><th>Value</th><th>Status</th></tr></thead><tbody>
+ ${rows(data.map(r=>`<tr>${r.slice(0,5).map(c=>`<td>${c}</td>`).join("")}<td><span class="badge ${r[5].toLowerCase()}">${r[5]}</span></td><td>${r[6]}</td><td>${r[7]}</td><td><span class="badge pending">${r[8]}</span></td></tr>`))}
+ </tbody></table></section>
+ <div class="grid split" style="margin-top:12px"><section class="card"><div class="eyebrow">Why this action</div><h2>Calculation preview</h2><div class="metric-row"><span>Forecast daily demand</span><strong>18.6 units</strong></div><div class="metric-row"><span>Supplier lead time</span><strong>34 days</strong></div><div class="metric-row"><span>Safety stock</span><strong>252 units</strong></div><div class="metric-row"><span>Target inventory</span><strong>1,224 units</strong></div></section><section class="card"><div class="eyebrow">Controls</div><h2>Human approval stays in the loop</h2><div class="metric-row"><span>MOQ adjustment</span><strong>Applied</strong></div><div class="metric-row"><span>Case pack</span><strong>24 units</strong></div><div class="metric-row"><span>External transmission</span><strong>Disabled</strong></div></section></div>`;
+}
+
+function purchaseOrders(){
+ const data=[
+ ["PO-260701","Aster Materials","US-3PL","Pending Approval","1,440","$17,280","Aug 18"],
+ ["PO-260705","Harbor Leather","Ontario 3PL","Submitted","2,160","$25,920","Aug 22"],
+ ["PO-260709","Peak Components","EU-3PL","Confirmed","1,080","$12,960","Aug 27"],
+ ["PO-260712","Aster Materials","US-3PL","In Production","2,400","$28,800","Sep 2"],
+ ["PO-260715","Harbor Leather","Ontario 3PL","Draft","720","$8,640","Sep 6"]
+ ];
+ return intro("Execution","Purchase orders","Track supplier commitments from approval through expected receipt.","$93,600 open commitment")+
+ `<div class="toolbar"><input class="input" value="Search purchase orders..."><select class="select"><option>All statuses</option></select><button class="btn primary">Create manual PO</button></div>
+ <section class="card"><table><thead><tr><th>PO</th><th>Supplier</th><th>Destination</th><th>Status</th><th>Units</th><th>Value</th><th>Expected</th></tr></thead><tbody>
+ ${rows(data.map(r=>`<tr><td><strong>${r[0]}</strong></td><td>${r[1]}</td><td>${r[2]}</td><td><span class="badge ${r[3]==='Pending Approval'?'pending':'healthy'}">${r[3]}</span></td><td>${r[4]}</td><td>${r[5]}</td><td>${r[6]}</td></tr>`))}
+ </tbody></table></section>`;
+}
+
+function fba(){
+ const data=[
+ ["STR-1028","Amazon US","US-3PL","Critical","4.6 days","240","$2,880"],
+ ["STR-1047","Amazon US","US-3PL","High","8.1 days","168","$2,016"],
+ ["STR-1091","Amazon CA","Ontario 3PL","High","11.7 days","180","$2,160"],
+ ["STR-1138","Amazon UK","EU-3PL","Medium","18.4 days","120","$1,440"],
+ ["STR-1184","Amazon DE","EU-3PL","Medium","21.2 days","96","$1,152"]
+ ];
+ return intro("Execution","FBA transfer candidates","Rebalance 3PL stock into marketplace fulfillment before channel coverage breaks.","804 units proposed")+
+ `<div class="grid kpis" style="grid-template-columns:repeat(4,1fr)">${kpi("Critical FBA SKUs","12","Inside 7 days",84)}${kpi("Transfer candidates","37","Across 4 marketplaces",70)}${kpi("Units proposed","804","From regional 3PLs",68)}${kpi("Transfer value","$9,648","Synthetic cost basis",62)}</div>
+ <section class="card"><table><thead><tr><th>SKU</th><th>Marketplace</th><th>Source 3PL</th><th>Risk</th><th>Projected cover</th><th>Transfer qty</th><th>Value</th></tr></thead><tbody>
+ ${rows(data.map(r=>`<tr><td><strong>${r[0]}</strong></td><td>${r[1]}</td><td>${r[2]}</td><td><span class="badge ${r[3].toLowerCase()}">${r[3]}</span></td><td>${r[4]}</td><td>${r[5]}</td><td>${r[6]}</td></tr>`))}
+ </tbody></table></section>`;
+}
+
+function shipments(){
+ const data=[
+ ["SHP-48031","PO-260705","Ocean","Shanghai → Denver","In Transit","Aug 19","On time"],
+ ["SHP-48042","FBA-3118","Ground","Denver → Amazon US","Picked Up","Jul 20","On time"],
+ ["SHP-48047","PO-260709","Air","Toronto → Frankfurt","Delayed","Jul 23","+2 days"],
+ ["SHP-48053","FBA-3129","Ground","Ontario → Amazon CA","Receiving","Jul 19","On time"],
+ ["SHP-48061","PO-260712","Ocean","Shenzhen → Denver","Booked","Sep 3","On time"]
+ ];
+ return intro("Execution","Inbound shipments","Keep purchase orders and network transfers visible through delivery and receiving.","28 active shipments")+
+ `<div class="grid kpis" style="grid-template-columns:repeat(4,1fr)">${kpi("Booked / picked up","9","Awaiting linehaul",58)}${kpi("In transit","12","Across 6 lanes",72)}${kpi("Delayed","3","Requires attention",28)}${kpi("Receiving","4","At destination",64)}</div>
+ <section class="card"><table><thead><tr><th>Shipment</th><th>Reference</th><th>Mode</th><th>Lane</th><th>Status</th><th>ETA</th><th>Variance</th></tr></thead><tbody>
+ ${rows(data.map(r=>`<tr><td><strong>${r[0]}</strong></td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td><span class="badge ${r[4]==='Delayed'?'critical':'inbound'}">${r[4]}</span></td><td>${r[5]}</td><td>${r[6]}</td></tr>`))}
+ </tbody></table></section>`;
+}
+
+function receiving(){
+ const data=[
+ ["RCV-7821","SHP-48053","Ontario 3PL","480","468","12 short","Open"],
+ ["RCV-7827","SHP-47998","US-3PL","720","720","Matched","Resolved"],
+ ["RCV-7833","SHP-48021","EU-3PL","360","354","6 damaged","Open"],
+ ["RCV-7836","SHP-48026","US-3PL","1,080","1,080","Matched","Resolved"]
+ ];
+ return intro("Execution","Receiving & discrepancies","Close the loop between expected inbound inventory and what actually arrives.","2 open exceptions")+
+ `<div class="grid split"><section class="card"><div class="eyebrow">Receiving queue</div><h2>Expected vs received</h2><table><thead><tr><th>Receipt</th><th>Shipment</th><th>Node</th><th>Expected</th><th>Received</th><th>Variance</th><th>Status</th></tr></thead><tbody>
+ ${rows(data.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td><td>${r[5]}</td><td><span class="badge ${r[6]==='Open'?'critical':'healthy'}">${r[6]}</span></td></tr>`))}
+ </tbody></table></section><section class="card"><div class="eyebrow">Control point</div><h2>Discrepancy resolution</h2><div class="metric-row"><span>Short receipt</span><strong>12 units</strong></div><div class="metric-row"><span>Damaged</span><strong>6 units</strong></div><div class="metric-row"><span>Inventory posted</span><strong>After review</strong></div><div class="metric-row"><span>Audit event</span><strong>Required</strong></div></section></div>`;
+}
+
+function scenario(){
+ return intro("Planning intelligence","Growth scenarios","Stress the network without changing operating data.","Scenario: 25% growth")+
+ `<section class="card" style="margin-bottom:12px"><div class="scenario-controls">
+   <div class="range"><label><span>Transaction growth</span><b>25%</b></label><div class="track"><i style="width:50%"></i></div></div>
+   <div class="range"><label><span>Amazon mix</span><b>56%</b></label><div class="track"><i style="width:56%"></i></div></div>
+   <div class="range"><label><span>Lead-time change</span><b>+0 days</b></label><div class="track"><i style="width:18%"></i></div></div>
+   <div class="range"><label><span>Safety stock</span><b>1.15×</b></label><div class="track"><i style="width:62%"></i></div></div>
+ </div></section>
+ <div class="grid kpis" style="grid-template-columns:repeat(4,1fr)">${kpi("Projected stockouts","67","+28 vs baseline",82)}${kpi("Required PO spend","$164K","+$41K vs baseline",76)}${kpi("FBA transfer units","1,406","+602 units",70)}${kpi("Network fill rate","93.1%","-3.3 pts",55)}</div>
+ <div class="grid two"><section class="card"><div class="eyebrow">Scenario impact</div><h2>Coverage by week</h2><div class="chart"><svg viewBox="0 0 900 210" preserveAspectRatio="none"><polyline fill="none" stroke="#4f9b88" stroke-width="3" points="0,60 120,72 240,85 360,96 480,118 600,132 720,148 900,168"/><polyline fill="none" stroke="#d65b50" stroke-width="3" stroke-dasharray="7 6" points="0,60 120,78 240,100 360,126 480,145 600,164 720,176 900,188"/></svg></div></section><section class="card"><div class="eyebrow">Decision support</div><h2>What changes first</h2><div class="metric-row"><span>Amazon US exposure</span><strong>Critical</strong></div><div class="metric-row"><span>Ontario 3PL</span><strong>High</strong></div><div class="metric-row"><span>Supplier capacity</span><strong>Within limit</strong></div><div class="metric-row"><span>Cash requirement</span><strong>+$41K</strong></div></section></div>`;
+}
+
+function automation(){
+ return intro("Governance","Automation center","Automate preparation while preserving approval and release controls.","Dry run enabled")+
+ `<section class="card" style="margin-bottom:12px"><div class="automation-modes"><div class="mode"><strong>Manual</strong><p>Users create every replenishment action manually.</p></div><div class="mode active"><strong>Assisted</strong><p>The engine proposes actions; analysts review each recommendation.</p></div><div class="mode"><strong>Controlled batch</strong><p>Approved actions are grouped for a human-controlled release.</p></div></div></section>
+ <div class="grid split"><section class="card"><div class="eyebrow">Safeguards</div><h2>Execution policy</h2><div class="metric-row"><span>Dry run</span><strong>Enabled</strong></div><div class="metric-row"><span>Approver required</span><strong>Yes</strong></div><div class="metric-row"><span>External system writes</span><strong>Disabled</strong></div><div class="metric-row"><span>Automation status</span><strong>Active</strong></div></section>
+ <section class="card"><div class="eyebrow">Controlled review batch</div><h2>Ready for approval</h2><div class="metric-row"><span>Approved recommendations</span><strong>18</strong></div><div class="metric-row"><span>Units</span><strong>4,824</strong></div><div class="metric-row"><span>Value</span><strong>$57,888</strong></div><div class="toolbar" style="margin-top:14px"><button class="btn primary">Create review batch</button></div></section></div>`;
+}
+
+function audit(){
+ const data=[
+ ["Jul 18 · 9:42","Northstar Engine","Mock sync run","Synchronization run","Automation"],
+ ["Jul 18 · 9:31","Brian Welk","Recommendation approved","REC-2041","Human"],
+ ["Jul 18 · 9:29","Brian Welk","Recommendation deferred","REC-2055","Human"],
+ ["Jul 18 · 9:18","Brian Welk","Scenario saved","25% transaction growth","Human"],
+ ["Jul 18 · 9:06","Northstar Engine","Risk recalculated","STR-1028 / Amazon US","Automation"],
+ ["Jul 18 · 8:58","Brian Welk","PO approved","PO-260701","Human"]
+ ];
+ return intro("Governance","Audit history","Trace workflow decisions, automation events, and review actions back to a named source.","Searchable history")+
+ `<div class="toolbar"><input class="input" value="Search action, entity, actor..."><select class="select"><option>All sources</option></select><button class="btn">Export CSV</button></div>
+ <section class="card"><div class="audit-line header"><span>Time</span><span>Actor</span><span>Action</span><span>Entity</span><span>Source</span></div>
+ ${rows(data.map(r=>`<div class="audit-line"><span>${r[0]}</span><span>${r[1]}</span><strong>${r[2]}</strong><span>${r[3]}</span><span><span class="badge ${r[4]==='Human'?'approved':'inbound'}">${r[4]}</span></span></div>`))}
+ </section>`;
+}
+
+const renderers={overview,inventory,replenishment,"purchase-orders":purchaseOrders,fba,shipments,receiving,scenario,automation,audit};
+function render(view){
+  const safe=renderers[view]?view:"overview";
+  document.querySelectorAll(".nav").forEach(n=>n.classList.toggle("active",n.dataset.view===safe));
+  document.getElementById("pageTitle").textContent=title[safe];
+  document.getElementById("screen").innerHTML=renderers[safe]();
+  const u=new URL(location.href);u.searchParams.set("view",safe);history.replaceState(null,"",u);
+}
+document.querySelectorAll(".nav").forEach(n=>n.addEventListener("click",()=>render(n.dataset.view)));
+render(new URLSearchParams(location.search).get("view")||"overview");
+</script>
+</body>
+</html>
