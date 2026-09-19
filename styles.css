@@ -834,3 +834,67 @@ footer p {
   .app-frame, .gallery-item.gallery-wide .app-frame { height: 330px; }
   .app-frame iframe, .gallery-item.gallery-wide .app-frame iframe { transform: scale(0.34); }
 }
+
+
+/* OCR Document Normalizer case study */
+.ocr-card-preview {
+  width: 100%;
+  height: 100%;
+  min-height: 31rem;
+  overflow: hidden;
+  background: #f5f7fa;
+}
+.ocr-card-preview iframe {
+  width: 1480px;
+  height: 980px;
+  border: 0;
+  transform: scale(0.59);
+  transform-origin: top left;
+  pointer-events: none;
+}
+.ocr-cover {
+  overflow: hidden;
+  background: #f5f7fa;
+}
+.ocr-cover iframe {
+  width: 100%;
+  height: min(76vw, 900px);
+  min-height: 680px;
+  display: block;
+  border: 0;
+  background: #f5f7fa;
+}
+.ocr-cover figcaption {
+  padding: 0.9rem 1.2rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.ocr-gallery .gallery-grid {
+  gap: 1.5rem;
+}
+.ocr-frame {
+  background: #f5f7fa;
+}
+.ocr-frame iframe {
+  width: 1480px;
+  height: 1000px;
+  border: 0;
+  transform: scale(0.55);
+  transform-origin: top left;
+  pointer-events: none;
+}
+.gallery-item.gallery-wide .ocr-frame iframe {
+  transform: scale(0.72);
+}
+@media (max-width: 800px) {
+  .ocr-card-preview { min-height: 24rem; }
+  .ocr-card-preview iframe { transform: scale(0.46); }
+  .ocr-cover iframe { min-height: 560px; }
+  .ocr-frame iframe,
+  .gallery-item.gallery-wide .ocr-frame iframe { transform: scale(0.47); }
+}
+@media (max-width: 560px) {
+  .ocr-cover iframe { min-height: 440px; }
+  .ocr-frame iframe,
+  .gallery-item.gallery-wide .ocr-frame iframe { transform: scale(0.34); }
+}
