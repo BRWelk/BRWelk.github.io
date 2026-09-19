@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Channel Pricing Integration Lab case study by Brian Welk, connecting floor-plan design, field surveys, quoting, purchasing, and accounting workflows."
+      content="Channel Pricing Integration Lab case study by Brian Welk, showing the current GuardianWorks opportunity-to-purchase workflow for security integrators."
     />
     <meta name="theme-color" content="#101a24" />
     <title>Channel Pricing Integration Lab Case Study | Brian Welk</title>
@@ -34,138 +34,260 @@
     <main class="case-main" id="main">
       <section class="case-hero">
         <div>
-          <p class="eyebrow">Field-to-purchase integration</p>
+          <p class="eyebrow">Opportunity-to-purchase operations platform</p>
           <h1>Channel Pricing Integration Lab</h1>
           <p class="case-hero-summary">
-            An API-driven workspace that carries a system design from floor plan and field
-            survey through quoting, purchasing, and accounting reconciliation.
+            The current GuardianWorks build connects opportunity discovery, visual system design,
+            field surveys, estimating catalogs, quoting, purchasing preparation, live pricing review,
+            and accounting reconciliation in one project lifecycle.
           </p>
         </div>
         <dl class="case-facts">
           <div>
             <dt>Role</dt>
-            <dd>Product designer and full-stack developer</dd>
+            <dd>Product designer, workflow architect, and full-stack developer</dd>
           </div>
           <div>
             <dt>Platform</dt>
-            <dd>Python, Flask, REST integrations, and QuickBooks Online sandbox</dd>
+            <dd>Node.js, JavaScript, SQLite, REST integrations, and QuickBooks Online sandbox</dd>
           </div>
           <div>
-            <dt>Portfolio data</dt>
-            <dd>Demonstration project, sandbox accounting records, and read-only vendor pricing</dd>
+            <dt>Controls</dt>
+            <dd>Read-only upstream pricing, explicit review, and sandbox-only accounting writes</dd>
           </div>
         </dl>
       </section>
 
-      <figure class="case-cover report-cover">
-        <img src="../assets/channel-pricing/floor-plan.png" alt="Channel Pricing Integration Lab floor plan with camera, controlled-door, reader, and cable-drop systems placed across a demonstration office" />
+      <figure class="case-cover channel-real-cover">
+        <a href="../assets/channel-pricing/current/overview.webp" target="_blank" rel="noreferrer">
+          <img
+            src="../assets/channel-pricing/current/overview.webp"
+            alt="GuardianWorks project workspace overview with QuickBooks catalog status, vendor pricing checks, project flow, purchase orders, and reconciliation metrics"
+          />
+        </a>
+        <figcaption>
+          Current GuardianWorks workspace. The dashboard makes catalog readiness, pricing verification,
+          purchase-order activity, and reconciliation status visible before the operator enters a project workflow.
+        </figcaption>
       </figure>
 
       <section class="case-section">
         <div>
-          <p class="eyebrow">The challenge</p>
-          <h2>Keep design, pricing, and purchasing aligned.</h2>
+          <p class="eyebrow">The operating problem</p>
+          <h2>Keep project information intact as work moves between teams and systems.</h2>
         </div>
         <div class="case-section-copy">
           <p>
-            Complex field projects often begin with drawings and notes, then move through
-            separate estimating, catalog, purchasing, and accounting tools. Re-entering
-            the same equipment at each stage introduces delays, inconsistent quantities,
-            and pricing errors.
+            Security integration projects can start with a bid opportunity, move to a floor plan and
+            field survey, become a quote, and eventually turn into purchasing and accounting documents.
+            When those stages live in separate tools, equipment identity, quantities, pricing assumptions,
+            and project context are repeatedly re-entered.
           </p>
           <p>
-            The workflow also needs firm boundaries. Vendor pricing must remain read-only,
-            while accounting transactions should be created only inside the authorized
-            customer sandbox after every line has been reviewed.
+            The application is designed around continuity. The same project lineage moves from discovery
+            through design and estimating into purchasing, while catalog and pricing rules determine what
+            is ready for execution and what still requires human review.
           </p>
         </div>
       </section>
 
       <section class="case-section">
         <div>
-          <p class="eyebrow">The solution</p>
-          <h2>One traceable workflow from drawing to document.</h2>
+          <p class="eyebrow">Current workflow</p>
+          <h2>From finding work to reconciling the purchase.</h2>
         </div>
         <div class="case-section-copy">
-          <p>
-            I designed the application around a six-stage project lifecycle. Systems placed
-            on a floor plan become editable field-survey packages, quoted equipment, a
-            controlled purchasing BOM, and reconciled accounting documents.
-          </p>
           <ul class="outcome-list">
-            <li>Visual floor-plan placement for cameras, controlled doors, readers, and cable runs</li>
-            <li>Reusable equipment packages with room-level quantities and installation details</li>
-            <li>Catalog matching and margin-aware pricing inside the estimating workflow</li>
-            <li>Saved quotes and projects that preserve equipment counts and prices</li>
-            <li>Purchasing BOM controls for vendor choice, procurement treatment, and item mapping</li>
-            <li>Purchase-order and bill tracking with vendor transaction writes permanently disabled</li>
+            <li>Live read-only opportunity discovery with local tracking and project start actions</li>
+            <li>Visual floor plans with reusable system packages and individually placed devices</li>
+            <li>Field-survey workflow with saved packages, room/area organization, and CSV/XLSX equipment-schedule import</li>
+            <li>Private 5,000-item estimate-only quote catalog for field estimates and budgetary pricing</li>
+            <li>Separate QuickBooks-managed catalog for purchase-capable items and current vendor pricing</li>
+            <li>Quote and project stages that preserve scope before purchasing preparation</li>
+            <li>Purchasing BOM workspace with project coding, ship-to information, margin controls, and current-catalog repricing</li>
+            <li>Native purchase-order, vendor-bill, payment, and reconciliation tracking from the accounting system</li>
+            <li>Background pricing checks that identify changes without silently rewriting catalog data</li>
           </ul>
         </div>
       </section>
 
-      <section class="case-section">
-        <div>
-          <p class="eyebrow">My contribution</p>
-          <h2>Workflow architecture, interface design, integrations, and safeguards.</h2>
-        </div>
-        <div class="case-section-copy">
-          <p>
-            I translated the operational process into a connected product experience,
-            including the data model, staged workflow, visual takeoff tools, catalog
-            matching, pricing logic, project handoffs, and document status views.
-          </p>
-          <p>
-            The demonstration uses a QuickBooks Online sandbox and enforces a read-only
-            boundary for upstream vendor pricing. The public case study does not expose
-            credentials, private API details, or any employer-specific implementation.
-          </p>
-          <ul class="tag-list" aria-label="Project capabilities">
-            <li>Product Design</li>
-            <li>Python</li>
-            <li>Flask</li>
-            <li>REST APIs</li>
-            <li>QuickBooks Online</li>
-            <li>Workflow Automation</li>
-            <li>Data Validation</li>
-            <li>Purchasing Controls</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="case-gallery report-gallery" id="product-views" aria-labelledby="gallery-title">
+      <section class="case-gallery channel-real-gallery" id="product-views" aria-labelledby="gallery-title">
         <div class="gallery-heading">
-          <p class="eyebrow">Product walkthrough</p>
-          <h2 id="gallery-title">Four stages of a connected project lifecycle</h2>
+          <p class="eyebrow">Actual application screens</p>
+          <h2 id="gallery-title">The current GuardianWorks workflow</h2>
           <p>
-            These screens show a demonstration project in the sandbox environment.
-            Vendor pricing is read-only, and the public case study omits supplier catalog
-            and line-level purchasing screens.
+            Every screen below is from the current application build. The portfolio uses the actual
+            interface rather than a recreated demo UI.
           </p>
         </div>
 
         <div class="gallery-grid">
           <figure class="gallery-item gallery-wide">
-            <img src="../assets/channel-pricing/floor-plan.png" alt="Interactive floor plan with 24 camera, controlled-door, reader, and cable-drop symbols placed across a demonstration office" />
-            <figcaption><strong>Visual system design</strong>Placed system packages and annotations turn a drawing into a live, countable project takeoff.</figcaption>
+            <a href="../assets/channel-pricing/current/opportunities.webp" target="_blank" rel="noreferrer">
+              <img
+                src="../assets/channel-pricing/current/opportunities.webp"
+                alt="GuardianWorks opportunities page showing a live read-only SAM.gov feed, search controls, opportunity tracking, and start-project actions"
+              />
+            </a>
+            <figcaption>
+              <strong>01 · Opportunities</strong>
+              A live read-only SAM.gov feed extends the workflow upstream. Opportunities can be qualified,
+              tracked locally, or used to start a project without writing back to the source.
+            </figcaption>
           </figure>
+
+          <figure class="gallery-item channel-portrait">
+            <a href="../assets/channel-pricing/current/floor-plans.webp" target="_blank" rel="noreferrer">
+              <img
+                src="../assets/channel-pricing/current/floor-plans.webp"
+                alt="GuardianWorks floor-plan workspace showing an elementary school drawing with camera, access-control, infrastructure, and annotation symbols"
+              />
+            </a>
+            <figcaption>
+              <strong>02 · Floor plans</strong>
+              Reusable packages and individual symbols are placed directly on a project drawing.
+              The plan remains linked to the field-survey stage instead of becoming a disconnected takeoff.
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item channel-portrait">
+            <a href="../assets/channel-pricing/current/field-survey.webp" target="_blank" rel="noreferrer">
+              <img
+                src="../assets/channel-pricing/current/field-survey.webp"
+                alt="GuardianWorks field-survey workspace with project areas, quick-add assemblies, saved packages, vendor-item search, and on-site estimate"
+              />
+            </a>
+            <figcaption>
+              <strong>03 · Field survey</strong>
+              Field users can organize systems by area, add repeatable assemblies, reuse saved packages,
+              import CSV/XLSX equipment schedules, and search individual vendor items.
+            </figcaption>
+          </figure>
+
           <figure class="gallery-item gallery-wide">
-            <img src="../assets/channel-pricing/field-survey.png" alt="Field survey workspace with reusable equipment packages, a thirteen-system on-site estimate, costs, price, and gross margin" />
-            <figcaption><strong>Field survey and estimate</strong>Reusable packages, catalog matches, room organization, quantities, and commercial totals stay together.</figcaption>
+            <a href="../assets/channel-pricing/current/quote-catalog.webp" target="_blank" rel="noreferrer">
+              <img
+                src="../assets/channel-pricing/current/quote-catalog.webp"
+                alt="GuardianWorks quote catalog showing a 5,000-item private estimate-only price library with full vendor SKUs, manufacturers, upstream vendors, costs, customer prices, and catalog state"
+              />
+            </a>
+            <figcaption>
+              <strong>04 · Quote catalog</strong>
+              The private 5,000-item estimating library is intentionally separate from the purchase-capable
+              accounting catalog. It supports field estimates and quotes without pretending every row is ready to buy.
+            </figcaption>
           </figure>
+
           <figure class="gallery-item gallery-wide">
-            <img src="../assets/channel-pricing/quotes-projects.png" alt="Quotes and projects view showing an active demonstration project with system count, equipment units, cost, selling price, and gross margin" />
-            <figcaption><strong>Quote-to-project handoff</strong>Approved scope becomes a durable project while preserving equipment counts, saved prices, and margin visibility.</figcaption>
+            <a href="../assets/channel-pricing/current/qbo-managed-catalog.webp" target="_blank" rel="noreferrer">
+              <img
+                src="../assets/channel-pricing/current/qbo-managed-catalog.webp"
+                alt="GuardianWorks QuickBooks-managed catalog showing vendor offers, catalog state, lead time, cost, sales price, gross margin, and add controls"
+              />
+            </a>
+            <figcaption>
+              <strong>05 · Managed purchasing catalog</strong>
+              The QuickBooks-managed catalog is the purchasing-facing item set. Vendor-price resolution,
+              lead times, cost, sales price, and margin are visible before an item is added to a BOM.
+            </figcaption>
           </figure>
+
+          <figure class="gallery-item">
+            <a href="../assets/channel-pricing/current/quotes-projects.webp" target="_blank" rel="noreferrer">
+              <img
+                src="../assets/channel-pricing/current/quotes-projects.webp"
+                alt="GuardianWorks quotes and projects workspace showing workflow stages for floor plan, field survey, quote, project, purchasing, and orders"
+              />
+            </a>
+            <figcaption>
+              <strong>06 · Quotes &amp; projects</strong>
+              The stage bar keeps the project state explicit. Quotes and projects can be paused,
+              reactivated, and carried into purchasing without collapsing the lifecycle into one transaction.
+            </figcaption>
+          </figure>
+
+          <figure class="gallery-item channel-portrait">
+            <a href="../assets/channel-pricing/current/purchasing-bom.webp" target="_blank" rel="noreferrer">
+              <img
+                src="../assets/channel-pricing/current/purchasing-bom.webp"
+                alt="GuardianWorks Purchasing BOM workspace with project code, department, ship-to address, margin adjustment, current-catalog repricing, and QuickBooks sandbox PO controls"
+              />
+            </a>
+            <figcaption>
+              <strong>07 · Purchasing BOM</strong>
+              The accepted project becomes a controlled purchasing draft with project coding, ship-to information,
+              margin adjustment, current-catalog repricing, and an explicit QuickBooks sandbox PO action.
+            </figcaption>
+          </figure>
+
           <figure class="gallery-item gallery-wide">
-            <img src="../assets/channel-pricing/orders-documents.png" alt="Orders and documents control center showing purchase order, bill, and reconciliation status for sandbox transactions" />
-            <figcaption><strong>Purchasing document control</strong>Purchase orders and bills are tracked through reconciliation while upstream vendor transaction writes remain disabled.</figcaption>
+            <a href="../assets/channel-pricing/current/orders-documents.webp" target="_blank" rel="noreferrer">
+              <img
+                src="../assets/channel-pricing/current/orders-documents.webp"
+                alt="GuardianWorks purchasing control center showing BOM, purchase order, vendor bill, payment, and reconciliation state across accounting documents"
+              />
+            </a>
+            <figcaption>
+              <strong>08 · Orders &amp; documents</strong>
+              The control center follows the native accounting lifecycle from BOM to purchase order, vendor bill,
+              payment, and reconciliation. Vendor transaction writes remain disabled.
+            </figcaption>
           </figure>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">Catalog architecture</p>
+          <h2>Estimating breadth is separated from purchasing authority.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            One of the most important changes is the explicit split between the private quote catalog
+            and the QuickBooks-managed catalog. The larger estimate library can support design and budgetary
+            work even when an item is not yet mapped or pricing-verified for purchasing.
+          </p>
+          <p>
+            Before purchasing, the workflow moves back to the managed catalog and current vendor-pricing state.
+            The overview shows the results of a read-only pricing check, including changed and unverified items,
+            without automatically applying those changes.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">Automation boundary</p>
+          <h2>Prepare aggressively. Write conservatively.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            The application automates searching, matching, project carry-forward, catalog comparison,
+            pricing verification, document linking, and status refreshes. The controls become stricter
+            as the workflow approaches a financial transaction.
+          </p>
+          <p>
+            Upstream vendor pricing remains read-only. The accounting connection shown in the portfolio
+            is a QuickBooks sandbox, and transaction creation is presented as an explicit operator action
+            rather than an automatic consequence of saving a quote or project.
+          </p>
+          <ul class="tag-list" aria-label="Project capabilities">
+            <li>Node.js</li>
+            <li>JavaScript</li>
+            <li>SQLite</li>
+            <li>REST APIs</li>
+            <li>QuickBooks Online</li>
+            <li>CSV / XLSX Import</li>
+            <li>Opportunity Discovery</li>
+            <li>Catalog Management</li>
+            <li>Workflow Controls</li>
+          </ul>
         </div>
       </section>
 
       <section class="case-next">
         <p class="eyebrow">Portfolio note</p>
-        <h2>Built to connect field execution with controlled purchasing.</h2>
+        <h2>Built to preserve project and equipment context from opportunity through purchasing reconciliation.</h2>
         <a class="button button-primary" href="../index.html#work">View more work</a>
       </section>
     </main>
