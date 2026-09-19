@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Channel Pricing Integration Lab case study by Brian Welk, connecting opportunity discovery, floor-plan design, field surveys, quoting, catalog readiness, purchasing review, pricing verification, and accounting reconciliation."
+      content="Channel Pricing Integration Lab case study by Brian Welk, connecting floor-plan design, field surveys, quoting, purchasing, and accounting workflows."
     />
     <meta name="theme-color" content="#101a24" />
     <title>Channel Pricing Integration Lab Case Study | Brian Welk</title>
@@ -27,285 +27,146 @@
       </a>
       <nav aria-label="Case study navigation">
         <a href="../index.html">← Portfolio</a>
-        <a href="#current-workflow">Current workflow</a>
-        <a href="../demos/channel-pricing-integration-lab/index.html" target="_blank" rel="noreferrer">Interactive walkthrough ↗</a>
+        <a href="#product-views">Product views</a>
       </nav>
     </header>
 
     <main class="case-main" id="main">
       <section class="case-hero">
         <div>
-          <p class="eyebrow">Opportunity-to-purchase operations platform</p>
+          <p class="eyebrow">Field-to-purchase integration</p>
           <h1>Channel Pricing Integration Lab</h1>
           <p class="case-hero-summary">
-            A customer-isolated operations workspace connecting opportunity discovery, system design,
-            field surveys, equipment imports, quoting, catalog readiness, purchasing review, pricing
-            verification, and connected accounting documents through one controlled project lineage.
+            An API-driven workspace that carries a system design from floor plan and field
+            survey through quoting, purchasing, and accounting reconciliation.
           </p>
         </div>
         <dl class="case-facts">
           <div>
             <dt>Role</dt>
-            <dd>Product designer, systems architect, and full-stack developer</dd>
+            <dd>Product designer and full-stack developer</dd>
           </div>
           <div>
             <dt>Platform</dt>
-            <dd>Node.js, JavaScript, SQLite, REST integrations, and QuickBooks Online sandbox</dd>
+            <dd>Python, Flask, REST integrations, and QuickBooks Online sandbox</dd>
           </div>
           <div>
-            <dt>Safety</dt>
-            <dd>Read-only upstream pricing, sandbox-only approved accounting writes, explicit human review</dd>
+            <dt>Portfolio data</dt>
+            <dd>Demonstration project, sandbox accounting records, and read-only vendor pricing</dd>
           </div>
         </dl>
       </section>
 
-      <figure class="case-cover channel-pricing-cover">
-        <iframe
-          src="../demos/channel-pricing-integration-lab/index.html?view=overview"
-          title="Current Channel Pricing Integration Lab portfolio walkthrough"
-          loading="eager"
-        ></iframe>
-        <figcaption>Current portfolio walkthrough based on the latest source package, using synthetic records and no live credentials.</figcaption>
+      <figure class="case-cover report-cover">
+        <img src="../assets/channel-pricing/floor-plan.png" alt="Channel Pricing Integration Lab floor plan with camera, controlled-door, reader, and cable-drop systems placed across a demonstration office" />
       </figure>
 
-      <div class="case-actions">
-        <a class="button button-primary" href="../demos/channel-pricing-integration-lab/index.html" target="_blank" rel="noreferrer">Launch interactive walkthrough ↗</a>
-        <a class="button button-secondary" href="#current-workflow">Explore the current workflow</a>
-      </div>
-
       <section class="case-section">
         <div>
-          <p class="eyebrow">How the product evolved</p>
-          <h2>It is no longer just a floor-plan and purchasing demonstrator.</h2>
+          <p class="eyebrow">The challenge</p>
+          <h2>Keep design, pricing, and purchasing aligned.</h2>
         </div>
         <div class="case-section-copy">
           <p>
-            The original case study focused on carrying equipment from a drawing through a field survey,
-            quote, purchasing BOM, and accounting documents. The current application has expanded into a
-            broader workspace that starts before design and continues through post-purchase reconciliation.
+            Complex field projects often begin with drawings and notes, then move through
+            separate estimating, catalog, purchasing, and accounting tools. Re-entering
+            the same equipment at each stage introduces delays, inconsistent quantities,
+            and pricing errors.
           </p>
           <p>
-            The operating problem is continuity. Project information, equipment identity, pricing readiness,
-            commercial assumptions, and accounting ownership should not have to be reconstructed every time
-            work moves from business development to the field, estimating, purchasing, or finance.
+            The workflow also needs firm boundaries. Vendor pricing must remain read-only,
+            while accounting transactions should be created only inside the authorized
+            customer sandbox after every line has been reviewed.
           </p>
         </div>
       </section>
 
       <section class="case-section">
         <div>
-          <p class="eyebrow">Current solution</p>
-          <h2>One controlled equipment chain from opportunity to connected documents.</h2>
+          <p class="eyebrow">The solution</p>
+          <h2>One traceable workflow from drawing to document.</h2>
         </div>
         <div class="case-section-copy">
+          <p>
+            I designed the application around a six-stage project lifecycle. Systems placed
+            on a floor plan become editable field-survey packages, quoted equipment, a
+            controlled purchasing BOM, and reconciled accounting documents.
+          </p>
           <ul class="outcome-list">
-            <li>Read-only opportunity discovery with a local pursuit list and direct project handoff</li>
-            <li>Durable floor plans with package placement, cropping, revisions, archive/restore, and linked surveys</li>
-            <li>Reusable equipment packages with independent project copies and revision protection</li>
-            <li>CSV and XLSX equipment-schedule import with exact full-SKU matching and preview-before-apply controls</li>
-            <li>Separate accounting-managed catalog and private estimate-only quote catalog with explicit readiness labels</li>
-            <li>Saved quotes and linked projects that preserve source systems, quantities, prices, margins, and lineage</li>
-            <li>Purchasing drafts that survive refreshes and retain the quote, project, and floor-plan source</li>
-            <li>Background read-only pricing verification against only the active managed catalog</li>
-            <li>Fresh-read safeguards before any explicitly approved QuickBooks sandbox purchasing or cost action</li>
-            <li>Connected PO, bill, payment, and reconciliation history while the accounting platform retains native transaction ownership</li>
-            <li>Administrator and Purchasing roles, protected connector credentials, searchable cost history, and global Search &amp; help</li>
+            <li>Visual floor-plan placement for cameras, controlled doors, readers, and cable runs</li>
+            <li>Reusable equipment packages with room-level quantities and installation details</li>
+            <li>Catalog matching and margin-aware pricing inside the estimating workflow</li>
+            <li>Saved quotes and projects that preserve equipment counts and prices</li>
+            <li>Purchasing BOM controls for vendor choice, procurement treatment, and item mapping</li>
+            <li>Purchase-order and bill tracking with vendor transaction writes permanently disabled</li>
           </ul>
         </div>
       </section>
 
-      <section class="case-gallery channel-pricing-gallery" id="current-workflow">
-        <div class="gallery-heading">
-          <p class="eyebrow">Current source walkthrough</p>
-          <h2>Opportunity discovery now feeds the same lineage used by design, quoting, and purchasing.</h2>
-          <p>
-            These interactive portfolio views are synthetic representations of the latest source package.
-            They intentionally omit credentials, customer data, private catalog content, and production transaction access.
-          </p>
-        </div>
-        <div class="gallery-grid">
-          <figure class="gallery-item gallery-wide">
-            <div class="app-frame channel-pricing-frame">
-              <iframe src="../demos/channel-pricing-integration-lab/index.html?view=opportunities" title="Opportunity discovery walkthrough" loading="lazy"></iframe>
-            </div>
-            <figcaption><strong>01 · Opportunity discovery</strong>Read-only source search, a customer-isolated pursuit list, and local Start project handoff extend the workflow upstream into business development.</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <div class="app-frame channel-pricing-frame">
-              <iframe src="../demos/channel-pricing-integration-lab/index.html?view=floor" title="Floor plan workflow walkthrough" loading="lazy"></iframe>
-            </div>
-            <figcaption><strong>02 · Floor plans &amp; reusable packages</strong>Named plans, project-specific package copies, linked survey state, crop controls, and saved package libraries keep design data durable.</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <div class="app-frame channel-pricing-frame">
-              <iframe src="../demos/channel-pricing-integration-lab/index.html?view=survey" title="Field survey and spreadsheet import walkthrough" loading="lazy"></iframe>
-            </div>
-            <figcaption><strong>03 · Field survey &amp; spreadsheet import</strong>Linked systems can be edited in the field, while CSV/XLSX imports require exact full SKUs and a validation preview before rows are applied.</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <div class="app-frame channel-pricing-frame">
-              <iframe src="../demos/channel-pricing-integration-lab/index.html?view=catalog" title="Catalog readiness walkthrough" loading="lazy"></iframe>
-            </div>
-            <figcaption><strong>04 · Catalog readiness</strong>The application distinguishes accounting-managed items from the larger estimate-only catalog so a budgetary selection cannot silently become a purchasing line.</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <div class="app-frame channel-pricing-frame">
-              <iframe src="../demos/channel-pricing-integration-lab/index.html?view=quotes" title="Quotes and projects walkthrough" loading="lazy"></iframe>
-            </div>
-            <figcaption><strong>05 · Quotes &amp; projects</strong>A quote freezes the commercial snapshot. Acceptance creates a linked project explicitly rather than triggering purchasing automatically.</figcaption>
-          </figure>
-
-          <figure class="gallery-item gallery-wide">
-            <div class="app-frame channel-pricing-frame">
-              <iframe src="../demos/channel-pricing-integration-lab/index.html?view=purchasing" title="Purchasing and pricing verification walkthrough" loading="lazy"></iframe>
-            </div>
-            <figcaption><strong>06 · Purchasing &amp; pricing verification</strong>Current managed-item identity and cost are revalidated before action. Pricing checks run in the background and never apply changes automatically.</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <div class="app-frame channel-pricing-frame">
-              <iframe src="../demos/channel-pricing-integration-lab/index.html?view=orders" title="Orders and connected documents walkthrough" loading="lazy"></iframe>
-            </div>
-            <figcaption><strong>07 · Orders &amp; connected documents</strong>Purchase orders, bills, payments, reconciliation, and local project completion stay linked while the accounting system remains the native transaction owner.</figcaption>
-          </figure>
-
-          <figure class="gallery-item">
-            <div class="app-frame channel-pricing-frame">
-              <iframe src="../demos/channel-pricing-integration-lab/index.html?view=admin" title="Administration and integration controls walkthrough" loading="lazy"></iframe>
-            </div>
-            <figcaption><strong>08 · Administration &amp; controls</strong>Roles, connection state, encrypted customer credentials, and cost-history review are kept out of the daily project workflow.</figcaption>
-          </figure>
-        </div>
-      </section>
-
       <section class="case-section">
         <div>
-          <p class="eyebrow">Identity before automation</p>
-          <h2>Full SKU and stable accounting IDs control whether an item is allowed into purchasing.</h2>
+          <p class="eyebrow">My contribution</p>
+          <h2>Workflow architecture, interface design, integrations, and safeguards.</h2>
         </div>
         <div class="case-section-copy">
           <p>
-            The current architecture treats the accounting system's active managed item list as the runtime
-            authority for purchase-capable equipment. Estimate-only catalog rows remain useful for surveys and
-            budgetary quotes, but they cannot create a purchasing snapshot or purchase order until independently
-            matched to an eligible active accounting item.
+            I translated the operational process into a connected product experience,
+            including the data model, staged workflow, visual takeoff tools, catalog
+            matching, pricing logic, project handoffs, and document status views.
           </p>
           <p>
-            Before a sandbox write, the application freshly re-reads the exact accounting item and verifies its
-            stable ID, full SKU, active state, preferred-vendor scope, current synchronization token, and the
-            corresponding upstream pricing result. Missing or ambiguous pricing fails closed.
-          </p>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div>
-          <p class="eyebrow">Pricing operations</p>
-          <h2>Large catalog checks and cost updates run as recoverable background jobs.</h2>
-        </div>
-        <div class="case-section-copy">
-          <p>
-            Read-only pricing checks operate only on the current managed catalog, use bounded request batches,
-            preserve a pricing watermark, and expose progress rather than holding one browser request open.
-            A daily organization-level check can refresh the comparison, but it does not write a cost change.
-          </p>
-          <p>
-            Approved sandbox cost synchronization is separately controlled. Items are checkpointed individually,
-            request pacing and rate-limit recovery are enforced, and an interrupted job does not resume a write by
-            itself after restart. The operator must explicitly resume only the remaining items.
-          </p>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div>
-          <p class="eyebrow">Security &amp; operating boundaries</p>
-          <h2>The integration layer is intentionally narrower than the workflows it coordinates.</h2>
-        </div>
-        <div class="case-section-copy">
-          <p>
-            The application uses customer-isolated SQLite records, Administrator and Purchasing roles, HTTP-only
-            application sessions, customer-bound encryption for connector credentials, and memory-only OAuth tokens
-            in the development environment. Sensitive credentials are never returned to the browser after storage.
-          </p>
-          <p>
-            Upstream pricing and ERP-provider access remains read-only. Production QuickBooks writes remain disabled.
-            The portfolio demonstrates only the explicitly guarded sandbox workflows represented in the current source.
-          </p>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div>
-          <p class="eyebrow">Verified source snapshot</p>
-          <h2>The updated portfolio is grounded in the current application package, not the old screenshots alone.</h2>
-        </div>
-        <div class="case-section-copy">
-          <p>
-            I reviewed the current 2026 source package separately from its runtime logs, temporary browser artifacts,
-            local databases, and credentials. The application code includes dedicated tests for search/help, opportunity
-            tracking, credential isolation, catalog readiness, spreadsheet import, package templates, floor plans,
-            surveys, quotes/projects, purchasing drafts, pricing synchronization, webhooks, and bill/payment reconciliation.
-          </p>
-          <p>
-            The supplied full <code>npm test</code> suite passed in an isolated local copy using a clean temporary data
-            directory and no production environment file.
+            The demonstration uses a QuickBooks Online sandbox and enforces a read-only
+            boundary for upstream vendor pricing. The public case study does not expose
+            credentials, private API details, or any employer-specific implementation.
           </p>
           <ul class="tag-list" aria-label="Project capabilities">
-            <li>Node.js</li>
-            <li>JavaScript</li>
-            <li>SQLite</li>
+            <li>Product Design</li>
+            <li>Python</li>
+            <li>Flask</li>
             <li>REST APIs</li>
             <li>QuickBooks Online</li>
-            <li>CSV / XLSX Import</li>
             <li>Workflow Automation</li>
             <li>Data Validation</li>
-            <li>Security Controls</li>
+            <li>Purchasing Controls</li>
           </ul>
         </div>
       </section>
 
-      <section class="case-gallery report-gallery" id="application-screens" aria-labelledby="screens-title">
+      <section class="case-gallery report-gallery" id="product-views" aria-labelledby="gallery-title">
         <div class="gallery-heading">
-          <p class="eyebrow">Application screenshots</p>
-          <h2 id="screens-title">The existing product lineage is still visible in the actual interface.</h2>
+          <p class="eyebrow">Product walkthrough</p>
+          <h2 id="gallery-title">Four stages of a connected project lifecycle</h2>
           <p>
-            These captured application screens remain representative of the core field-to-purchase workflow.
-            The interactive walkthrough above adds the newer opportunity, catalog, pricing, administration, and control layers.
+            These screens show a demonstration project in the sandbox environment.
+            Vendor pricing is read-only, and the public case study omits supplier catalog
+            and line-level purchasing screens.
           </p>
         </div>
 
         <div class="gallery-grid">
           <figure class="gallery-item gallery-wide">
-            <img src="../assets/channel-pricing/floor-plan.png" alt="Channel Pricing Integration Lab floor plan with system packages and drawing annotations" />
-            <figcaption><strong>Floor-plan design</strong>Placed packages turn a drawing into a countable, editable project scope.</figcaption>
+            <img src="../assets/channel-pricing/floor-plan.png" alt="Interactive floor plan with 24 camera, controlled-door, reader, and cable-drop symbols placed across a demonstration office" />
+            <figcaption><strong>Visual system design</strong>Placed system packages and annotations turn a drawing into a live, countable project takeoff.</figcaption>
           </figure>
           <figure class="gallery-item gallery-wide">
-            <img src="../assets/channel-pricing/field-survey.png" alt="Channel Pricing Integration Lab field survey showing reusable equipment packages, catalog information, costs, and estimate totals" />
-            <figcaption><strong>Field survey</strong>Package identity, components, quantities, project areas, and commercial context remain together.</figcaption>
+            <img src="../assets/channel-pricing/field-survey.png" alt="Field survey workspace with reusable equipment packages, a thirteen-system on-site estimate, costs, price, and gross margin" />
+            <figcaption><strong>Field survey and estimate</strong>Reusable packages, catalog matches, room organization, quantities, and commercial totals stay together.</figcaption>
           </figure>
           <figure class="gallery-item gallery-wide">
-            <img src="../assets/channel-pricing/quotes-projects.png" alt="Channel Pricing Integration Lab quotes and projects workspace" />
-            <figcaption><strong>Quote-to-project handoff</strong>Saved commercial scope becomes a durable project only after an explicit acceptance action.</figcaption>
+            <img src="../assets/channel-pricing/quotes-projects.png" alt="Quotes and projects view showing an active demonstration project with system count, equipment units, cost, selling price, and gross margin" />
+            <figcaption><strong>Quote-to-project handoff</strong>Approved scope becomes a durable project while preserving equipment counts, saved prices, and margin visibility.</figcaption>
           </figure>
           <figure class="gallery-item gallery-wide">
-            <img src="../assets/channel-pricing/orders-documents.png" alt="Channel Pricing Integration Lab orders and documents workspace showing purchase-order and reconciliation status" />
-            <figcaption><strong>Connected documents</strong>Accounting-owned documents remain connected to the source project without shifting transaction ownership into the integration layer.</figcaption>
+            <img src="../assets/channel-pricing/orders-documents.png" alt="Orders and documents control center showing purchase order, bill, and reconciliation status for sandbox transactions" />
+            <figcaption><strong>Purchasing document control</strong>Purchase orders and bills are tracked through reconciliation while upstream vendor transaction writes remain disabled.</figcaption>
           </figure>
         </div>
       </section>
 
       <section class="case-next">
         <p class="eyebrow">Portfolio note</p>
-        <h2>Built to preserve equipment identity and project lineage from pursuit through purchasing and reconciliation.</h2>
-        <div class="project-links case-next-links">
-          <a class="button button-primary" href="../demos/channel-pricing-integration-lab/index.html" target="_blank" rel="noreferrer">Launch interactive walkthrough ↗</a>
-          <a class="button button-secondary" href="../index.html#work">View more work</a>
-        </div>
+        <h2>Built to connect field execution with controlled purchasing.</h2>
+        <a class="button button-primary" href="../index.html#work">View more work</a>
       </section>
     </main>
 
