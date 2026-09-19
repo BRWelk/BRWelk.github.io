@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Synthetic portfolio walkthrough of an OCR document normalization workflow." />
+  <title>OCR Document Normalizer | Portfolio Walkthrough</title>
+  <style>
+    :root{
+      --navy:#102a43;--blue:#1769aa;--pale:#edf5fb;--ink:#243b53;--muted:#627d98;
+      --line:#d9e2ec;--bg:#f5f7fa;--white:#fff;--red:#b42318;--amber:#9a6700;
+      --green:#18794e;--green-bg:#ecfdf5;--amber-bg:#fff8e6;--shadow:0 4px 18px rgba(16,42,67,.07)
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif}
+    button{font:inherit}
+    .notice{min-height:30px;display:grid;place-items:center;padding:5px 14px;background:#f0c45d;color:#362b14;font-size:11px;font-weight:800;letter-spacing:.07em;text-align:center;text-transform:uppercase}
+    .topbar{min-height:66px;padding:0 4vw;display:flex;align-items:center;justify-content:space-between;gap:24px;background:var(--navy);color:#fff}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}.mark{background:#1f7aaf;padding:9px 10px;border-radius:6px;letter-spacing:.05em}
+    .brand small{display:block;color:#a8c6dc;font-size:10px;font-weight:600;margin-top:2px}
+    .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.nav button{border:0;background:transparent;color:#d9eaf4;padding:8px 10px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer}.nav button.active,.nav button:hover{background:#1b4a70;color:#fff}
+    main{max-width:1480px;margin:0 auto;padding:30px 4vw 52px}
+    .heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:22px}.eyebrow{color:var(--blue);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.heading h1{margin:4px 0 6px;color:var(--navy);font-size:clamp(30px,4vw,46px);letter-spacing:-.025em}.heading p{margin:0;color:var(--muted);max-width:760px}.status{display:inline-flex;padding:7px 11px;border-radius:999px;background:#e8f8f1;color:#047857;border:1px solid #9dd8bd;font-size:11px;font-weight:800}
+    .grid{display:grid;gap:16px}.kpis{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}.card,.panel{background:var(--white);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}.kpi{padding:18px;border-top:4px solid var(--blue)}.kpi.green{border-top-color:#059669}.kpi.amber{border-top-color:#d97706}.kpi strong{display:block;color:var(--navy);font-size:29px}.kpi span{color:var(--muted);font-size:13px}
+    .panel{padding:20px}.panel h2{margin:0;color:var(--navy);font-size:20px}.panel-sub{margin:4px 0 16px;color:var(--muted);font-size:12px}
+    .workflow{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;align-items:center}.step{padding:14px 10px;border:1px solid var(--line);border-radius:8px;background:#f9fbfc;text-align:center;min-height:102px;display:grid;place-items:center}.step strong{display:block;color:var(--navy);font-size:12px}.step small{display:block;color:var(--muted);font-size:10px;margin-top:5px}.arrow{color:#7592a7;text-align:center;font-size:20px}
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:16px}.doc-panel{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}.doc-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;border-bottom:1px solid var(--line)}.doc-head h2{font-size:17px}.doc-head small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.doc{background:#e9eef3;padding:18px;min-height:690px}.paper{width:min(100%,640px);min-height:655px;margin:auto;background:#fff;box-shadow:0 6px 18px rgba(16,42,67,.12);padding:46px 48px;color:#171717}
+    .source-paper h3{margin:0 0 30px;color:#111;font-size:28px;letter-spacing:.01em}.source-paper p{margin:0 0 16px;font-size:15px}.source-paper .lines{margin-top:22px}
+    .normalized-paper{padding:0 0 42px}.normalized-title{background:#173f5d;color:#fff;padding:20px 40px;font-size:21px;font-weight:800}.norm-body{padding:32px 40px}.norm-body h3{margin:0 0 10px;color:#173f5d;font-size:17px}.field-grid{display:grid;grid-template-columns:165px 1fr;margin-bottom:22px;font-size:12px}.field-grid div{padding:7px 9px}.field-grid .label{background:#e7eef4;font-weight:800}.items{width:100%;border-collapse:collapse;font-size:11px}.items th{padding:8px;background:#d8e8f4;text-align:left;color:#3a4b5b}.items td{padding:10px 8px;border-bottom:1px solid #eef2f5}
+    .review-strip{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px;padding:13px 16px;border:1px solid #9dd8bd;border-radius:8px;background:#f0fbf6}.review-strip strong{color:#0f6b4c}.review-strip span{color:var(--muted);font-size:12px}
+    .two{grid-template-columns:minmax(0,1.3fr) minmax(320px,.7fr)}.fields{margin:0;border:1px solid var(--line);border-radius:7px;overflow:hidden}.fields div{display:grid;grid-template-columns:190px 1fr;border-bottom:1px solid var(--line)}.fields div:last-child{border-bottom:0}.fields dt,.fields dd{margin:0;padding:10px 12px;font-size:12px}.fields dt{background:#f7f9fb;font-weight:800}.validation{border-left:5px solid #059669}.warning{padding:11px 13px;border-radius:6px;background:var(--amber-bg);color:var(--amber);font-size:12px}
+    table{width:100%;border-collapse:collapse}th{padding:10px;text-align:left;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--line)}td{padding:11px 10px;border-bottom:1px solid #edf2f7;font-size:12px}.pill{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase}.pill.processed{background:#d1fae5;color:#047857}.pill.hold{background:#fff3cd;color:#8a5700}.pill.pending{background:#e0f2fe;color:#075985}
+    .audit article{padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}.audit article:last-child{border-bottom:0}.audit strong{display:block;color:var(--navy)}.audit span{display:block;color:var(--muted);margin-top:3px}
+    .profile-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:16px}.profile-box{padding:18px;border-top:4px solid var(--blue)}.profile-box.green{border-top-color:#059669}.profile-box.amber{border-top-color:#d97706}.profile-box strong{display:block;color:var(--navy);font-size:30px}.profile-box span{color:var(--muted);font-size:13px}
+    .boundary{margin-top:18px;padding:14px 16px;border-left:5px solid #d97706;background:#fff8e6;color:#725114;font-size:12px}.boundary strong{display:block;margin-bottom:4px}
+    .footer-note{margin-top:18px;color:#829ab1;font-size:10px}
+    @media(max-width:980px){.kpis,.profile-grid{grid-template-columns:repeat(2,1fr)}.compare,.two{grid-template-columns:1fr}.workflow{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}}
+    @media(max-width:680px){.topbar{align-items:flex-start;flex-direction:column;padding-top:12px;padding-bottom:12px}.nav{justify-content:flex-start}.kpis,.profile-grid{grid-template-columns:1fr}.paper{padding-left:28px;padding-right:28px}.field-grid{grid-template-columns:130px 1fr}}
+  </style>
+</head>
+<body>
+<div class="notice">Synthetic portfolio walkthrough · no production documents, credentials, or live system writes</div>
+<header class="topbar">
+  <div class="brand"><span class="mark">OCR</span><span>Document Normalizer<small>Evidence-first review and normalization</small></span></div>
+  <nav class="nav" aria-label="Demo views">
+    <button data-view="dashboard">Dashboard</button>
+    <button data-view="compare">Review &amp; compare</button>
+    <button data-view="fields">Extracted data</button>
+    <button data-view="audit">Audit &amp; exceptions</button>
+    <button data-view="profiles">Profile queue</button>
+  </nav>
+</header>
+<main id="screen"></main>
+<script>
+const pageTitle={
+  dashboard:"Normalization control point",
+  compare:"Side-by-side document review",
+  fields:"Extracted and normalized data",
+  audit:"Audit trail and exception handling",
+  profiles:"Customer profile approval"
+};
+
+function heading(kicker,title,desc,status){
+  return `<section class="heading"><div><div class="eyebrow">${kicker}</div><h1>${title}</h1><p>${desc}</p></div><span class="status">${status}</span></section>`;
+}
+function dashboard(){
+  return heading("Document automation boundary","Normalization control point","Convert variable inbound purchase orders into validated, reviewable data before downstream automation is allowed to act.","Local synthetic demo")+
+  `<section class="grid kpis">
+    <div class="card kpi"><strong>1</strong><span>synthetic transaction processed</span></div>
+    <div class="card kpi green"><strong>186</strong><span>regression tests in the portfolio package</span></div>
+    <div class="card kpi amber"><strong>1</strong><span>catalog item routed to Item Hold</span></div>
+    <div class="card kpi green"><strong>0</strong><span>production credentials or external writes</span></div>
+  </section>
+  <section class="panel">
+    <h2>Controlled document-to-automation workflow</h2>
+    <p class="panel-sub">Automation starts only after source evidence is extracted, normalized, validated, and reviewable.</p>
+    <div class="workflow">
+      <div class="step"><div><strong>Inbound PDF</strong><small>Native text or scanned page</small></div></div><div class="arrow">→</div>
+      <div class="step"><div><strong>Text extraction</strong><small>OCR fallback when required</small></div></div><div class="arrow">→</div>
+      <div class="step"><div><strong>Normalize</strong><small>Canonical fields and item IDs</small></div></div><div class="arrow">→</div>
+      <div class="step"><div><strong>Validate</strong><small>Required data and safe matching</small></div></div><div class="arrow">→</div>
+      <div class="step"><div><strong>Human review</strong><small>Source vs normalized output</small></div></div><div class="arrow">→</div>
+      <div class="step"><div><strong>Approved output</strong><small>Fixed downstream template</small></div></div><div class="arrow">→</div>
+      <div class="step"><div><strong>Automation handoff</strong><small>ERP, vendor, AP, or workflow layer</small></div></div>
+    </div>
+  </section>
+  <div class="boundary"><strong>Current public demo boundary</strong>This clean-room build demonstrates PDF intake. CSV and XLSX adapters are not represented as implemented yet.</div>`;
+}
+function compare(){
+  return heading("Human-in-the-loop review","Side-by-side document review","The reviewer can compare the immutable source against a fixed normalized template before a document becomes eligible for downstream capture.","Candidate ready for review")+
+  `<div class="review-strip"><div><strong>Visual verification required</strong><br><span>Source evidence remains visible while normalized fields and item decisions are reviewed.</span></div><span>Sample 1 of 1</span></div>
+  <div class="compare">
+    <section class="doc-panel"><div class="doc-head"><div><h2>Original customer document</h2><small>northstar_purchase_order.pdf · immutable source</small></div><span class="pill pending">Source</span></div>
+      <div class="doc"><div class="paper source-paper"><h3>PURCHASE ORDER</h3><p>Northstar Integration, LLC</p><p>northstar.example</p><div class="lines"><p>Northstar Order Reference: DEMO-1001</p><p>Quote Number: QT10001</p><p>Ship Via: Ground</p><p>Site Project: DEMO-SITE-7</p><p>Ship To:</p><p>Northstar Example Site</p><p>Attn: Taylor Morgan</p><p>Phone: 555-010-0100</p><p>100 Main Street</p><p>Example City, CO 80000</p><p>PART REF: CAM-100 QTY: 2 UNIT: 125.00 TOTAL: 250.00</p><p>PART REF: UNKNOWN-9 QTY: 1 UNIT: 20.00 TOTAL: 20.00</p></div></div></div>
+    </section>
+    <section class="doc-panel"><div class="doc-head"><div><h2>Normalized output</h2><small>Fixed machine-readable downstream template</small></div><span class="pill processed">Validated</span></div>
+      <div class="doc"><div class="paper normalized-paper"><div class="normalized-title">NORMALIZED PURCHASE ORDER</div><div class="norm-body"><h3>PURCHASE ORDER</h3>
+        <div class="field-grid"><div class="label">CustomerName</div><div>Northstar Integration, LLC</div><div class="label">CustPO</div><div>DEMO-1001</div><div class="label">QuoteNumber</div><div>QT10001</div><div class="label">ShipVia</div><div>Ground</div><div class="label">JobNumber</div><div>DEMO-SITE-7</div></div>
+        <h3>SHIP-TO</h3><div class="field-grid"><div class="label">Business</div><div>Northstar Example Site</div><div class="label">Attn</div><div>Taylor Morgan</div><div class="label">PhoneNumber</div><div>555-010-0100</div><div class="label">Address1</div><div>100 Main Street</div><div class="label">City</div><div>Example City</div><div class="label">State / Zip</div><div>CO 80000</div></div>
+        <h3>ITEMS</h3><table class="items"><thead><tr><th>Line</th><th>Normalized item</th><th>Qty</th><th>Unit</th><th>Extended</th></tr></thead><tbody><tr><td>1</td><td>CAM-100-STD</td><td>2</td><td>125.00</td><td>250.00</td></tr><tr><td>2</td><td><span class="pill hold">Item Hold</span></td><td>1</td><td>20.00</td><td>20.00</td></tr></tbody></table>
+      </div></div></div>
+    </section>
+  </div>`;
+}
+function fields(){
+  return heading("Evidence-first extraction","Extracted and normalized data","The source value is preserved separately from the normalized value so cleanup never erases what the customer actually sent.","Validation passed")+
+  `<div class="grid two">
+    <section class="panel validation"><h2>Normalized order fields</h2><p class="panel-sub">Profile NORTHSTAR_INTEGRATION · version 1.0.0-example</p>
+      <dl class="fields"><div><dt>Customer PO</dt><dd>DEMO-1001</dd></div><div><dt>Quote number</dt><dd>QT10001</dd></div><div><dt>Ship via</dt><dd>Ground</dd></div><div><dt>Job number</dt><dd>DEMO-SITE-7</dd></div><div><dt>Business</dt><dd>Northstar Example Site</dd></div><div><dt>Attention</dt><dd>Taylor Morgan</dd></div><div><dt>Phone</dt><dd>555-010-0100</dd></div><div><dt>Address</dt><dd>100 Main Street, Example City, CO 80000</dd></div></dl>
+    </section>
+    <section class="panel"><h2>Catalog decisions</h2><p class="panel-sub">Conservative matching favors review over silent guessing.</p>
+      <table><thead><tr><th>Source item</th><th>Normalized item</th><th>Decision</th></tr></thead><tbody><tr><td>CAM-100</td><td>CAM-100-STD</td><td><span class="pill processed">Matched</span></td></tr><tr><td>UNKNOWN-9</td><td>Item Hold</td><td><span class="pill hold">Review</span></td></tr></tbody></table>
+      <div class="warning" style="margin-top:16px"><strong>Why Item Hold matters:</strong> ambiguous or unsupported item matches are not guessed. The original source value remains available for review and audit.</div>
+    </section>
+  </div>`;
+}
+function audit(){
+  return heading("Governance and recovery","Audit trail and exception handling","Every state transition and manual correction is reviewable before an automated workflow is trusted with the normalized result.","Traceable by design")+
+  `<div class="grid two">
+    <section class="panel audit"><h2>Transaction audit</h2><p class="panel-sub">Newest event first</p>
+      <article><strong>unmatched_catalog_items</strong><span>System · UNKNOWN-9 routed to Item Hold</span><p>Source value retained because the catalog did not provide a unique safe match.</p></article>
+      <article><strong>status:processed</strong><span>System · normalized output generated</span></article>
+      <article><strong>intake</strong><span>System · package accepted into controlled processing</span></article>
+    </section>
+    <section class="panel"><h2>Exception controls</h2><p class="panel-sub">The full application supports field overrides, source-page evidence, retry, rejection, archive, and regeneration.</p>
+      <dl class="fields"><div><dt>Override evidence</dt><dd>Source page and exact supporting text required</dd></div><div><dt>Audit reason</dt><dd>Required for each field correction</dd></div><div><dt>Retry</dt><dd>Available for retryable technical failures</dd></div><div><dt>Reject</dt><dd>Retains package and reason</dd></div><div><dt>Regenerate</dt><dd>Normalized output rebuilt after approved changes</dd></div></dl>
+    </section>
+  </div>`;
+}
+function profiles(){
+  return heading("Customer onboarding","Customer profile approval","New document layouts are isolated until their extraction rules and normalized previews have been reviewed.","1 synthetic profile pending")+
+  `<section class="grid profile-grid"><div class="card profile-box"><strong>1</strong><span>Total profiles</span></div><div class="card profile-box green"><strong>0</strong><span>Approved in this walkthrough</span></div><div class="card profile-box amber"><strong>1</strong><span>Ready for review</span></div></section>
+  <section class="panel"><h2>Profile queue</h2><p class="panel-sub">Candidate rules remain isolated from normal processing until review is complete.</p>
+    <table><thead><tr><th>Company</th><th>Customer key</th><th>Workflow status</th><th>Samples</th><th>Review</th></tr></thead><tbody><tr><td>Northstar Integration</td><td><code>NORTHSTAR_INTEGRATION</code></td><td><span class="pill hold">Ready for approval</span></td><td>1</td><td>Side-by-side comparison required</td></tr></tbody></table>
+    <div class="boundary"><strong>Clean-room portfolio edition</strong>The shared project contains fictional profiles, generated PDFs, local SQLite schema, and tests. It excludes production customer files, credentials, deployment configuration, and Git history.</div>
+  </section>`;
+}
+const renderers={dashboard,compare,fields,audit,profiles};
+function render(view){
+  const safe=renderers[view]?view:"dashboard";
+  document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.view===safe));
+  document.getElementById("screen").innerHTML=renderers[safe]();
+  document.title=pageTitle[safe]+" | OCR Document Normalizer";
+  const u=new URL(location.href);u.searchParams.set("view",safe);history.replaceState(null,"",u);
+}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>render(b.dataset.view)));
+render(new URLSearchParams(location.search).get("view")||"dashboard");
+</script>
+</body>
+</html>
