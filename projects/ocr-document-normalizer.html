@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="OCR Document Normalizer case study by Brian Welk, demonstrating evidence-first extraction, side-by-side review, normalization, validation, audit controls, and downstream automation readiness." />
+    <meta name="theme-color" content="#101a24" />
+    <title>OCR Document Normalizer Case Study | Brian Welk</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header case-header">
+      <a class="nameplate" href="../index.html" aria-label="Return to Brian Welk's portfolio">
+        <span class="nameplate-mark" aria-hidden="true">BW</span><span>Brian Welk</span>
+      </a>
+      <nav aria-label="Case study navigation">
+        <a href="../index.html">← Portfolio</a>
+        <a href="#workflow">Workflow</a>
+        <a href="../demos/ocr-document-normalizer/index.html" target="_blank" rel="noreferrer">Interactive walkthrough ↗</a>
+      </nav>
+    </header>
+
+    <main class="case-main" id="main">
+      <section class="case-hero">
+        <div>
+          <p class="eyebrow">Document intelligence &amp; automation controls</p>
+          <h1>OCR Document Normalizer</h1>
+          <p class="case-hero-summary">
+            A clean-room document-processing application that converts variable inbound purchase-order PDFs into a fixed,
+            machine-readable format while preserving source evidence, human review, exception handling, and an audit trail
+            before downstream automation is allowed to act.
+          </p>
+        </div>
+        <dl class="case-facts">
+          <div><dt>Role</dt><dd>Workflow designer, application developer, data-normalization architect</dd></div>
+          <div><dt>Platform</dt><dd>Python, FastAPI, SQLite, OCR/Tesseract support, PyMuPDF, ReportLab</dd></div>
+          <div><dt>Portfolio data</dt><dd>Fully synthetic profiles, catalog records, source PDFs, output documents, and tests</dd></div>
+        </dl>
+      </section>
+
+      <figure class="case-cover ocr-cover">
+        <iframe src="../demos/ocr-document-normalizer/index.html?view=compare" title="OCR Document Normalizer side-by-side review walkthrough" loading="eager"></iframe>
+        <figcaption>Source document and normalized output remain visible together so a reviewer can verify what automation will receive.</figcaption>
+      </figure>
+
+      <div class="case-actions">
+        <a class="button button-primary" href="../demos/ocr-document-normalizer/index.html" target="_blank" rel="noreferrer">Launch interactive walkthrough ↗</a>
+        <a class="button button-secondary" href="#workflow">Explore the workflow</a>
+      </div>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">The problem</p>
+          <h2>Automation is only useful when the incoming data is trustworthy.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            Purchase orders, invoices, and similar business documents arrive in inconsistent layouts. Even when OCR can read the page,
+            extracted text still has to be mapped into reliable business fields, validated against known rules, and reviewed when the
+            system cannot resolve a value safely.
+          </p>
+          <p>
+            The application creates a control point between unstructured documents and downstream systems. Instead of sending raw OCR
+            results directly into an ERP, vendor workflow, or accounting process, it produces a standardized document and structured
+            data model that can be inspected before release.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">The solution</p>
+          <h2>Extract, normalize, validate, compare, then hand off.</h2>
+        </div>
+        <div class="case-section-copy">
+          <ul class="outcome-list">
+            <li>Native PDF text extraction with OCR fallback for image-only pages</li>
+            <li>Position-aware field extraction for labeled values, addresses, and ship-to blocks</li>
+            <li>Shared normalization rules with isolated customer-specific exceptions</li>
+            <li>Conservative catalog matching that routes unresolved values to <strong>Item Hold</strong> instead of guessing</li>
+            <li>Fixed-geometry normalized PDF output for consistent downstream capture</li>
+            <li>Side-by-side source and normalized document review</li>
+            <li>Audited field overrides with source-page evidence and regeneration</li>
+            <li>Exception, retry, rejection, approval, and archive workflows</li>
+            <li>Isolated onboarding for new document layouts before profile activation</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-gallery ocr-gallery" id="workflow">
+        <div class="gallery-heading">
+          <p class="eyebrow">Application workflow</p>
+          <h2>A reviewable bridge between dirty documents and clean automation.</h2>
+          <p>
+            The portfolio walkthrough uses fictional records but mirrors the application's operational boundaries:
+            source evidence is retained, normalization decisions are visible, and automation is downstream of validation rather than upstream of it.
+          </p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item gallery-wide">
+            <div class="app-frame ocr-frame"><iframe src="../demos/ocr-document-normalizer/index.html?view=dashboard" title="OCR normalization dashboard" loading="lazy"></iframe></div>
+            <figcaption><strong>01 · Normalization control point</strong>Shows the complete document-to-automation sequence and makes the approval boundary explicit.</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-wide">
+            <div class="app-frame ocr-frame"><iframe src="../demos/ocr-document-normalizer/index.html?view=compare" title="Side-by-side document review" loading="lazy"></iframe></div>
+            <figcaption><strong>02 · Side-by-side review</strong>The original customer document remains visible next to the fixed normalized output so a person can verify the transformation.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <div class="app-frame ocr-frame"><iframe src="../demos/ocr-document-normalizer/index.html?view=fields" title="Extracted normalized data" loading="lazy"></iframe></div>
+            <figcaption><strong>03 · Extraction &amp; normalization</strong>Source values, standardized fields, and catalog decisions remain inspectable. Unsupported item matches are placed on hold.</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <div class="app-frame ocr-frame"><iframe src="../demos/ocr-document-normalizer/index.html?view=audit" title="Audit and exception controls" loading="lazy"></iframe></div>
+            <figcaption><strong>04 · Audit &amp; recovery</strong>Overrides require evidence and a reason. Retry, rejection, regeneration, and transaction state changes remain traceable.</figcaption>
+          </figure>
+          <figure class="gallery-item gallery-wide">
+            <div class="app-frame ocr-frame"><iframe src="../demos/ocr-document-normalizer/index.html?view=profiles" title="Customer profile approval queue" loading="lazy"></iframe></div>
+            <figcaption><strong>05 · New-layout onboarding</strong>New customer/document layouts stay isolated until sample comparisons and candidate rules have been reviewed and explicitly approved.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">Safety by design</p>
+          <h2>The parser is deliberately conservative where certainty matters.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            Catalog resolution moves from strongest evidence to weaker evidence: exact canonical identifiers, exact display or vendor identifiers,
+            unique compact matches, tightly bounded decorations, and only then narrowly controlled transformations. Ambiguous or conflicting results
+            do not silently resolve.
+          </p>
+          <p>
+            The source item number is preserved even when the normalized output uses <strong>Item Hold</strong>. That separation is important because
+            cleanup should never erase the evidence needed to understand what the sender actually supplied.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">Architecture</p>
+          <h2>A reusable normalization layer rather than a one-document script.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            A shared default profile contains standard extraction and normalization behavior. Customer-specific profiles layer only the exceptions
+            needed for a particular document layout. JSON Schema validation keeps those rules explicit, while SQLite stores transaction state,
+            audit history, profile requests, and unmatched-item events.
+          </p>
+          <p>
+            The generated output uses a fixed field map and item-table geometry so downstream capture receives a predictable format regardless of how
+            inconsistent the original PDF was.
+          </p>
+          <ul class="tag-list" aria-label="Project capabilities">
+            <li>Python</li><li>FastAPI</li><li>OCR</li><li>SQLite</li><li>PDF Parsing</li><li>Data Validation</li><li>Workflow Controls</li><li>Auditability</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">Verified clean-room build</p>
+          <h2>Portfolio-safe without reducing the project to a mockup.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            The shared package removes production customer profiles, catalog exports, databases, credentials, deployment state, source documents,
+            generated production outputs, and organization-specific identifiers. The included scanner reported zero findings against the supplied
+            clean-room identifier set.
+          </p>
+          <p>
+            I also ran the included regression suite against this uploaded portfolio package: <strong>186 tests passed</strong>. The synthetic smoke
+            workflow processed a fictional purchase order successfully and demonstrated both a valid catalog normalization and a deliberately unresolved item.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">Current boundary</p>
+          <h2>PDF intake today; additional structured input adapters can follow.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            This portfolio edition currently demonstrates PDF input. CSV and Excel ingestion are natural extensions because the normalization,
+            validation, review, and downstream handoff layers already exist, but those adapters are not presented here as implemented functionality.
+          </p>
+          <p>
+            The broader operating pattern is document-agnostic: turn variable incoming business data into a clean, validated contract before it is
+            allowed to trigger vendor ordering, ERP entry, accounts-payable processing, or another automated workflow.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-next">
+        <p class="eyebrow">Portfolio note</p>
+        <h2>Designed to make document automation safer by putting evidence, normalization, and human review ahead of system action.</h2>
+        <div class="project-links case-next-links">
+          <a class="button button-primary" href="../demos/ocr-document-normalizer/index.html" target="_blank" rel="noreferrer">Launch interactive walkthrough ↗</a>
+          <a class="button button-secondary" href="../index.html#work">View more work</a>
+        </div>
+      </section>
+    </main>
+    <footer><p>Brian Welk · Business Systems &amp; Data Portfolio</p><p>Colorado, United States</p></footer>
+  </body>
+</html>
