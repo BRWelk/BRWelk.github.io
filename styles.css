@@ -898,3 +898,55 @@ footer p {
   .ocr-frame iframe,
   .gallery-item.gallery-wide .ocr-frame iframe { transform: scale(0.34); }
 }
+
+
+/* Current GuardianWorks screenshots */
+.channel-card-cover {
+  object-fit: contain !important;
+  object-position: left top !important;
+  background: #f4f7f9 !important;
+}
+.channel-real-cover {
+  background: #f4f7f9;
+}
+.channel-real-cover a {
+  display: block;
+}
+.channel-real-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.channel-real-cover figcaption {
+  padding: 0.9rem 1.2rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.channel-real-gallery .gallery-grid {
+  gap: 1.5rem;
+}
+.channel-real-gallery .gallery-item {
+  overflow: hidden;
+  background: #f4f7f9;
+}
+.channel-real-gallery .gallery-item a {
+  display: block;
+  background: #f4f7f9;
+}
+.channel-real-gallery .gallery-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: top left;
+  background: #f4f7f9;
+}
+.channel-real-gallery .channel-portrait img {
+  max-height: 56rem;
+  object-position: top center;
+}
+@media (max-width: 800px) {
+  .channel-real-gallery .channel-portrait img {
+    max-height: none;
+  }
+}
