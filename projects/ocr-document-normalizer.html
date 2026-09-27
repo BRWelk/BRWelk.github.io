@@ -120,7 +120,7 @@
           </figure>
           <figure class="gallery-item gallery-wide">
             <div class="app-frame ocr-frame"><iframe src="../demos/ocr-document-normalizer/index.html?view=invoice" title="Proposed vendor invoice ingestion walkthrough" loading="lazy"></iframe></div>
-            <figcaption><strong>05 · Vendor invoice ingestion concept</strong>An original PO and a vendor invoice show the $120 versus $130 unit prices, the $20 difference, receipt verification, approver reason, and a local AP payload export. This interactive view is a synthetic prototype, not a deployed invoice parser.</figcaption>
+            <figcaption><strong>05 · Vendor invoice ingestion concept</strong>An original PO and a disputed invoice show the $120 versus $130 unit prices. Request a correction, inspect a revised $120 invoice, and keep the first version marked as superseded. The review records the decision before a local AP payload export. This is a synthetic prototype, not a deployed invoice parser.</figcaption>
           </figure>
           <figure class="gallery-item gallery-wide">
             <div class="app-frame ocr-frame"><iframe src="../demos/ocr-document-normalizer/index.html?view=profiles" title="Customer profile approval queue" loading="lazy"></iframe></div>
@@ -146,8 +146,10 @@
             Before accounts payable automation, checks would flag duplicate vendor-and-invoice-number combinations, reconcile
             line totals with the invoice total, and compare the invoice against the purchase order and receipt where available.
             Missing references, quantity or price differences, and uncertain matches would enter a review queue. In the local walkthrough,
-            the approver confirms receipt and records a reason for accepting the $20 variance before exporting a synthetic AP-ready JSON payload.
-            A production integration would require persisted audit history and an authorized ERP or accounting handoff.
+            a disputed $272 invoice stays on hold while the vendor sends a corrected $252 version. The reviewer sees both invoice versions,
+            confirms that the revision matches the original $252 PO and the receipt, then approves one AP-ready payload. The alternate path
+            for accepting the $20 variance requires vendor confirmation, an explanation, and receipt verification. A production integration
+            would require persisted source files, correspondence, audit history, and an authorized ERP or accounting handoff.
           </p>
           <p><strong>Build status:</strong> This is an interactive, browser-only workflow prototype with fictional records. The verified clean-room application and its 186 tests cover purchase-order PDF normalization. Live invoice parsing, persisted PO and receipt matching, email intake, and AP posting are not implemented.</p>
         </div>
