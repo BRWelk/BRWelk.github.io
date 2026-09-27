@@ -48,6 +48,7 @@
     <button data-view="fields">Extracted data</button>
     <button data-view="audit">Audit &amp; exceptions</button>
     <button data-view="profiles">Profile queue</button>
+    <button data-view="invoice">Vendor invoices</button>
   </nav>
 </header>
 <main id="screen"></main>
@@ -57,7 +58,8 @@ const pageTitle={
   compare:"Side-by-side document review",
   fields:"Extracted and normalized data",
   audit:"Audit trail and exception handling",
-  profiles:"Customer profile approval"
+  profiles:"Customer profile approval",
+  invoice:"Vendor invoice intake concept"
 };
 
 function heading(kicker,title,desc,status){
@@ -84,7 +86,7 @@ function dashboard(){
       <div class="step"><div><strong>Automation handoff</strong><small>ERP, vendor, AP, or workflow layer</small></div></div>
     </div>
   </section>
-  <div class="boundary"><strong>Current public demo boundary</strong>This clean-room build demonstrates PDF intake. CSV and XLSX adapters are not represented as implemented yet.</div>`;
+  <div class="boundary"><strong>Current public demo boundary</strong>The verified build demonstrates purchase-order PDF intake. Vendor invoice ingestion and CSV/XLSX adapters are illustrated or proposed, not implemented in this package.</div>`;
 }
 function compare(){
   return heading("Human-in-the-loop review","Side-by-side document review","The reviewer can compare the immutable source against a fixed normalized template before a document becomes eligible for downstream capture.","Candidate ready for review")+
@@ -135,7 +137,32 @@ function profiles(){
     <div class="boundary"><strong>Clean-room portfolio edition</strong>The shared project contains fictional profiles, generated PDFs, local SQLite schema, and tests. It excludes production customer files, credentials, deployment configuration, and Git history.</div>
   </section>`;
 }
-const renderers={dashboard,compare,fields,audit,profiles};
+function invoice(){
+  return heading("Proposed workflow · synthetic example","Vendor invoice ingestion","A proposed accounts payable intake path uses source evidence and review gates before an invoice becomes eligible for an accounting handoff.","Concept · no AP writes")+
+  `<div class="boundary"><strong>Illustrative extension</strong>This fictional invoice view is a workflow design. The verified clean-room parser and regression suite cover purchase-order PDFs; vendor invoice ingestion, matching, and AP posting have not been implemented in that package.</div>
+  <section class="grid kpis" style="margin-top:18px">
+    <div class="card kpi"><strong>1</strong><span>synthetic invoice example</span></div>
+    <div class="card kpi amber"><strong>1</strong><span>price variance for review</span></div>
+    <div class="card kpi green"><strong>0</strong><span>accounting system writes</span></div>
+    <div class="card kpi"><strong>PDF</strong><span>proposed intake format</span></div>
+  </section>
+  <section class="panel" style="margin-bottom:18px"><h2>Proposed invoice-to-AP workflow</h2><p class="panel-sub">Retain the source, extract structured fields, check the invoice, resolve exceptions, then release an approved payload.</p>
+    <div class="workflow"><div class="step"><div><strong>Receive invoice</strong><small>PDF or email attachment</small></div></div><div class="arrow">→</div><div class="step"><div><strong>Extract fields</strong><small>Vendor, number, dates, lines</small></div></div><div class="arrow">→</div><div class="step"><div><strong>Validate</strong><small>Duplicates and totals</small></div></div><div class="arrow">→</div><div class="step"><div><strong>Match</strong><small>PO and receipt if available</small></div></div><div class="arrow">→</div><div class="step"><div><strong>Resolve</strong><small>Variance review with evidence</small></div></div><div class="arrow">→</div><div class="step"><div><strong>Approve</strong><small>Authorized AP release</small></div></div><div class="arrow">→</div><div class="step"><div><strong>Hand off</strong><small>AP-ready data and audit link</small></div></div></div>
+  </section>
+  <div class="compare">
+    <section class="doc-panel"><div class="doc-head"><div><h2>Fictional vendor invoice</h2><small>summit_supply_inv_2048.pdf · proposed immutable source</small></div><span class="pill pending">Source</span></div>
+      <div class="doc"><div class="paper source-paper"><h3>INVOICE</h3><p>Summit Supply Co.</p><p>Invoice: SS-2048</p><p>Date: September 15, 2026</p><p>PO: PO-3017</p><p>Terms: Net 30</p><div class="lines"><p>CAM-100 · 2 × $130.00 = $260.00</p><p>Freight: $12.00</p><p>Tax: $0.00</p><p><strong>Total due: $272.00</strong></p></div></div></div>
+    </section>
+    <section class="doc-panel"><div class="doc-head"><div><h2>Proposed structured record</h2><small>Draft only · not approved for AP</small></div><span class="pill hold">Review needed</span></div>
+      <div class="doc"><div class="paper normalized-paper"><div class="normalized-title">VENDOR INVOICE · DRAFT</div><div class="norm-body"><h3>INVOICE FIELDS</h3>
+        <div class="field-grid"><div class="label">Vendor</div><div>Summit Supply Co.</div><div class="label">Invoice number</div><div>SS-2048</div><div class="label">Invoice date</div><div>2026-09-15</div><div class="label">PO reference</div><div>PO-3017</div><div class="label">Terms</div><div>Net 30</div><div class="label">Total</div><div>$272.00</div></div>
+        <h3>VALIDATION GATES</h3><table class="items"><thead><tr><th>Check</th><th>Example result</th></tr></thead><tbody><tr><td>Duplicate vendor + invoice</td><td>No match in synthetic register</td></tr><tr><td>Line + freight + tax</td><td>$260 + $12 + $0 = $272</td></tr><tr><td>PO price comparison</td><td><span class="pill hold">$5 per unit variance</span></td></tr><tr><td>Receipt comparison</td><td>Awaiting receipt confirmation</td></tr></tbody></table>
+        <div class="warning" style="margin-top:16px">Hold the AP handoff until a reviewer resolves the price variance and receipt status, records a reason, and approves the invoice.</div>
+      </div></div></div>
+    </section>
+  </div>`;
+}
+const renderers={dashboard,compare,fields,audit,profiles,invoice};
 function render(view){
   const safe=renderers[view]?view:"dashboard";
   document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.view===safe));
