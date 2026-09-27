@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Channel Pricing Integration Lab case study by Brian Welk, showing the current GuardianWorks opportunity-to-purchase workflow for security integrators."
+      content="GuardianWorks case study by Brian Welk, with a guided walkthrough of real application screens from opportunity intake through catalog sourcing, quoting, purchasing, and reconciliation."
     />
     <meta name="theme-color" content="#101a24" />
     <title>Channel Pricing Integration Lab Case Study | Brian Welk</title>
@@ -16,6 +16,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles.css" />
+    <style>.guardian-tour-frame{display:block;width:100%;height:730px;border:1px solid #d9e2ec;border-radius:12px;background:#f5f7fa}@media(max-width:800px){.guardian-tour-frame{height:600px}}</style>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -27,6 +28,7 @@
       </a>
       <nav aria-label="Case study navigation">
         <a href="../index.html">← Portfolio</a>
+        <a href="#walkthrough">Interactive walkthrough</a>
         <a href="#product-views">Product views</a>
       </nav>
     </header>
@@ -37,9 +39,9 @@
           <p class="eyebrow">Opportunity-to-purchase operations platform</p>
           <h1>Channel Pricing Integration Lab</h1>
           <p class="case-hero-summary">
-            The current GuardianWorks build connects opportunity discovery, visual system design,
-            field surveys, estimating catalogs, quoting, purchasing preparation, live pricing review,
-            and accounting reconciliation in one project lifecycle.
+            GuardianWorks connects opportunity intake, visual site design, field surveys, multichannel
+            estimating, quoting, purchasing preparation, current pricing review, and QuickBooks sandbox
+            reconciliation in one project lifecycle.
           </p>
         </div>
         <dl class="case-facts">
@@ -66,10 +68,25 @@
           />
         </a>
         <figcaption>
-          Current GuardianWorks workspace. The dashboard makes catalog readiness, pricing verification,
-          purchase-order activity, and reconciliation status visible before the operator enters a project workflow.
+          Previously published GuardianWorks workspace capture. In the live app on September 27, the dashboard showed
+          4,520 verified managed items, 20 linked purchase orders, and a read-only vendor pricing check.
         </figcaption>
       </figure>
+
+      <section class="case-gallery" id="walkthrough" aria-labelledby="walkthrough-title">
+        <div class="gallery-heading">
+          <p class="eyebrow">Interactive tour</p>
+          <h2 id="walkthrough-title">Follow the actual application screens.</h2>
+          <p>
+            Choose any stage to see a real GuardianWorks capture with notes on the workflow and its controls.
+            The tour is read-only and does not imitate the signed-in application.
+          </p>
+          <div class="project-links">
+            <a class="button button-primary" href="../demos/guardianworks/index.html" target="_blank" rel="noreferrer">Launch full walkthrough ↗</a>
+          </div>
+        </div>
+        <iframe class="guardian-tour-frame" src="../demos/guardianworks/index.html?step=1" title="Interactive GuardianWorks project walkthrough" loading="lazy"></iframe>
+      </section>
 
       <section class="case-section">
         <div>
@@ -98,11 +115,11 @@
         </div>
         <div class="case-section-copy">
           <ul class="outcome-list">
-            <li>Live read-only opportunity discovery with local tracking and project start actions</li>
+            <li>Read-only SAM.gov opportunity discovery with local pursuit tracking and project start actions; other provider profiles use the same local handoff pattern</li>
             <li>Visual floor plans with reusable system packages and individually placed devices</li>
             <li>Field-survey workflow with saved packages, room/area organization, and CSV/XLSX equipment-schedule import</li>
-            <li>Private 5,000-item estimate-only quote catalog for field estimates and budgetary pricing</li>
-            <li>Separate QuickBooks-managed catalog for purchase-capable items and current vendor pricing</li>
+            <li>Private 18,969-item quote catalog combining managed, staged, selected API, and direct-vendor estimate offers by buying channel</li>
+            <li>Separate 5,004-item QuickBooks-managed channel catalog with 4,520 pricing-verified items in the live September sandbox</li>
             <li>Quote and project stages that preserve scope before purchasing preparation</li>
             <li>Purchasing BOM workspace with project coding, ship-to information, margin controls, and current-catalog repricing</li>
             <li>Native purchase-order, vendor-bill, payment, and reconciliation tracking from the accounting system</li>
@@ -116,8 +133,8 @@
           <p class="eyebrow">Actual application screens</p>
           <h2 id="gallery-title">The current GuardianWorks workflow</h2>
           <p>
-            Every screen below is from the current application build. The portfolio uses the actual
-            interface rather than a recreated demo UI.
+            These are actual GuardianWorks captures already published in the portfolio. The guided tour pairs
+            them with current facts verified in the live app on September 27, 2026. Some counts in the images predate that check.
           </p>
         </div>
 
@@ -126,13 +143,13 @@
             <a href="../assets/channel-pricing/current/opportunities.webp" target="_blank" rel="noreferrer">
               <img
                 src="../assets/channel-pricing/current/opportunities.webp"
-                alt="GuardianWorks opportunities page showing a live read-only SAM.gov feed, search controls, opportunity tracking, and start-project actions"
+                alt="GuardianWorks SAM.gov opportunity screen with read-only search, tracking, and start-project actions"
               />
             </a>
             <figcaption>
               <strong>01 · Opportunities</strong>
-              A live read-only SAM.gov feed extends the workflow upstream. Opportunities can be qualified,
-              tracked locally, or used to start a project without writing back to the source.
+              A read-only SAM.gov feed extends the workflow upstream. Other provider profiles are selected
+              in the same Opportunities workspace and use local tracking and project handoff.
             </figcaption>
           </figure>
 
@@ -168,13 +185,13 @@
             <a href="../assets/channel-pricing/current/quote-catalog.webp" target="_blank" rel="noreferrer">
               <img
                 src="../assets/channel-pricing/current/quote-catalog.webp"
-                alt="GuardianWorks quote catalog showing a 5,000-item private estimate-only price library with full vendor SKUs, manufacturers, upstream vendors, costs, customer prices, and catalog state"
+                alt="GuardianWorks quote catalog showing 18,969 private estimate items, buying source filters, supplier, SKU, cost, estimate price, and QBO catalog state"
               />
             </a>
             <figcaption>
               <strong>04 · Quote catalog</strong>
-              The private 5,000-item estimating library is intentionally separate from the purchase-capable
-              accounting catalog. It supports field estimates and quotes without pretending every row is ready to buy.
+              The private 18,969-item estimating library is separate from the purchase-capable catalog.
+              Buying source, supplier, and full SKU stay visible while offers are compared.
             </figcaption>
           </figure>
 
@@ -187,8 +204,8 @@
             </a>
             <figcaption>
               <strong>05 · Managed purchasing catalog</strong>
-              The QuickBooks-managed catalog is the purchasing-facing item set. Vendor-price resolution,
-              lead times, cost, sales price, and margin are visible before an item is added to a BOM.
+              The QBO-managed catalog is the purchasing-facing set. The live September catalog has 5,004 channel-managed
+              items, while linked direct-vendor records remain separate. The screen shows pricing and lead-time controls.
             </figcaption>
           </figure>
 
@@ -243,14 +260,15 @@
         </div>
         <div class="case-section-copy">
           <p>
-            One of the most important changes is the explicit split between the private quote catalog
-            and the QuickBooks-managed catalog. The larger estimate library can support design and budgetary
-            work even when an item is not yet mapped or pricing-verified for purchasing.
+            The private quote catalog now compares channel, staged, selected API, and direct-vendor offers.
+            The 18,969-item estimate library supports design and budgetary work even when an offer is not
+            mapped or pricing-verified for purchasing. The separate QBO-managed catalog contains 5,004
+            channel items in the live September check.
           </p>
           <p>
-            Before purchasing, the workflow moves back to the managed catalog and current vendor-pricing state.
-            The overview shows the results of a read-only pricing check, including changed and unverified items,
-            without automatically applying those changes.
+            Before purchasing, the workflow returns to managed catalog and current vendor-pricing state.
+            The September overview shows 4,520 verified items and 484 needing review. The read-only check
+            does not automatically apply price changes.
           </p>
         </div>
       </section>
@@ -267,9 +285,10 @@
             as the workflow approaches a financial transaction.
           </p>
           <p>
-            Upstream vendor pricing remains read-only. The accounting connection shown in the portfolio
-            is a QuickBooks sandbox, and transaction creation is presented as an explicit operator action
-            rather than an automatic consequence of saving a quote or project.
+            Upstream vendor pricing remains read-only. SAM.gov discovery is live in the captured view,
+            while other provider profiles can use external research and local pursuit intake. The accounting connection
+            is a QuickBooks sandbox, and creating a PO requires an explicit operator action. Saving a quote
+            or project does not create a transaction.
           </p>
           <ul class="tag-list" aria-label="Project capabilities">
             <li>Node.js</li>
@@ -288,7 +307,7 @@
       <section class="case-next">
         <p class="eyebrow">Portfolio note</p>
         <h2>Built to preserve project and equipment context from opportunity through purchasing reconciliation.</h2>
-        <a class="button button-primary" href="../index.html#work">View more work</a>
+        <div class="project-links"><a class="button button-primary" href="../demos/guardianworks/index.html" target="_blank" rel="noreferrer">Launch walkthrough ↗</a><a class="button button-secondary" href="../index.html#work">View more work</a></div>
       </section>
     </main>
 
