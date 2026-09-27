@@ -33,8 +33,25 @@
     .audit article{padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}.audit article:last-child{border-bottom:0}.audit strong{display:block;color:var(--navy)}.audit span{display:block;color:var(--muted);margin-top:3px}
     .profile-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:16px}.profile-box{padding:18px;border-top:4px solid var(--blue)}.profile-box.green{border-top-color:#059669}.profile-box.amber{border-top-color:#d97706}.profile-box strong{display:block;color:var(--navy);font-size:30px}.profile-box span{color:var(--muted);font-size:13px}
     .boundary{margin-top:18px;padding:14px 16px;border-left:5px solid #d97706;background:#fff8e6;color:#725114;font-size:12px}.boundary strong{display:block;margin-bottom:4px}
+    .invoice-evidence{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0}
+    .invoice-evidence .paper{min-height:410px;padding:32px;box-shadow:none}
+    .invoice-evidence .doc{min-height:440px;padding:12px}
+    .invoice-evidence h3{margin:0 0 16px;font-size:23px}
+    .invoice-evidence .source-line{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0;font-size:13px}
+    .invoice-evidence .source-line span:last-child{text-align:right}
+    .invoice-compare{margin:18px 0;overflow-x:auto}.invoice-compare table{min-width:730px}
+    .invoice-compare td strong{font-size:13px}.invoice-compare .variance{color:var(--red);font-weight:800}
+    .review-form{display:grid;gap:12px;max-width:760px}.review-form label{font-size:13px;font-weight:700}
+    .review-form textarea{width:100%;min-height:70px;padding:10px;border:1px solid var(--line);border-radius:6px;font:inherit}
+    .review-form button{padding:10px 14px;border:0;border-radius:6px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer}
+    .review-form button:disabled{background:#a2b4c3;cursor:not-allowed}
+    .review-form .actions{display:flex;gap:10px;flex-wrap:wrap}.review-form .secondary{background:#e7eef4;color:var(--navy)}
+    .review-form .check{display:flex;align-items:center;gap:9px}
+    .review-form .check input{width:17px;height:17px}
+    .result{padding:12px 14px;border-radius:6px;background:var(--amber-bg);color:var(--amber);font-size:13px}
+    .result.approved{background:var(--green-bg);color:var(--green)}
     .footer-note{margin-top:18px;color:#829ab1;font-size:10px}
-    @media(max-width:980px){.kpis,.profile-grid{grid-template-columns:repeat(2,1fr)}.compare,.two{grid-template-columns:1fr}.workflow{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}}
+    @media(max-width:980px){.kpis,.profile-grid{grid-template-columns:repeat(2,1fr)}.compare,.two,.invoice-evidence{grid-template-columns:1fr}.workflow{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}}
     @media(max-width:680px){.topbar{align-items:flex-start;flex-direction:column;padding-top:12px;padding-bottom:12px}.nav{justify-content:flex-start}.kpis,.profile-grid{grid-template-columns:1fr}.paper{padding-left:28px;padding-right:28px}.field-grid{grid-template-columns:130px 1fr}}
   </style>
 </head>
@@ -138,35 +155,84 @@ function profiles(){
   </section>`;
 }
 function invoice(){
-  return heading("Proposed workflow · synthetic example","Vendor invoice ingestion","A proposed accounts payable intake path uses source evidence and review gates before an invoice becomes eligible for an accounting handoff.","Concept · no AP writes")+
-  `<div class="boundary"><strong>Illustrative extension</strong>This fictional invoice view is a workflow design. The verified clean-room parser and regression suite cover purchase-order PDFs; vendor invoice ingestion, matching, and AP posting have not been implemented in that package.</div>
+  return heading("PO-to-invoice review · synthetic example","Vendor invoice ingestion","Compare the actual purchase-order values with the invoice, retain both source documents, and resolve differences before AP release.","Interactive local review")+
+  `<div class="boundary"><strong>Portfolio prototype</strong>These are fictional source documents and a browser-only approval simulation. The verified parser currently handles customer purchase-order PDFs. Vendor invoice OCR, email intake, receipt matching, and accounting integration are the proposed next build.</div>
   <section class="grid kpis" style="margin-top:18px">
-    <div class="card kpi"><strong>1</strong><span>synthetic invoice example</span></div>
-    <div class="card kpi amber"><strong>1</strong><span>price variance for review</span></div>
-    <div class="card kpi green"><strong>0</strong><span>accounting system writes</span></div>
-    <div class="card kpi"><strong>PDF</strong><span>proposed intake format</span></div>
+    <div class="card kpi"><strong>PO-3017</strong><span>matched by vendor and PO reference</span></div>
+    <div class="card kpi amber"><strong>$10</strong><span>unit price variance on CAM-100</span></div>
+    <div class="card kpi amber"><strong>$20</strong><span>extended line variance, quantity 2</span></div>
+    <div class="card kpi"><strong>Pending</strong><span>receipt confirmation and approval</span></div>
   </section>
-  <section class="panel" style="margin-bottom:18px"><h2>Proposed invoice-to-AP workflow</h2><p class="panel-sub">Retain the source, extract structured fields, check the invoice, resolve exceptions, then release an approved payload.</p>
-    <div class="workflow"><div class="step"><div><strong>Receive invoice</strong><small>PDF or email attachment</small></div></div><div class="arrow">→</div><div class="step"><div><strong>Extract fields</strong><small>Vendor, number, dates, lines</small></div></div><div class="arrow">→</div><div class="step"><div><strong>Validate</strong><small>Duplicates and totals</small></div></div><div class="arrow">→</div><div class="step"><div><strong>Match</strong><small>PO and receipt if available</small></div></div><div class="arrow">→</div><div class="step"><div><strong>Resolve</strong><small>Variance review with evidence</small></div></div><div class="arrow">→</div><div class="step"><div><strong>Approve</strong><small>Authorized AP release</small></div></div><div class="arrow">→</div><div class="step"><div><strong>Hand off</strong><small>AP-ready data and audit link</small></div></div></div>
+  <section class="panel"><h2>Linked source documents</h2><p class="panel-sub">Both records are fictional. The values below are the evidence used by the comparison, not unexplained validation labels.</p>
+    <div class="invoice-evidence">
+      <section class="doc-panel" aria-label="Original purchase order"><div class="doc-head"><div><h2>Original purchase order</h2><small>po_3017.pdf · source PO record</small></div><span class="pill pending">PO source</span></div>
+        <div class="doc"><div class="paper"><h3>PURCHASE ORDER</h3><div class="source-line"><strong>Buyer</strong><span>Northstar Integration, LLC</span></div><div class="source-line"><strong>Vendor</strong><span>Summit Supply Co.</span></div><div class="source-line"><strong>PO number</strong><span>PO-3017</span></div><div class="source-line"><strong>Item</strong><span>CAM-100</span></div><div class="source-line"><strong>Quantity × unit price</strong><span>2 × $120.00</span></div><div class="source-line"><strong>Item extended</strong><span>$240.00</span></div><div class="source-line"><strong>Freight</strong><span>$12.00</span></div><div class="source-line"><strong>PO expected total</strong><span><strong>$252.00</strong></span></div></div></div>
+      </section>
+      <section class="doc-panel" aria-label="Vendor invoice"><div class="doc-head"><div><h2>Vendor invoice</h2><small>summit_supply_inv_2048.pdf · invoice source</small></div><span class="pill pending">Invoice source</span></div>
+        <div class="doc"><div class="paper"><h3>INVOICE</h3><div class="source-line"><strong>Vendor</strong><span>Summit Supply Co.</span></div><div class="source-line"><strong>Invoice number</strong><span>SS-2048 · Sep 15, 2026</span></div><div class="source-line"><strong>PO reference</strong><span>PO-3017</span></div><div class="source-line"><strong>Item</strong><span>CAM-100</span></div><div class="source-line"><strong>Quantity × unit price</strong><span>2 × $130.00</span></div><div class="source-line"><strong>Item extended</strong><span>$260.00</span></div><div class="source-line"><strong>Freight</strong><span>$12.00</span></div><div class="source-line"><strong>Invoice total due</strong><span><strong>$272.00</strong></span></div></div></div>
+      </section>
+    </div>
   </section>
-  <div class="compare">
-    <section class="doc-panel"><div class="doc-head"><div><h2>Fictional vendor invoice</h2><small>summit_supply_inv_2048.pdf · proposed immutable source</small></div><span class="pill pending">Source</span></div>
-      <div class="doc"><div class="paper source-paper"><h3>INVOICE</h3><p>Summit Supply Co.</p><p>Invoice: SS-2048</p><p>Date: September 15, 2026</p><p>PO: PO-3017</p><p>Terms: Net 30</p><div class="lines"><p>CAM-100 · 2 × $130.00 = $260.00</p><p>Freight: $12.00</p><p>Tax: $0.00</p><p><strong>Total due: $272.00</strong></p></div></div></div>
+  <section class="panel invoice-compare"><h2>PO-to-invoice comparison</h2><p class="panel-sub">Matched on vendor, PO reference, and item ID. Example duplicate check finds no second SS-2048 for this vendor in the fictional register.</p>
+    <table><thead><tr><th>Check</th><th>Original PO · PO-3017</th><th>Invoice · SS-2048</th><th>Difference / control</th></tr></thead><tbody>
+      <tr><td>Vendor + PO link</td><td>Summit Supply Co.</td><td>Summit Supply Co. · PO-3017</td><td><span class="pill processed">Matched</span></td></tr>
+      <tr><td>CAM-100 quantity</td><td>2</td><td>2</td><td><span class="pill processed">Matched</span></td></tr>
+      <tr><td>CAM-100 unit price</td><td><strong>$120.00</strong></td><td><strong>$130.00</strong></td><td class="variance">+$10.00 per unit</td></tr>
+      <tr><td>CAM-100 extended</td><td>2 × $120 = $240.00</td><td>2 × $130 = $260.00</td><td class="variance">+$20.00 line variance</td></tr>
+      <tr><td>Freight / tax</td><td>$12.00 / $0.00</td><td>$12.00 / $0.00</td><td><span class="pill processed">Matched</span></td></tr>
+      <tr><td>Document total</td><td><strong>$252.00</strong></td><td><strong>$272.00</strong></td><td class="variance">+$20.00 invoice over PO</td></tr>
+      <tr><td>Receipt</td><td>Expected: 2 CAM-100</td><td>Invoice: 2 CAM-100</td><td><span class="pill hold">Confirmation required</span></td></tr>
+    </tbody></table>
+  </section>
+  <div class="grid two">
+    <section class="panel"><h2>Approver review</h2><p class="panel-sub">This local exercise records an explicit reason for accepting the $20 variance and a simulated receipt confirmation.</p>
+      <div class="review-form"><label class="check"><input id="invoice-receipt" type="checkbox" />I verified receipt of 2 CAM-100 units against PO-3017</label>
+        <label for="invoice-reason">Reason for accepting the $20 PO-to-invoice difference</label><textarea id="invoice-reason" placeholder="For example: Approved vendor price change supported by email dated ..."></textarea>
+        <div class="actions"><button id="invoice-approve" type="button">Record exception approval</button><button id="invoice-reset" class="secondary" type="button">Reset review</button><button id="invoice-export" class="secondary" type="button" disabled>Export AP-ready JSON</button></div>
+        <div id="invoice-result" class="result" role="status">On hold: $20 price variance and receipt verification require approver review. No AP payload released.</div>
+      </div>
     </section>
-    <section class="doc-panel"><div class="doc-head"><div><h2>Proposed structured record</h2><small>Draft only · not approved for AP</small></div><span class="pill hold">Review needed</span></div>
-      <div class="doc"><div class="paper normalized-paper"><div class="normalized-title">VENDOR INVOICE · DRAFT</div><div class="norm-body"><h3>INVOICE FIELDS</h3>
-        <div class="field-grid"><div class="label">Vendor</div><div>Summit Supply Co.</div><div class="label">Invoice number</div><div>SS-2048</div><div class="label">Invoice date</div><div>2026-09-15</div><div class="label">PO reference</div><div>PO-3017</div><div class="label">Terms</div><div>Net 30</div><div class="label">Total</div><div>$272.00</div></div>
-        <h3>VALIDATION GATES</h3><table class="items"><thead><tr><th>Check</th><th>Example result</th></tr></thead><tbody><tr><td>Duplicate vendor + invoice</td><td>No match in synthetic register</td></tr><tr><td>Line + freight + tax</td><td>$260 + $12 + $0 = $272</td></tr><tr><td>PO price comparison</td><td><span class="pill hold">$5 per unit variance</span></td></tr><tr><td>Receipt comparison</td><td>Awaiting receipt confirmation</td></tr></tbody></table>
-        <div class="warning" style="margin-top:16px">Hold the AP handoff until a reviewer resolves the price variance and receipt status, records a reason, and approves the invoice.</div>
-      </div></div></div>
+    <section class="panel"><h2>Decision audit trail</h2><p class="panel-sub">Every stage points back to PO-3017 and SS-2048. Actions in this demo last only for the current browser view.</p>
+      <div class="audit" id="invoice-audit"><article><strong>intake:invoice</strong><span>SS-2048 · Summit Supply Co. · $272.00</span></article><article><strong>match:purchase_order</strong><span>PO-3017 · CAM-100 quantity 2 · PO $120/unit · invoice $130/unit</span></article><article><strong>exception:price_variance</strong><span>+$10/unit × 2 = +$20 · AP handoff blocked pending receipt and approval</span></article></div>
     </section>
-  </div>`;
+  </div>
+  <div class="boundary"><strong>Automation boundary</strong>The exported JSON is a local illustration of an approved, auditable payload. This page does not read real PDFs, verify real receipts, persist approvals, or post bills into an accounting system.</div>`;
+}
+function setupInvoice(){
+  const receipt=document.getElementById("invoice-receipt"), reason=document.getElementById("invoice-reason");
+  const status=document.getElementById("invoice-result"), audit=document.getElementById("invoice-audit");
+  const exportButton=document.getElementById("invoice-export");
+  let approval=null;
+  document.getElementById("invoice-approve").addEventListener("click",()=>{
+    if(!receipt.checked || !reason.value.trim()){
+      status.textContent="Review remains on hold. Confirm receipt of 2 units and enter a reason for accepting the $20 variance.";
+      return;
+    }
+    approval={reviewer:"Portfolio demo reviewer",reviewedAt:new Date().toISOString(),reason:reason.value.trim()};
+    receipt.disabled=true;reason.readOnly=true;
+    document.getElementById("invoice-approve").disabled=true;
+    exportButton.disabled=false;
+    status.classList.add("approved");
+    status.textContent="Exception approved in this local demo. AP-ready JSON can now be exported; no accounting system was updated.";
+    const event=document.createElement("article"), title=document.createElement("strong"), detail=document.createElement("span"), note=document.createElement("p");
+    title.textContent="exception:approved";detail.textContent=approval.reviewer+" · "+approval.reviewedAt+" · receipt confirmed";note.textContent=approval.reason;
+    event.append(title,detail,note);audit.append(event);
+  });
+  document.getElementById("invoice-reset").addEventListener("click",()=>render("invoice"));
+  exportButton.addEventListener("click",()=>{
+    if(!approval)return;
+    const payload={demo:true,status:"approved_for_ap_handoff",vendor:"Summit Supply Co.",invoiceNumber:"SS-2048",invoiceDate:"2026-09-15",purchaseOrder:"PO-3017",sourceFiles:["po_3017.pdf","summit_supply_inv_2048.pdf"],items:[{item:"CAM-100",quantity:2,poUnitPrice:120,invoiceUnitPrice:130,poLineTotal:240,invoiceLineTotal:260,variance:20}],freight:12,tax:0,poTotal:252,invoiceTotal:272,duplicateCheck:"no duplicate in fictional register",receipt:"confirmed in local demo",approval};
+    const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}));
+    const link=document.createElement("a");link.href=url;link.download="synthetic-approved-invoice-SS-2048.json";link.click();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+  });
 }
 const renderers={dashboard,compare,fields,audit,profiles,invoice};
 function render(view){
   const safe=renderers[view]?view:"dashboard";
   document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.view===safe));
   document.getElementById("screen").innerHTML=renderers[safe]();
+  if(safe==="invoice")setupInvoice();
   document.title=pageTitle[safe]+" | OCR Document Normalizer";
   const u=new URL(location.href);u.searchParams.set("view",safe);history.replaceState(null,"",u);
 }
