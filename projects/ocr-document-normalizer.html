@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="OCR Document Normalizer case study by Brian Welk, demonstrating evidence-first extraction, side-by-side review, normalization, validation, audit controls, and downstream automation readiness." />
+    <meta name="description" content="OCR Document Normalizer case study by Brian Welk, showing purchase order normalization and a proposed vendor invoice ingestion path with validation, matching, review, and accounts payable automation handoff." />
     <meta name="theme-color" content="#101a24" />
     <title>OCR Document Normalizer Case Study | Brian Welk</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,6 +20,7 @@
       <nav aria-label="Case study navigation">
         <a href="../index.html">← Portfolio</a>
         <a href="#workflow">Workflow</a>
+        <a href="#vendor-invoices">Vendor invoices</a>
         <a href="../demos/ocr-document-normalizer/index.html" target="_blank" rel="noreferrer">Interactive walkthrough ↗</a>
       </nav>
     </header>
@@ -32,7 +33,7 @@
           <p class="case-hero-summary">
             A clean-room document-processing application that converts variable inbound purchase-order PDFs into a fixed,
             machine-readable format while preserving source evidence, human review, exception handling, and an audit trail
-            before downstream automation is allowed to act.
+            before downstream automation is allowed to act. A proposed vendor invoice path applies the same control pattern to accounts payable intake.
           </p>
         </div>
         <dl class="case-facts">
@@ -118,9 +119,35 @@
             <figcaption><strong>04 · Audit &amp; recovery</strong>Overrides require evidence and a reason. Retry, rejection, regeneration, and transaction state changes remain traceable.</figcaption>
           </figure>
           <figure class="gallery-item gallery-wide">
-            <div class="app-frame ocr-frame"><iframe src="../demos/ocr-document-normalizer/index.html?view=profiles" title="Customer profile approval queue" loading="lazy"></iframe></div>
-            <figcaption><strong>05 · New-layout onboarding</strong>New customer/document layouts stay isolated until sample comparisons and candidate rules have been reviewed and explicitly approved.</figcaption>
+            <div class="app-frame ocr-frame"><iframe src="../demos/ocr-document-normalizer/index.html?view=invoice" title="Proposed vendor invoice ingestion walkthrough" loading="lazy"></iframe></div>
+            <figcaption><strong>05 · Vendor invoice ingestion concept</strong>A synthetic invoice shows proposed field capture, duplicate and purchase-order checks, exception review, and an approved accounts payable handoff. This view illustrates an extension, not a deployed invoice parser.</figcaption>
           </figure>
+          <figure class="gallery-item gallery-wide">
+            <div class="app-frame ocr-frame"><iframe src="../demos/ocr-document-normalizer/index.html?view=profiles" title="Customer profile approval queue" loading="lazy"></iframe></div>
+            <figcaption><strong>06 · New-layout onboarding</strong>New customer/document layouts stay isolated until sample comparisons and candidate rules have been reviewed and explicitly approved.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="case-section" id="vendor-invoices">
+        <div>
+          <p class="eyebrow">Proposed extension</p>
+          <h2>Vendor invoices can enter the same controlled intake pattern.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>
+            The <a href="../demos/ocr-document-normalizer/index.html?view=invoice" target="_blank" rel="noreferrer">synthetic invoice walkthrough</a>
+            shows the next workflow to build. A vendor invoice arriving by PDF or email attachment would enter a separate invoice profile;
+            extraction would retain the original file and capture vendor, invoice number and date, purchase-order reference,
+            line items, tax, freight, and total in a structured record.
+          </p>
+          <p>
+            Before accounts payable automation, checks would flag duplicate vendor-and-invoice-number combinations, reconcile
+            line totals with the invoice total, and compare the invoice against the purchase order and receipt where available.
+            Missing references, quantity or price differences, and uncertain matches would enter a review queue. An approved
+            invoice could then produce an auditable AP-ready payload for a controlled ERP or accounting handoff.
+          </p>
+          <p><strong>Build status:</strong> This is a proposed workflow shown with fictional data. The verified clean-room application and its 186 tests cover purchase-order PDF normalization; invoice parsing, matching, email intake, and AP posting are not claimed as implemented.</p>
         </div>
       </section>
 
@@ -184,12 +211,11 @@
       <section class="case-section">
         <div>
           <p class="eyebrow">Current boundary</p>
-          <h2>PDF intake today; additional structured input adapters can follow.</h2>
+          <h2>Purchase-order PDF intake today; invoice automation is the next workflow.</h2>
         </div>
         <div class="case-section-copy">
           <p>
-            This portfolio edition currently demonstrates PDF input. CSV and Excel ingestion are natural extensions because the normalization,
-            validation, review, and downstream handoff layers already exist, but those adapters are not presented here as implemented functionality.
+            The verified clean-room build demonstrates purchase-order PDF input. The vendor invoice view is a synthetic workflow concept, and CSV and Excel input adapters are further possible extensions. None of those additions is presented as implemented functionality.
           </p>
           <p>
             The broader operating pattern is document-agnostic: turn variable incoming business data into a clean, validated contract before it is
