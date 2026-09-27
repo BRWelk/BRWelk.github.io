@@ -12,6 +12,7 @@
       --green:#18794e;--green-bg:#ecfdf5;--amber-bg:#fff8e6;--shadow:0 4px 18px rgba(16,42,67,.07)
     }
     *{box-sizing:border-box}
+    [hidden]{display:none!important}
     body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif}
     button{font:inherit}
     .notice{min-height:30px;display:grid;place-items:center;padding:5px 14px;background:#f0c45d;color:#362b14;font-size:11px;font-weight:800;letter-spacing:.07em;text-align:center;text-transform:uppercase}
@@ -159,71 +160,119 @@ function invoice(){
   `<div class="boundary"><strong>Portfolio prototype</strong>These are fictional source documents and a browser-only approval simulation. The verified parser currently handles customer purchase-order PDFs. Vendor invoice OCR, email intake, receipt matching, and accounting integration are the proposed next build.</div>
   <section class="grid kpis" style="margin-top:18px">
     <div class="card kpi"><strong>PO-3017</strong><span>matched by vendor and PO reference</span></div>
-    <div class="card kpi amber"><strong>$10</strong><span>unit price variance on CAM-100</span></div>
-    <div class="card kpi amber"><strong>$20</strong><span>extended line variance, quantity 2</span></div>
-    <div class="card kpi"><strong>Pending</strong><span>receipt confirmation and approval</span></div>
+    <div class="card kpi amber"><strong id="invoice-unit-kpi">$10</strong><span>unit price variance on CAM-100</span></div>
+    <div class="card kpi amber"><strong id="invoice-total-kpi">$20</strong><span>extended line variance, quantity 2</span></div>
+    <div class="card kpi"><strong id="invoice-state-kpi">Pending</strong><span>receipt confirmation and approval</span></div>
   </section>
   <section class="panel"><h2>Linked source documents</h2><p class="panel-sub">Both records are fictional. The values below are the evidence used by the comparison, not unexplained validation labels.</p>
     <div class="invoice-evidence">
       <section class="doc-panel" aria-label="Original purchase order"><div class="doc-head"><div><h2>Original purchase order</h2><small>po_3017.pdf · source PO record</small></div><span class="pill pending">PO source</span></div>
         <div class="doc"><div class="paper"><h3>PURCHASE ORDER</h3><div class="source-line"><strong>Buyer</strong><span>Northstar Integration, LLC</span></div><div class="source-line"><strong>Vendor</strong><span>Summit Supply Co.</span></div><div class="source-line"><strong>PO number</strong><span>PO-3017</span></div><div class="source-line"><strong>Item</strong><span>CAM-100</span></div><div class="source-line"><strong>Quantity × unit price</strong><span>2 × $120.00</span></div><div class="source-line"><strong>Item extended</strong><span>$240.00</span></div><div class="source-line"><strong>Freight</strong><span>$12.00</span></div><div class="source-line"><strong>PO expected total</strong><span><strong>$252.00</strong></span></div></div></div>
       </section>
-      <section class="doc-panel" aria-label="Vendor invoice"><div class="doc-head"><div><h2>Vendor invoice</h2><small>summit_supply_inv_2048.pdf · invoice source</small></div><span class="pill pending">Invoice source</span></div>
+      <section class="doc-panel" aria-label="Original vendor invoice"><div class="doc-head"><div><h2>Original vendor invoice</h2><small>summit_supply_inv_2048.pdf · invoice source</small></div><span class="pill pending" id="original-invoice-state">Original · on hold</span></div>
         <div class="doc"><div class="paper"><h3>INVOICE</h3><div class="source-line"><strong>Vendor</strong><span>Summit Supply Co.</span></div><div class="source-line"><strong>Invoice number</strong><span>SS-2048 · Sep 15, 2026</span></div><div class="source-line"><strong>PO reference</strong><span>PO-3017</span></div><div class="source-line"><strong>Item</strong><span>CAM-100</span></div><div class="source-line"><strong>Quantity × unit price</strong><span>2 × $130.00</span></div><div class="source-line"><strong>Item extended</strong><span>$260.00</span></div><div class="source-line"><strong>Freight</strong><span>$12.00</span></div><div class="source-line"><strong>Invoice total due</strong><span><strong>$272.00</strong></span></div></div></div>
+      </section>
+      <section class="doc-panel" id="revised-invoice-source" aria-label="Corrected vendor invoice" hidden><div class="doc-head"><div><h2>Corrected vendor invoice</h2><small>summit_supply_inv_2048_r1.pdf · linked to original SS-2048</small></div><span class="pill processed">Revised · active candidate</span></div>
+        <div class="doc"><div class="paper"><h3>REVISED INVOICE</h3><div class="source-line"><strong>Vendor</strong><span>Summit Supply Co.</span></div><div class="source-line"><strong>Invoice number</strong><span>SS-2048-R1 · Sep 17, 2026</span></div><div class="source-line"><strong>Corrects</strong><span>SS-2048 · Sep 15, 2026</span></div><div class="source-line"><strong>PO reference</strong><span>PO-3017</span></div><div class="source-line"><strong>Item</strong><span>CAM-100</span></div><div class="source-line"><strong>Quantity × unit price</strong><span>2 × $120.00</span></div><div class="source-line"><strong>Item extended</strong><span>$240.00</span></div><div class="source-line"><strong>Freight</strong><span>$12.00</span></div><div class="source-line"><strong>Revised total due</strong><span><strong>$252.00</strong></span></div></div></div>
       </section>
     </div>
   </section>
-  <section class="panel invoice-compare"><h2>PO-to-invoice comparison</h2><p class="panel-sub">Matched on vendor, PO reference, and item ID. Example duplicate check finds no second SS-2048 for this vendor in the fictional register.</p>
-    <table><thead><tr><th>Check</th><th>Original PO · PO-3017</th><th>Invoice · SS-2048</th><th>Difference / control</th></tr></thead><tbody>
+  <section class="panel invoice-compare"><h2>PO-to-invoice comparison</h2><p class="panel-sub" id="invoice-match-note">Matched on vendor, PO reference, and item ID. A duplicate check flags another invoice with the same vendor and invoice number; a corrected version must be linked to the original, never silently added as a second payable.</p>
+    <table><thead><tr><th>Check</th><th>Original PO · PO-3017</th><th id="comparison-invoice-header">Invoice · SS-2048</th><th>Difference / control</th></tr></thead><tbody>
       <tr><td>Vendor + PO link</td><td>Summit Supply Co.</td><td>Summit Supply Co. · PO-3017</td><td><span class="pill processed">Matched</span></td></tr>
       <tr><td>CAM-100 quantity</td><td>2</td><td>2</td><td><span class="pill processed">Matched</span></td></tr>
-      <tr><td>CAM-100 unit price</td><td><strong>$120.00</strong></td><td><strong>$130.00</strong></td><td class="variance">+$10.00 per unit</td></tr>
-      <tr><td>CAM-100 extended</td><td>2 × $120 = $240.00</td><td>2 × $130 = $260.00</td><td class="variance">+$20.00 line variance</td></tr>
+      <tr><td>CAM-100 unit price</td><td><strong>$120.00</strong></td><td id="invoice-compare-unit"><strong>$130.00</strong></td><td class="variance" id="invoice-unit-difference">+$10.00 per unit</td></tr>
+      <tr><td>CAM-100 extended</td><td>2 × $120 = $240.00</td><td id="invoice-compare-line">2 × $130 = $260.00</td><td class="variance" id="invoice-line-difference">+$20.00 line variance</td></tr>
       <tr><td>Freight / tax</td><td>$12.00 / $0.00</td><td>$12.00 / $0.00</td><td><span class="pill processed">Matched</span></td></tr>
-      <tr><td>Document total</td><td><strong>$252.00</strong></td><td><strong>$272.00</strong></td><td class="variance">+$20.00 invoice over PO</td></tr>
+      <tr><td>Document total</td><td><strong>$252.00</strong></td><td id="invoice-compare-total"><strong>$272.00</strong></td><td class="variance" id="invoice-total-difference">+$20.00 invoice over PO</td></tr>
       <tr><td>Receipt</td><td>Expected: 2 CAM-100</td><td>Invoice: 2 CAM-100</td><td><span class="pill hold">Confirmation required</span></td></tr>
     </tbody></table>
   </section>
   <div class="grid two">
-    <section class="panel"><h2>Approver review</h2><p class="panel-sub">This local exercise records an explicit reason for accepting the $20 variance and a simulated receipt confirmation.</p>
+    <section class="panel"><h2>Resolve the vendor discrepancy</h2><p class="panel-sub">Ask the vendor to correct an overcharge, or verify and document an authorized price change. The original invoice remains on hold either way.</p>
       <div class="review-form"><label class="check"><input id="invoice-receipt" type="checkbox" />I verified receipt of 2 CAM-100 units against PO-3017</label>
-        <label for="invoice-reason">Reason for accepting the $20 PO-to-invoice difference</label><textarea id="invoice-reason" placeholder="For example: Approved vendor price change supported by email dated ..."></textarea>
-        <div class="actions"><button id="invoice-approve" type="button">Record exception approval</button><button id="invoice-reset" class="secondary" type="button">Reset review</button><button id="invoice-export" class="secondary" type="button" disabled>Export AP-ready JSON</button></div>
-        <div id="invoice-result" class="result" role="status">On hold: $20 price variance and receipt verification require approver review. No AP payload released.</div>
+        <div id="original-review-fields"><label class="check"><input id="invoice-vendor-confirmed" type="checkbox" />I confirmed with the vendor that the $130 price is authorized</label>
+          <label for="invoice-reason">Vendor confirmation and reason to accept the $20 difference</label><textarea id="invoice-reason" placeholder="Vendor contact, date, and evidence of approved price change"></textarea></div>
+        <label class="check" id="revised-review-field" hidden><input id="invoice-revised-confirmed" type="checkbox" />I compared corrected invoice SS-2048-R1 to PO-3017 and confirmed the $252 total</label>
+        <div class="actions"><button id="invoice-request-correction" type="button">Request corrected invoice</button><button id="invoice-receive-revision" class="secondary" type="button" hidden>Simulate revised invoice received</button><button id="invoice-approve" class="secondary" type="button">Approve verified variance</button><button id="invoice-reset" class="secondary" type="button">Reset review</button><button id="invoice-export" class="secondary" type="button" disabled>Export AP-ready JSON</button></div>
+        <div id="invoice-result" class="result" role="status">On hold: verify the vendor price before accepting it, or request a corrected invoice. No AP payload released.</div>
       </div>
     </section>
     <section class="panel"><h2>Decision audit trail</h2><p class="panel-sub">Every stage points back to PO-3017 and SS-2048. Actions in this demo last only for the current browser view.</p>
       <div class="audit" id="invoice-audit"><article><strong>intake:invoice</strong><span>SS-2048 · Summit Supply Co. · $272.00</span></article><article><strong>match:purchase_order</strong><span>PO-3017 · CAM-100 quantity 2 · PO $120/unit · invoice $130/unit</span></article><article><strong>exception:price_variance</strong><span>+$10/unit × 2 = +$20 · AP handoff blocked pending receipt and approval</span></article></div>
     </section>
   </div>
-  <div class="boundary"><strong>Automation boundary</strong>The exported JSON is a local illustration of an approved, auditable payload. This page does not read real PDFs, verify real receipts, persist approvals, or post bills into an accounting system.</div>`;
+  <div class="boundary"><strong>Automation boundary</strong>The corrected invoice arrival, vendor confirmation, and receipt check are simulated. A real workflow must retain both source files and vendor correspondence, treat the first invoice as superseded, recheck the revision against the PO and receipt, and persist approval before creating one payable. No bills are posted here.</div>`;
 }
 function setupInvoice(){
-  const receipt=document.getElementById("invoice-receipt"), reason=document.getElementById("invoice-reason");
-  const status=document.getElementById("invoice-result"), audit=document.getElementById("invoice-audit");
-  const exportButton=document.getElementById("invoice-export");
-  let approval=null;
-  document.getElementById("invoice-approve").addEventListener("click",()=>{
-    if(!receipt.checked || !reason.value.trim()){
-      status.textContent="Review remains on hold. Confirm receipt of 2 units and enter a reason for accepting the $20 variance.";
+  const $=id=>document.getElementById(id);
+  const receipt=$("invoice-receipt"),reason=$("invoice-reason"),vendorConfirmed=$("invoice-vendor-confirmed");
+  const status=$("invoice-result"),audit=$("invoice-audit"),exportButton=$("invoice-export");
+  const corrected=$("revised-invoice-source"),requestButton=$("invoice-request-correction"),receiveButton=$("invoice-receive-revision"),approveButton=$("invoice-approve");
+  let state="original",approval=null;
+  function event(name,detail,note){
+    const row=document.createElement("article"),title=document.createElement("strong"),line=document.createElement("span");
+    title.textContent=name;line.textContent=detail;row.append(title,line);
+    if(note){const p=document.createElement("p");p.textContent=note;row.append(p)}
+    audit.append(row);
+  }
+  requestButton.addEventListener("click",()=>{
+    if(state!=="original")return;
+    state="correction_requested";
+    requestButton.disabled=true;receiveButton.hidden=false;approveButton.disabled=true;
+    $("original-invoice-state").textContent="Disputed · on hold";
+    $("invoice-state-kpi").textContent="Disputed";
+    status.textContent="Correction requested from Summit Supply Co. Original SS-2048 remains on hold. Await a revised source invoice; do not pay either version yet.";
+    event("vendor:correction_requested","SS-2048 · $272.00 disputed against PO-3017 · $252.00","Vendor asked to issue a corrected invoice. Original retained as evidence and blocked from AP.");
+  });
+  receiveButton.addEventListener("click",()=>{
+    if(state!=="correction_requested")return;
+    state="revised";
+    receiveButton.hidden=true;corrected.hidden=false;
+    $("original-invoice-state").textContent="Superseded · do not pay";
+    $("invoice-unit-kpi").textContent="$0";$("invoice-total-kpi").textContent="$0";$("invoice-state-kpi").textContent="Recheck";
+    $("comparison-invoice-header").textContent="Corrected invoice · SS-2048-R1";
+    $("invoice-compare-unit").textContent="$120.00";$("invoice-unit-difference").textContent="$0.00 · matched";
+    $("invoice-compare-line").textContent="2 × $120 = $240.00";$("invoice-line-difference").textContent="$0.00 · matched";
+    $("invoice-compare-total").textContent="$252.00";$("invoice-total-difference").textContent="$0.00 · matched";
+    ["invoice-unit-difference","invoice-line-difference","invoice-total-difference"].forEach(id=>$(id).classList.remove("variance"));
+    $("invoice-match-note").textContent="Revision SS-2048-R1 explicitly corrects SS-2048 and is linked to PO-3017. Recheck vendor, item, quantity, price, freight, total, and receipt. The original is superseded, not a second payable.";
+    $("original-review-fields").hidden=true;$("revised-review-field").hidden=false;
+    approveButton.disabled=false;approveButton.textContent="Approve matched revision";
+    status.textContent="Revised invoice SS-2048-R1 matches PO-3017 at $252. Confirm receipt and review the corrected source before approval.";
+    event("intake:revised_invoice","SS-2048-R1 · $252.00 · corrects SS-2048","Original $272 invoice marked superseded; revision linked to same PO, not entered as a second bill.");
+    event("match:revised_invoice","PO-3017 · CAM-100 2 × $120 = $240; freight $12; total $252","Price and total variance resolved. Receipt and reviewer sign-off still required.");
+  });
+  approveButton.addEventListener("click",()=>{
+    if(state==="correction_requested")return;
+    if(!receipt.checked){
+      status.textContent="On hold: verify receipt of 2 CAM-100 units before approving any invoice.";
       return;
     }
-    approval={reviewer:"Portfolio demo reviewer",reviewedAt:new Date().toISOString(),reason:reason.value.trim()};
-    receipt.disabled=true;reason.readOnly=true;
-    document.getElementById("invoice-approve").disabled=true;
-    exportButton.disabled=false;
+    if(state==="original" && (!vendorConfirmed.checked || !reason.value.trim())){
+      status.textContent="On hold: confirm the vendor's authorized price and record the contact, date, and reason before accepting the $20 variance.";
+      return;
+    }
+    if(state==="revised" && !$("invoice-revised-confirmed").checked){
+      status.textContent="On hold: compare the corrected source invoice to PO-3017 and confirm its $252 total.";
+      return;
+    }
+    const revised=state==="revised";
+    approval={reviewer:"Portfolio demo reviewer",reviewedAt:new Date().toISOString(),decision:revised?"approve_corrected_invoice":"approve_verified_variance",reason:revised?"Corrected invoice matched PO after reviewer check":reason.value.trim()};
+    state="approved";receipt.disabled=true;reason.readOnly=true;vendorConfirmed.disabled=true;$("invoice-revised-confirmed").disabled=true;
+    approveButton.disabled=true;requestButton.disabled=true;exportButton.disabled=false;
     status.classList.add("approved");
-    status.textContent="Exception approved in this local demo. AP-ready JSON can now be exported; no accounting system was updated.";
-    const event=document.createElement("article"), title=document.createElement("strong"), detail=document.createElement("span"), note=document.createElement("p");
-    title.textContent="exception:approved";detail.textContent=approval.reviewer+" · "+approval.reviewedAt+" · receipt confirmed";note.textContent=approval.reason;
-    event.append(title,detail,note);audit.append(event);
+    status.textContent=(revised?"Corrected SS-2048-R1 ($252)":"Verified original SS-2048 ($272)")+" approved in this local demo. Export is enabled; no accounting system was updated.";
+    $("invoice-state-kpi").textContent="Approved";
+    event(revised?"revision:approved":"exception:approved",approval.reviewer+" · "+approval.reviewedAt+" · receipt confirmed",approval.reason);
   });
-  document.getElementById("invoice-reset").addEventListener("click",()=>render("invoice"));
+  $("invoice-reset").addEventListener("click",()=>render("invoice"));
   exportButton.addEventListener("click",()=>{
     if(!approval)return;
-    const payload={demo:true,status:"approved_for_ap_handoff",vendor:"Summit Supply Co.",invoiceNumber:"SS-2048",invoiceDate:"2026-09-15",purchaseOrder:"PO-3017",sourceFiles:["po_3017.pdf","summit_supply_inv_2048.pdf"],items:[{item:"CAM-100",quantity:2,poUnitPrice:120,invoiceUnitPrice:130,poLineTotal:240,invoiceLineTotal:260,variance:20}],freight:12,tax:0,poTotal:252,invoiceTotal:272,duplicateCheck:"no duplicate in fictional register",receipt:"confirmed in local demo",approval};
+    const revised=approval.decision==="approve_corrected_invoice";
+    const payload={demo:true,status:"approved_for_ap_handoff",vendor:"Summit Supply Co.",invoiceNumber:revised?"SS-2048-R1":"SS-2048",invoiceDate:revised?"2026-09-17":"2026-09-15",purchaseOrder:"PO-3017",supersedes:revised?"SS-2048":null,sourceFiles:revised?["po_3017.pdf","summit_supply_inv_2048.pdf","summit_supply_inv_2048_r1.pdf"]:["po_3017.pdf","summit_supply_inv_2048.pdf"],items:[{item:"CAM-100",quantity:2,poUnitPrice:120,invoiceUnitPrice:revised?120:130,poLineTotal:240,invoiceLineTotal:revised?240:260,variance:revised?0:20}],freight:12,tax:0,poTotal:252,invoiceTotal:revised?252:272,duplicateCheck:revised?"revision linked to original; create only one payable":"no duplicate in fictional register",receipt:"confirmed in local demo",approval};
     const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}));
-    const link=document.createElement("a");link.href=url;link.download="synthetic-approved-invoice-SS-2048.json";link.click();
+    const link=document.createElement("a");link.href=url;link.download="synthetic-approved-invoice-"+payload.invoiceNumber+".json";link.click();
     setTimeout(()=>URL.revokeObjectURL(url),1000);
   });
 }
