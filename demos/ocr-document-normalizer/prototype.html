@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Synthetic portfolio walkthrough of an OCR document normalization workflow." />
+  <title>OCR Document Normalizer | Portfolio Walkthrough</title>
+  <style>
+    :root{
+      --navy:#102a43;--blue:#1769aa;--pale:#edf5fb;--ink:#243b53;--muted:#627d98;
+      --line:#d9e2ec;--bg:#f5f7fa;--white:#fff;--red:#b42318;--amber:#9a6700;
+      --green:#18794e;--green-bg:#ecfdf5;--amber-bg:#fff8e6;--shadow:0 4px 18px rgba(16,42,67,.07)
+    }
+    *{box-sizing:border-box}
+    [hidden]{display:none!important}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif}
+    button{font:inherit}
+    .notice{min-height:30px;display:grid;place-items:center;padding:5px 14px;background:#f0c45d;color:#362b14;font-size:11px;font-weight:800;letter-spacing:.07em;text-align:center;text-transform:uppercase}
+    .topbar{min-height:66px;padding:0 4vw;display:flex;align-items:center;justify-content:space-between;gap:24px;background:var(--navy);color:#fff}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}.mark{background:#1f7aaf;padding:9px 10px;border-radius:6px;letter-spacing:.05em}
+    .brand small{display:block;color:#a8c6dc;font-size:10px;font-weight:600;margin-top:2px}
+    .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.nav button{border:0;background:transparent;color:#d9eaf4;padding:8px 10px;border-radius:5px;font-size:12px;font-weight:700;cursor:pointer}.nav button.active,.nav button:hover{background:#1b4a70;color:#fff}
+    main{max-width:1480px;margin:0 auto;padding:30px 4vw 52px}
+    .heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:22px}.eyebrow{color:var(--blue);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.heading h1{margin:4px 0 6px;color:var(--navy);font-size:clamp(30px,4vw,46px);letter-spacing:-.025em}.heading p{margin:0;color:var(--muted);max-width:760px}.status{display:inline-flex;padding:7px 11px;border-radius:999px;background:#e8f8f1;color:#047857;border:1px solid #9dd8bd;font-size:11px;font-weight:800}
+    .grid{display:grid;gap:16px}.kpis{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}.card,.panel{background:var(--white);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}.kpi{padding:18px;border-top:4px solid var(--blue)}.kpi.green{border-top-color:#059669}.kpi.amber{border-top-color:#d97706}.kpi strong{display:block;color:var(--navy);font-size:29px}.kpi span{color:var(--muted);font-size:13px}
+    .panel{padding:20px}.panel h2{margin:0;color:var(--navy);font-size:20px}.panel-sub{margin:4px 0 16px;color:var(--muted);font-size:12px}
+    .workflow{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;align-items:center}.step{padding:14px 10px;border:1px solid var(--line);border-radius:8px;background:#f9fbfc;text-align:center;min-height:102px;display:grid;place-items:center}.step strong{display:block;color:var(--navy);font-size:12px}.step small{display:block;color:var(--muted);font-size:10px;margin-top:5px}.arrow{color:#7592a7;text-align:center;font-size:20px}
+    .compare{display:grid;grid-template-columns:1fr 1fr;gap:16px}.doc-panel{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}.doc-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;border-bottom:1px solid var(--line)}.doc-head h2{font-size:17px}.doc-head small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.doc{background:#e9eef3;padding:18px;min-height:690px}.paper{width:min(100%,640px);min-height:655px;margin:auto;background:#fff;box-shadow:0 6px 18px rgba(16,42,67,.12);padding:46px 48px;color:#171717}
+    .source-paper h3{margin:0 0 30px;color:#111;font-size:28px;letter-spacing:.01em}.source-paper p{margin:0 0 16px;font-size:15px}.source-paper .lines{margin-top:22px}
+    .normalized-paper{padding:0 0 42px}.normalized-title{background:#173f5d;color:#fff;padding:20px 40px;font-size:21px;font-weight:800}.norm-body{padding:32px 40px}.norm-body h3{margin:0 0 10px;color:#173f5d;font-size:17px}.field-grid{display:grid;grid-template-columns:165px 1fr;margin-bottom:22px;font-size:12px}.field-grid div{padding:7px 9px}.field-grid .label{background:#e7eef4;font-weight:800}.items{width:100%;border-collapse:collapse;font-size:11px}.items th{padding:8px;background:#d8e8f4;text-align:left;color:#3a4b5b}.items td{padding:10px 8px;border-bottom:1px solid #eef2f5}
+    .review-strip{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px;padding:13px 16px;border:1px solid #9dd8bd;border-radius:8px;background:#f0fbf6}.review-strip strong{color:#0f6b4c}.review-strip span{color:var(--muted);font-size:12px}
+    .two{grid-template-columns:minmax(0,1.3fr) minmax(320px,.7fr)}.fields{margin:0;border:1px solid var(--line);border-radius:7px;overflow:hidden}.fields div{display:grid;grid-template-columns:190px 1fr;border-bottom:1px solid var(--line)}.fields div:last-child{border-bottom:0}.fields dt,.fields dd{margin:0;padding:10px 12px;font-size:12px}.fields dt{background:#f7f9fb;font-weight:800}.validation{border-left:5px solid #059669}.warning{padding:11px 13px;border-radius:6px;background:var(--amber-bg);color:var(--amber);font-size:12px}
+    table{width:100%;border-collapse:collapse}th{padding:10px;text-align:left;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--line)}td{padding:11px 10px;border-bottom:1px solid #edf2f7;font-size:12px}.pill{display:inline-flex;padding:4px 8px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase}.pill.processed{background:#d1fae5;color:#047857}.pill.hold{background:#fff3cd;color:#8a5700}.pill.pending{background:#e0f2fe;color:#075985}
+    .audit article{padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}.audit article:last-child{border-bottom:0}.audit strong{display:block;color:var(--navy)}.audit span{display:block;color:var(--muted);margin-top:3px}
+    .profile-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin-bottom:16px}.profile-box{padding:18px;border-top:4px solid var(--blue)}.profile-box.green{border-top-color:#059669}.profile-box.amber{border-top-color:#d97706}.profile-box strong{display:block;color:var(--navy);font-size:30px}.profile-box span{color:var(--muted);font-size:13px}
+    .boundary{margin-top:18px;padding:14px 16px;border-left:5px solid #d97706;background:#fff8e6;color:#725114;font-size:12px}.boundary strong{display:block;margin-bottom:4px}
+    .invoice-evidence{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0}
+    .invoice-evidence .paper{min-height:410px;padding:32px;box-shadow:none}
+    .invoice-evidence .doc{min-height:440px;padding:12px}
+    .invoice-evidence h3{margin:0 0 16px;font-size:23px}
+    .invoice-evidence .source-line{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0;font-size:13px}
+    .invoice-evidence .source-line span:last-child{text-align:right}
+    .invoice-compare{margin:18px 0;overflow-x:auto}.invoice-compare table{min-width:730px}
+    .invoice-compare td strong{font-size:13px}.invoice-compare .variance{color:var(--red);font-weight:800}
+    .review-form{display:grid;gap:12px;max-width:760px}.review-form label{font-size:13px;font-weight:700}
+    .review-form textarea{width:100%;min-height:70px;padding:10px;border:1px solid var(--line);border-radius:6px;font:inherit}
+    .review-form button{padding:10px 14px;border:0;border-radius:6px;background:var(--blue);color:#fff;font-weight:700;cursor:pointer}
+    .review-form button:disabled{background:#a2b4c3;cursor:not-allowed}
+    .review-form .actions{display:flex;gap:10px;flex-wrap:wrap}.review-form .secondary{background:#e7eef4;color:var(--navy)}
+    .review-form .check{display:flex;align-items:center;gap:9px}
+    .review-form .check input{width:17px;height:17px}
+    .result{padding:12px 14px;border-radius:6px;background:var(--amber-bg);color:var(--amber);font-size:13px}
+    .result.approved{background:var(--green-bg);color:var(--green)}
+    .footer-note{margin-top:18px;color:#829ab1;font-size:10px}
+    @media(max-width:980px){.kpis,.profile-grid{grid-template-columns:repeat(2,1fr)}.compare,.two,.invoice-evidence{grid-template-columns:1fr}.workflow{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}}
+    @media(max-width:680px){.topbar{align-items:flex-start;flex-direction:column;padding-top:12px;padding-bottom:12px}.nav{justify-content:flex-start}.kpis,.profile-grid{grid-template-columns:1fr}.paper{padding-left:28px;padding-right:28px}.field-grid{grid-template-columns:130px 1fr}}
+  </style>
+</head>
+<body>
+<div class="notice">Synthetic portfolio walkthrough · no production documents, credentials, or live system writes</div>
+<header class="topbar">
+  <div class="brand"><span class="mark">OCR</span><span>Document Normalizer<small>Evidence-first review and normalization</small></span></div>
+  <nav class="nav" aria-label="Demo views">
+    <button data-view="dashboard">Dashboard</button>
+    <button data-view="compare">Review &amp; compare</button>
+    <button data-view="fields">Extracted data</button>
+    <button data-view="audit">Audit &amp; exceptions</button>
+    <button data-view="profiles">Profile queue</button>
+    <button data-view="invoice">Vendor invoices</button>
+  </nav>
+</header>
+<main id="screen"></main>
+<script>
+const pageTitle={
+  dashboard:"Normalization control point",
+  compare:"Side-by-side document review",
+  fields:"Extracted and normalized data",
+  audit:"Audit trail and exception handling",
+  profiles:"Customer profile approval",
+  invoice:"Vendor invoice intake concept"
+};
+
+function heading(kicker,title,desc,status){
+  return `<section class="heading"><div><div class="eyebrow">${kicker}</div><h1>${title}</h1><p>${desc}</p></div><span class="status">${status}</span></section>`;
+}
+function dashboard(){
+  return heading("Document automation boundary","Normalization control point","Convert variable inbound purchase orders into validated, reviewable data before downstream automation is allowed to act.","Local synthetic demo")+
+  `<section class="grid kpis">
+    <div class="card kpi"><strong>1</strong><span>synthetic transaction processed</span></div>
+    <div class="card kpi green"><strong>186</strong><span>regression tests in the portfolio package</span></div>
+    <div class="card kpi amber"><strong>1</strong><span>catalog item routed to Item Hold</span></div>
+    <div class="card kpi green"><strong>0</strong><span>production credentials or external writes</span></div>
+  </section>
+  <section class="panel">
+    <h2>Controlled document-to-automation workflow</h2>
+    <p class="panel-sub">Automation starts only after source evidence is extracted, normalized, validated, and reviewable.</p>
+    <div class="workflow">
+      <div class="step"><div><strong>Inbound PDF</strong><small>Native text or scanned page</small></div></div><div class="arrow">→</div>
+      <div class="step"><div><strong>Text extraction</strong><small>OCR fallback when required</small></div></div><div class="arrow">→</div>
+      <div class="step"><div><strong>Normalize</strong><small>Canonical fields and item IDs</small></div></div><div class="arrow">→</div>
+      <div class="step"><div><strong>Validate</strong><small>Required data and safe matching</small></div></div><div class="arrow">→</div>
+      <div class="step"><div><strong>Human review</strong><small>Source vs normalized output</small></div></div><div class="arrow">→</div>
+      <div class="step"><div><strong>Approved output</strong><small>Fixed downstream template</small></div></div><div class="arrow">→</div>
+      <div class="step"><div><strong>Automation handoff</strong><small>ERP, vendor, AP, or workflow layer</small></div></div>
+    </div>
+  </section>
+  <div class="boundary"><strong>Current public demo boundary</strong>The verified build demonstrates purchase-order PDF intake. Vendor invoice ingestion and CSV/XLSX adapters are illustrated or proposed, not implemented in this package.</div>`;
+}
+function compare(){
+  return heading("Human-in-the-loop review","Side-by-side document review","The reviewer can compare the immutable source against a fixed normalized template before a document becomes eligible for downstream capture.","Candidate ready for review")+
+  `<div class="review-strip"><div><strong>Visual verification required</strong><br><span>Source evidence remains visible while normalized fields and item decisions are reviewed.</span></div><span>Sample 1 of 1</span></div>
+  <div class="compare">
+    <section class="doc-panel"><div class="doc-head"><div><h2>Original customer document</h2><small>northstar_purchase_order.pdf · immutable source</small></div><span class="pill pending">Source</span></div>
+      <div class="doc"><div class="paper source-paper"><h3>PURCHASE ORDER</h3><p>Northstar Integration, LLC</p><p>northstar.example</p><div class="lines"><p>Northstar Order Reference: DEMO-1001</p><p>Quote Number: QT10001</p><p>Ship Via: Ground</p><p>Site Project: DEMO-SITE-7</p><p>Ship To:</p><p>Northstar Example Site</p><p>Attn: Taylor Morgan</p><p>Phone: 555-010-0100</p><p>100 Main Street</p><p>Example City, CO 80000</p><p>PART REF: CAM-100 QTY: 2 UNIT: 125.00 TOTAL: 250.00</p><p>PART REF: UNKNOWN-9 QTY: 1 UNIT: 20.00 TOTAL: 20.00</p></div></div></div>
+    </section>
+    <section class="doc-panel"><div class="doc-head"><div><h2>Normalized output</h2><small>Fixed machine-readable downstream template</small></div><span class="pill processed">Validated</span></div>
+      <div class="doc"><div class="paper normalized-paper"><div class="normalized-title">NORMALIZED PURCHASE ORDER</div><div class="norm-body"><h3>PURCHASE ORDER</h3>
+        <div class="field-grid"><div class="label">CustomerName</div><div>Northstar Integration, LLC</div><div class="label">CustPO</div><div>DEMO-1001</div><div class="label">QuoteNumber</div><div>QT10001</div><div class="label">ShipVia</div><div>Ground</div><div class="label">JobNumber</div><div>DEMO-SITE-7</div></div>
+        <h3>SHIP-TO</h3><div class="field-grid"><div class="label">Business</div><div>Northstar Example Site</div><div class="label">Attn</div><div>Taylor Morgan</div><div class="label">PhoneNumber</div><div>555-010-0100</div><div class="label">Address1</div><div>100 Main Street</div><div class="label">City</div><div>Example City</div><div class="label">State / Zip</div><div>CO 80000</div></div>
+        <h3>ITEMS</h3><table class="items"><thead><tr><th>Line</th><th>Normalized item</th><th>Qty</th><th>Unit</th><th>Extended</th></tr></thead><tbody><tr><td>1</td><td>CAM-100-STD</td><td>2</td><td>125.00</td><td>250.00</td></tr><tr><td>2</td><td><span class="pill hold">Item Hold</span></td><td>1</td><td>20.00</td><td>20.00</td></tr></tbody></table>
+      </div></div></div>
+    </section>
+  </div>`;
+}
+function fields(){
+  return heading("Evidence-first extraction","Extracted and normalized data","The source value is preserved separately from the normalized value so cleanup never erases what the customer actually sent.","Validation passed")+
+  `<div class="grid two">
+    <section class="panel validation"><h2>Normalized order fields</h2><p class="panel-sub">Profile NORTHSTAR_INTEGRATION · version 1.0.0-example</p>
+      <dl class="fields"><div><dt>Customer PO</dt><dd>DEMO-1001</dd></div><div><dt>Quote number</dt><dd>QT10001</dd></div><div><dt>Ship via</dt><dd>Ground</dd></div><div><dt>Job number</dt><dd>DEMO-SITE-7</dd></div><div><dt>Business</dt><dd>Northstar Example Site</dd></div><div><dt>Attention</dt><dd>Taylor Morgan</dd></div><div><dt>Phone</dt><dd>555-010-0100</dd></div><div><dt>Address</dt><dd>100 Main Street, Example City, CO 80000</dd></div></dl>
+    </section>
+    <section class="panel"><h2>Catalog decisions</h2><p class="panel-sub">Conservative matching favors review over silent guessing.</p>
+      <table><thead><tr><th>Source item</th><th>Normalized item</th><th>Decision</th></tr></thead><tbody><tr><td>CAM-100</td><td>CAM-100-STD</td><td><span class="pill processed">Matched</span></td></tr><tr><td>UNKNOWN-9</td><td>Item Hold</td><td><span class="pill hold">Review</span></td></tr></tbody></table>
+      <div class="warning" style="margin-top:16px"><strong>Why Item Hold matters:</strong> ambiguous or unsupported item matches are not guessed. The original source value remains available for review and audit.</div>
+    </section>
+  </div>`;
+}
+function audit(){
+  return heading("Governance and recovery","Audit trail and exception handling","Every state transition and manual correction is reviewable before an automated workflow is trusted with the normalized result.","Traceable by design")+
+  `<div class="grid two">
+    <section class="panel audit"><h2>Transaction audit</h2><p class="panel-sub">Newest event first</p>
+      <article><strong>unmatched_catalog_items</strong><span>System · UNKNOWN-9 routed to Item Hold</span><p>Source value retained because the catalog did not provide a unique safe match.</p></article>
+      <article><strong>status:processed</strong><span>System · normalized output generated</span></article>
+      <article><strong>intake</strong><span>System · package accepted into controlled processing</span></article>
+    </section>
+    <section class="panel"><h2>Exception controls</h2><p class="panel-sub">The full application supports field overrides, source-page evidence, retry, rejection, archive, and regeneration.</p>
+      <dl class="fields"><div><dt>Override evidence</dt><dd>Source page and exact supporting text required</dd></div><div><dt>Audit reason</dt><dd>Required for each field correction</dd></div><div><dt>Retry</dt><dd>Available for retryable technical failures</dd></div><div><dt>Reject</dt><dd>Retains package and reason</dd></div><div><dt>Regenerate</dt><dd>Normalized output rebuilt after approved changes</dd></div></dl>
+    </section>
+  </div>`;
+}
+function profiles(){
+  return heading("Customer onboarding","Customer profile approval","New document layouts are isolated until their extraction rules and normalized previews have been reviewed.","1 synthetic profile pending")+
+  `<section class="grid profile-grid"><div class="card profile-box"><strong>1</strong><span>Total profiles</span></div><div class="card profile-box green"><strong>0</strong><span>Approved in this walkthrough</span></div><div class="card profile-box amber"><strong>1</strong><span>Ready for review</span></div></section>
+  <section class="panel"><h2>Profile queue</h2><p class="panel-sub">Candidate rules remain isolated from normal processing until review is complete.</p>
+    <table><thead><tr><th>Company</th><th>Customer key</th><th>Workflow status</th><th>Samples</th><th>Review</th></tr></thead><tbody><tr><td>Northstar Integration</td><td><code>NORTHSTAR_INTEGRATION</code></td><td><span class="pill hold">Ready for approval</span></td><td>1</td><td>Side-by-side comparison required</td></tr></tbody></table>
+    <div class="boundary"><strong>Clean-room portfolio edition</strong>The shared project contains fictional profiles, generated PDFs, local SQLite schema, and tests. It excludes production customer files, credentials, deployment configuration, and Git history.</div>
+  </section>`;
+}
+function invoice(){
+  return heading("PO-to-invoice review · synthetic example","Vendor invoice ingestion","Compare the actual purchase-order values with the invoice, retain both source documents, and resolve differences before AP release.","Interactive local review")+
+  `<div class="boundary"><strong>Portfolio prototype</strong>These are fictional source documents and a browser-only approval simulation. The verified parser currently handles customer purchase-order PDFs. Vendor invoice OCR, email intake, receipt matching, and accounting integration are the proposed next build.</div>
+  <section class="grid kpis" style="margin-top:18px">
+    <div class="card kpi"><strong>PO-3017</strong><span>matched by vendor and PO reference</span></div>
+    <div class="card kpi amber"><strong id="invoice-unit-kpi">$10</strong><span>unit price variance on CAM-100</span></div>
+    <div class="card kpi amber"><strong id="invoice-total-kpi">$20</strong><span>extended line variance, quantity 2</span></div>
+    <div class="card kpi"><strong id="invoice-state-kpi">Pending</strong><span>receipt confirmation and approval</span></div>
+  </section>
+  <section class="panel"><h2>Linked source documents</h2><p class="panel-sub">Both records are fictional. The values below are the evidence used by the comparison, not unexplained validation labels.</p>
+    <div class="invoice-evidence">
+      <section class="doc-panel" aria-label="Original purchase order"><div class="doc-head"><div><h2>Original purchase order</h2><small>po_3017.pdf · source PO record</small></div><span class="pill pending">PO source</span></div>
+        <div class="doc"><div class="paper"><h3>PURCHASE ORDER</h3><div class="source-line"><strong>Buyer</strong><span>Northstar Integration, LLC</span></div><div class="source-line"><strong>Vendor</strong><span>Summit Supply Co.</span></div><div class="source-line"><strong>PO number</strong><span>PO-3017</span></div><div class="source-line"><strong>Item</strong><span>CAM-100</span></div><div class="source-line"><strong>Quantity × unit price</strong><span>2 × $120.00</span></div><div class="source-line"><strong>Item extended</strong><span>$240.00</span></div><div class="source-line"><strong>Freight</strong><span>$12.00</span></div><div class="source-line"><strong>PO expected total</strong><span><strong>$252.00</strong></span></div></div></div>
+      </section>
+      <section class="doc-panel" aria-label="Original vendor invoice"><div class="doc-head"><div><h2>Original vendor invoice</h2><small>summit_supply_inv_2048.pdf · invoice source</small></div><span class="pill pending" id="original-invoice-state">Original · on hold</span></div>
+        <div class="doc"><div class="paper"><h3>INVOICE</h3><div class="source-line"><strong>Vendor</strong><span>Summit Supply Co.</span></div><div class="source-line"><strong>Invoice number</strong><span>SS-2048 · Sep 15, 2026</span></div><div class="source-line"><strong>PO reference</strong><span>PO-3017</span></div><div class="source-line"><strong>Item</strong><span>CAM-100</span></div><div class="source-line"><strong>Quantity × unit price</strong><span>2 × $130.00</span></div><div class="source-line"><strong>Item extended</strong><span>$260.00</span></div><div class="source-line"><strong>Freight</strong><span>$12.00</span></div><div class="source-line"><strong>Invoice total due</strong><span><strong>$272.00</strong></span></div></div></div>
+      </section>
+      <section class="doc-panel" id="revised-invoice-source" aria-label="Corrected vendor invoice" hidden><div class="doc-head"><div><h2>Corrected vendor invoice</h2><small>summit_supply_inv_2048_r1.pdf · linked to original SS-2048</small></div><span class="pill processed">Revised · active candidate</span></div>
+        <div class="doc"><div class="paper"><h3>REVISED INVOICE</h3><div class="source-line"><strong>Vendor</strong><span>Summit Supply Co.</span></div><div class="source-line"><strong>Invoice number</strong><span>SS-2048-R1 · Sep 17, 2026</span></div><div class="source-line"><strong>Corrects</strong><span>SS-2048 · Sep 15, 2026</span></div><div class="source-line"><strong>PO reference</strong><span>PO-3017</span></div><div class="source-line"><strong>Item</strong><span>CAM-100</span></div><div class="source-line"><strong>Quantity × unit price</strong><span>2 × $120.00</span></div><div class="source-line"><strong>Item extended</strong><span>$240.00</span></div><div class="source-line"><strong>Freight</strong><span>$12.00</span></div><div class="source-line"><strong>Revised total due</strong><span><strong>$252.00</strong></span></div></div></div>
+      </section>
+    </div>
+  </section>
+  <section class="panel invoice-compare"><h2>PO-to-invoice comparison</h2><p class="panel-sub" id="invoice-match-note">Matched on vendor, PO reference, and item ID. A duplicate check flags another invoice with the same vendor and invoice number; a corrected version must be linked to the original, never silently added as a second payable.</p>
+    <table><thead><tr><th>Check</th><th>Original PO · PO-3017</th><th id="comparison-invoice-header">Invoice · SS-2048</th><th>Difference / control</th></tr></thead><tbody>
+      <tr><td>Vendor + PO link</td><td>Summit Supply Co.</td><td>Summit Supply Co. · PO-3017</td><td><span class="pill processed">Matched</span></td></tr>
+      <tr><td>CAM-100 quantity</td><td>2</td><td>2</td><td><span class="pill processed">Matched</span></td></tr>
+      <tr><td>CAM-100 unit price</td><td><strong>$120.00</strong></td><td id="invoice-compare-unit"><strong>$130.00</strong></td><td class="variance" id="invoice-unit-difference">+$10.00 per unit</td></tr>
+      <tr><td>CAM-100 extended</td><td>2 × $120 = $240.00</td><td id="invoice-compare-line">2 × $130 = $260.00</td><td class="variance" id="invoice-line-difference">+$20.00 line variance</td></tr>
+      <tr><td>Freight / tax</td><td>$12.00 / $0.00</td><td>$12.00 / $0.00</td><td><span class="pill processed">Matched</span></td></tr>
+      <tr><td>Document total</td><td><strong>$252.00</strong></td><td id="invoice-compare-total"><strong>$272.00</strong></td><td class="variance" id="invoice-total-difference">+$20.00 invoice over PO</td></tr>
+      <tr><td>Receipt</td><td>Expected: 2 CAM-100</td><td>Invoice: 2 CAM-100</td><td><span class="pill hold">Confirmation required</span></td></tr>
+    </tbody></table>
+  </section>
+  <div class="grid two">
+    <section class="panel"><h2>Resolve the vendor discrepancy</h2><p class="panel-sub">Ask the vendor to correct an overcharge, or verify and document an authorized price change. The original invoice remains on hold either way.</p>
+      <div class="review-form"><label class="check"><input id="invoice-receipt" type="checkbox" />I verified receipt of 2 CAM-100 units against PO-3017</label>
+        <div id="original-review-fields"><label class="check"><input id="invoice-vendor-confirmed" type="checkbox" />I confirmed with the vendor that the $130 price is authorized</label>
+          <label for="invoice-reason">Vendor confirmation and reason to accept the $20 difference</label><textarea id="invoice-reason" placeholder="Vendor contact, date, and evidence of approved price change"></textarea></div>
+        <label class="check" id="revised-review-field" hidden><input id="invoice-revised-confirmed" type="checkbox" />I compared corrected invoice SS-2048-R1 to PO-3017 and confirmed the $252 total</label>
+        <div class="actions"><button id="invoice-request-correction" type="button">Request corrected invoice</button><button id="invoice-receive-revision" class="secondary" type="button" hidden>Simulate revised invoice received</button><button id="invoice-approve" class="secondary" type="button">Approve verified variance</button><button id="invoice-reset" class="secondary" type="button">Reset review</button><button id="invoice-export" class="secondary" type="button" disabled>Export AP-ready JSON</button></div>
+        <div id="invoice-result" class="result" role="status">On hold: verify the vendor price before accepting it, or request a corrected invoice. No AP payload released.</div>
+      </div>
+    </section>
+    <section class="panel"><h2>Decision audit trail</h2><p class="panel-sub">Every stage points back to PO-3017 and SS-2048. Actions in this demo last only for the current browser view.</p>
+      <div class="audit" id="invoice-audit"><article><strong>intake:invoice</strong><span>SS-2048 · Summit Supply Co. · $272.00</span></article><article><strong>match:purchase_order</strong><span>PO-3017 · CAM-100 quantity 2 · PO $120/unit · invoice $130/unit</span></article><article><strong>exception:price_variance</strong><span>+$10/unit × 2 = +$20 · AP handoff blocked pending receipt and approval</span></article></div>
+    </section>
+  </div>
+  <div class="boundary"><strong>Automation boundary</strong>The corrected invoice arrival, vendor confirmation, and receipt check are simulated. A real workflow must retain both source files and vendor correspondence, treat the first invoice as superseded, recheck the revision against the PO and receipt, and persist approval before creating one payable. No bills are posted here.</div>`;
+}
+function setupInvoice(){
+  const $=id=>document.getElementById(id);
+  const receipt=$("invoice-receipt"),reason=$("invoice-reason"),vendorConfirmed=$("invoice-vendor-confirmed");
+  const status=$("invoice-result"),audit=$("invoice-audit"),exportButton=$("invoice-export");
+  const corrected=$("revised-invoice-source"),requestButton=$("invoice-request-correction"),receiveButton=$("invoice-receive-revision"),approveButton=$("invoice-approve");
+  let state="original",approval=null;
+  function event(name,detail,note){
+    const row=document.createElement("article"),title=document.createElement("strong"),line=document.createElement("span");
+    title.textContent=name;line.textContent=detail;row.append(title,line);
+    if(note){const p=document.createElement("p");p.textContent=note;row.append(p)}
+    audit.append(row);
+  }
+  requestButton.addEventListener("click",()=>{
+    if(state!=="original")return;
+    state="correction_requested";
+    requestButton.disabled=true;receiveButton.hidden=false;approveButton.disabled=true;
+    $("original-invoice-state").textContent="Disputed · on hold";
+    $("invoice-state-kpi").textContent="Disputed";
+    status.textContent="Correction requested from Summit Supply Co. Original SS-2048 remains on hold. Await a revised source invoice; do not pay either version yet.";
+    event("vendor:correction_requested","SS-2048 · $272.00 disputed against PO-3017 · $252.00","Vendor asked to issue a corrected invoice. Original retained as evidence and blocked from AP.");
+  });
+  receiveButton.addEventListener("click",()=>{
+    if(state!=="correction_requested")return;
+    state="revised";
+    receiveButton.hidden=true;corrected.hidden=false;
+    $("original-invoice-state").textContent="Superseded · do not pay";
+    $("invoice-unit-kpi").textContent="$0";$("invoice-total-kpi").textContent="$0";$("invoice-state-kpi").textContent="Recheck";
+    $("comparison-invoice-header").textContent="Corrected invoice · SS-2048-R1";
+    $("invoice-compare-unit").textContent="$120.00";$("invoice-unit-difference").textContent="$0.00 · matched";
+    $("invoice-compare-line").textContent="2 × $120 = $240.00";$("invoice-line-difference").textContent="$0.00 · matched";
+    $("invoice-compare-total").textContent="$252.00";$("invoice-total-difference").textContent="$0.00 · matched";
+    ["invoice-unit-difference","invoice-line-difference","invoice-total-difference"].forEach(id=>$(id).classList.remove("variance"));
+    $("invoice-match-note").textContent="Revision SS-2048-R1 explicitly corrects SS-2048 and is linked to PO-3017. Recheck vendor, item, quantity, price, freight, total, and receipt. The original is superseded, not a second payable.";
+    $("original-review-fields").hidden=true;$("revised-review-field").hidden=false;
+    approveButton.disabled=false;approveButton.textContent="Approve matched revision";
+    status.textContent="Revised invoice SS-2048-R1 matches PO-3017 at $252. Confirm receipt and review the corrected source before approval.";
+    event("intake:revised_invoice","SS-2048-R1 · $252.00 · corrects SS-2048","Original $272 invoice marked superseded; revision linked to same PO, not entered as a second bill.");
+    event("match:revised_invoice","PO-3017 · CAM-100 2 × $120 = $240; freight $12; total $252","Price and total variance resolved. Receipt and reviewer sign-off still required.");
+  });
+  approveButton.addEventListener("click",()=>{
+    if(state==="correction_requested")return;
+    if(!receipt.checked){
+      status.textContent="On hold: verify receipt of 2 CAM-100 units before approving any invoice.";
+      return;
+    }
+    if(state==="original" && (!vendorConfirmed.checked || !reason.value.trim())){
+      status.textContent="On hold: confirm the vendor's authorized price and record the contact, date, and reason before accepting the $20 variance.";
+      return;
+    }
+    if(state==="revised" && !$("invoice-revised-confirmed").checked){
+      status.textContent="On hold: compare the corrected source invoice to PO-3017 and confirm its $252 total.";
+      return;
+    }
+    const revised=state==="revised";
+    approval={reviewer:"Portfolio demo reviewer",reviewedAt:new Date().toISOString(),decision:revised?"approve_corrected_invoice":"approve_verified_variance",reason:revised?"Corrected invoice matched PO after reviewer check":reason.value.trim()};
+    state="approved";receipt.disabled=true;reason.readOnly=true;vendorConfirmed.disabled=true;$("invoice-revised-confirmed").disabled=true;
+    approveButton.disabled=true;requestButton.disabled=true;exportButton.disabled=false;
+    status.classList.add("approved");
+    status.textContent=(revised?"Corrected SS-2048-R1 ($252)":"Verified original SS-2048 ($272)")+" approved in this local demo. Export is enabled; no accounting system was updated.";
+    $("invoice-state-kpi").textContent="Approved";
+    event(revised?"revision:approved":"exception:approved",approval.reviewer+" · "+approval.reviewedAt+" · receipt confirmed",approval.reason);
+  });
+  $("invoice-reset").addEventListener("click",()=>render("invoice"));
+  exportButton.addEventListener("click",()=>{
+    if(!approval)return;
+    const revised=approval.decision==="approve_corrected_invoice";
+    const payload={demo:true,status:"approved_for_ap_handoff",vendor:"Summit Supply Co.",invoiceNumber:revised?"SS-2048-R1":"SS-2048",invoiceDate:revised?"2026-09-17":"2026-09-15",purchaseOrder:"PO-3017",supersedes:revised?"SS-2048":null,sourceFiles:revised?["po_3017.pdf","summit_supply_inv_2048.pdf","summit_supply_inv_2048_r1.pdf"]:["po_3017.pdf","summit_supply_inv_2048.pdf"],items:[{item:"CAM-100",quantity:2,poUnitPrice:120,invoiceUnitPrice:revised?120:130,poLineTotal:240,invoiceLineTotal:revised?240:260,variance:revised?0:20}],freight:12,tax:0,poTotal:252,invoiceTotal:revised?252:272,duplicateCheck:revised?"revision linked to original; create only one payable":"no duplicate in fictional register",receipt:"confirmed in local demo",approval};
+    const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:"application/json"}));
+    const link=document.createElement("a");link.href=url;link.download="synthetic-approved-invoice-"+payload.invoiceNumber+".json";link.click();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+  });
+}
+const renderers={dashboard,compare,fields,audit,profiles,invoice};
+function render(view){
+  const safe=renderers[view]?view:"dashboard";
+  document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.view===safe));
+  document.getElementById("screen").innerHTML=renderers[safe]();
+  if(safe==="invoice")setupInvoice();
+  document.title=pageTitle[safe]+" | OCR Document Normalizer";
+  const u=new URL(location.href);u.searchParams.set("view",safe);history.replaceState(null,"",u);
+}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>render(b.dataset.view)));
+render(new URLSearchParams(location.search).get("view")||"dashboard");
+</script>
+</body>
+</html>
