@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="OCR Document Normalizer case study by Brian Welk, showing purchase order normalization and a proposed vendor invoice ingestion path with validation, matching, review, and accounts payable automation handoff." />
+    <meta name="description" content="OCR Document Normalizer case study by Brian Welk, showing a three-path document inbox for customer orders, vendor invoices, and customer credits, plus source review, purchase-order comparison, and ERP export controls." />
     <meta name="theme-color" content="#101a24" />
     <title>OCR Document Normalizer Case Study | Brian Welk</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,27 +31,43 @@
           <p class="eyebrow">Document intelligence &amp; automation controls</p>
           <h1>OCR Document Normalizer</h1>
           <p class="case-hero-summary">
-            A clean-room document-processing application that converts variable inbound purchase-order PDFs into a fixed,
-            machine-readable format while preserving source evidence, human review, exception handling, and an audit trail
-            before downstream automation is allowed to act. A proposed vendor invoice path applies the same control pattern to accounts payable intake.
+            A document review workspace for customer orders, inventory purchases, and customer credits. Its original clean-room build
+            normalizes customer purchase-order PDFs; a newer document inbox presents dedicated intake paths for sales orders,
+            vendor invoices, and customer adjustments. Review and export sit between source documents and ERP action.
           </p>
         </div>
         <dl class="case-facts">
           <div><dt>Role</dt><dd>Workflow designer, application developer, data-normalization architect</dd></div>
           <div><dt>Platform</dt><dd>Python, FastAPI, SQLite, OCR/Tesseract support, PyMuPDF, ReportLab</dd></div>
-          <div><dt>Portfolio data</dt><dd>Fully synthetic profiles, catalog records, source PDFs, output documents, and tests</dd></div>
+          <div><dt>Portfolio data</dt><dd>Clean-room package and synthetic walkthrough; new inbox screen supplied by the project owner</dd></div>
         </dl>
       </section>
 
       <figure class="case-cover ocr-cover">
         <iframe src="../demos/ocr-document-normalizer/index.html?view=compare" title="OCR Document Normalizer side-by-side review walkthrough" loading="eager"></iframe>
-        <figcaption>Source document and normalized output remain visible together so a reviewer can verify what automation will receive.</figcaption>
+        <figcaption>The linked synthetic walkthrough keeps the original customer document beside the normalized output for review.</figcaption>
       </figure>
 
       <div class="case-actions">
         <a class="button button-primary" href="../demos/ocr-document-normalizer/index.html" target="_blank" rel="noreferrer">Launch interactive walkthrough ↗</a>
         <a class="button button-secondary" href="#workflow">Explore the workflow</a>
       </div>
+
+      <section class="case-section" id="document-inbox">
+        <div>
+          <p class="eyebrow">Newer application view</p>
+          <h2>One inbox, three different document decisions.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>The updated screen brings three workflows into one intake area. It shows document counts and review status, with separate entry points for each source and destination:</p>
+          <ul class="outcome-list">
+            <li><strong>Customer PO → sales order:</strong> review an incoming customer order and prepare sales-order data for the ERP.</li>
+            <li><strong>Vendor invoice → AP bill:</strong> import the PO issued to the vendor, match the invoice line by line, review the result, and export AP bill data.</li>
+            <li><strong>Customer credit document:</strong> review a credit memo, deduction, or return claim against the original ERP invoice and prior credits.</li>
+          </ul>
+          <p>The inbox describes accepted PDFs and CSVs as local review outputs. Posting, payments, fulfillment, customer billing, and inventory actions take place in the ERP. The newer application screen describes the interface and workflow design; the linked portfolio walkthrough is a separate synthetic demonstration.</p>
+        </div>
+      </section>
 
       <section class="case-section">
         <div>
@@ -131,13 +147,13 @@
 
       <section class="case-section" id="vendor-invoices">
         <div>
-          <p class="eyebrow">Proposed extension</p>
-          <h2>Vendor invoices can enter the same controlled intake pattern.</h2>
+          <p class="eyebrow">Vendor invoice lane</p>
+          <h2>Match the vendor bill to the PO before AP export.</h2>
         </div>
         <div class="case-section-copy">
           <p>
-            The <a href="../demos/ocr-document-normalizer/index.html?view=invoice" target="_blank" rel="noreferrer">interactive synthetic invoice walkthrough</a>
-            links original PO-3017 to vendor invoice SS-2048. Both source records stay visible: CAM-100 is 2 × $120 on the PO
+            The newer inbox provides a vendor-invoice entry point and a link to restocking POs. The <a href="../demos/ocr-document-normalizer/index.html?view=invoice" target="_blank" rel="noreferrer">interactive synthetic invoice walkthrough</a>
+            illustrates the review decision by linking original PO-3017 to vendor invoice SS-2048. Both source records stay visible: CAM-100 is 2 × $120 on the PO
             and 2 × $130 on the invoice, creating a $10 per unit and $20 total variance. A vendor invoice arriving by PDF or email attachment would enter a separate invoice profile;
             extraction would retain the original file and capture vendor, invoice number and date, purchase-order reference,
             line items, tax, freight, and total in a structured record.
@@ -151,7 +167,7 @@
             for accepting the $20 variance requires vendor confirmation, an explanation, and receipt verification. A production integration
             would require persisted source files, correspondence, audit history, and an authorized ERP or accounting handoff.
           </p>
-          <p><strong>Build status:</strong> This is an interactive, browser-only workflow prototype with fictional records. The verified clean-room application and its 186 tests cover purchase-order PDF normalization. Live invoice parsing, persisted PO and receipt matching, email intake, and AP posting are not implemented.</p>
+          <p><strong>Evidence boundary:</strong> The new inbox screenshot shows the three intake paths and export-oriented workflow. The linked invoice comparison is an interactive, browser-only simulation with fictional records. The previously verified clean-room package and its 186 tests cover customer purchase-order PDF normalization. This portfolio review has not yet verified the newer app's live parsing, persisted matching, receipt checks, email intake, or AP posting.</p>
         </div>
       </section>
 
@@ -215,11 +231,11 @@
       <section class="case-section">
         <div>
           <p class="eyebrow">Current boundary</p>
-          <h2>Purchase-order PDF intake today; invoice automation is the next workflow.</h2>
+          <h2>Verified parser baseline and newer inbox interface.</h2>
         </div>
         <div class="case-section-copy">
           <p>
-            The verified clean-room build demonstrates purchase-order PDF input. The vendor invoice view is a synthetic workflow concept, and CSV and Excel input adapters are further possible extensions. None of those additions is presented as implemented functionality.
+            The verified clean-room package demonstrates customer purchase-order PDF normalization. The newer inbox screen presents vendor invoice and customer credit paths, while the linked invoice demo simulates a specific approval decision. The new app's processing and storage behavior needs a current build review before this case study can claim those paths are implemented end to end.
           </p>
           <p>
             The broader operating pattern is document-agnostic: turn variable incoming business data into a clean, validated contract before it is
