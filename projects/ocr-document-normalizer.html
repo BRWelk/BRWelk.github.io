@@ -1,258 +1,41 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="OCR Document Normalizer case study by Brian Welk, showing a three-path document inbox for customer orders, vendor invoices, and customer credits, plus source review, purchase-order comparison, and ERP export controls." />
-    <meta name="theme-color" content="#101a24" />
-    <title>OCR Document Normalizer Case Study | Brian Welk</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../styles.css" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header case-header">
-      <a class="nameplate" href="../index.html" aria-label="Return to Brian Welk's portfolio">
-        <span class="nameplate-mark" aria-hidden="true">BW</span><span>Brian Welk</span>
-      </a>
-      <nav aria-label="Case study navigation">
-        <a href="../index.html">← Portfolio</a>
-        <a href="#workflow">Workflow</a>
-        <a href="#vendor-invoices">Vendor invoices</a>
-        <a href="../demos/ocr-document-normalizer/index.html" target="_blank" rel="noreferrer">Interactive walkthrough ↗</a>
-      </nav>
-    </header>
-
-    <main class="case-main" id="main">
-      <section class="case-hero">
-        <div>
-          <p class="eyebrow">Document intelligence &amp; automation controls</p>
-          <h1>OCR Document Normalizer</h1>
-          <p class="case-hero-summary">
-            A document review workspace for customer orders, inventory purchases, and customer credits. Its original clean-room build
-            normalizes customer purchase-order PDFs; a newer document inbox presents dedicated intake paths for sales orders,
-            vendor invoices, and customer adjustments. Review and export sit between source documents and ERP action.
-          </p>
-        </div>
-        <dl class="case-facts">
-          <div><dt>Role</dt><dd>Workflow designer, application developer, data-normalization architect</dd></div>
-          <div><dt>Platform</dt><dd>Python, FastAPI, SQLite, OCR/Tesseract support, PyMuPDF, ReportLab</dd></div>
-          <div><dt>Portfolio data</dt><dd>Clean-room package and synthetic walkthrough; new inbox screen supplied by the project owner</dd></div>
-        </dl>
-      </section>
-
-      <figure class="case-cover ocr-cover">
-        <iframe src="../demos/ocr-document-normalizer/index.html?view=compare" title="OCR Document Normalizer side-by-side review walkthrough" loading="eager"></iframe>
-        <figcaption>The linked synthetic walkthrough keeps the original customer document beside the normalized output for review.</figcaption>
-      </figure>
-
-      <div class="case-actions">
-        <a class="button button-primary" href="../demos/ocr-document-normalizer/index.html" target="_blank" rel="noreferrer">Launch interactive walkthrough ↗</a>
-        <a class="button button-secondary" href="#workflow">Explore the workflow</a>
-      </div>
-
-      <section class="case-section" id="document-inbox">
-        <div>
-          <p class="eyebrow">Newer application view</p>
-          <h2>One inbox, three different document decisions.</h2>
-        </div>
-        <div class="case-section-copy">
-          <p>The updated screen brings three workflows into one intake area. It shows document counts and review status, with separate entry points for each source and destination:</p>
-          <ul class="outcome-list">
-            <li><strong>Customer PO → sales order:</strong> review an incoming customer order and prepare sales-order data for the ERP.</li>
-            <li><strong>Vendor invoice → AP bill:</strong> import the PO issued to the vendor, match the invoice line by line, review the result, and export AP bill data.</li>
-            <li><strong>Customer credit document:</strong> review a credit memo, deduction, or return claim against the original ERP invoice and prior credits.</li>
-          </ul>
-          <p>The inbox describes accepted PDFs and CSVs as local review outputs. Posting, payments, fulfillment, customer billing, and inventory actions take place in the ERP. The newer application screen describes the interface and workflow design; the linked portfolio walkthrough is a separate synthetic demonstration.</p>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div>
-          <p class="eyebrow">The problem</p>
-          <h2>Automation is only useful when the incoming data is trustworthy.</h2>
-        </div>
-        <div class="case-section-copy">
-          <p>
-            Purchase orders, invoices, and similar business documents arrive in inconsistent layouts. Even when OCR can read the page,
-            extracted text still has to be mapped into reliable business fields, validated against known rules, and reviewed when the
-            system cannot resolve a value safely.
-          </p>
-          <p>
-            The application creates a control point between unstructured documents and downstream systems. Instead of sending raw OCR
-            results directly into an ERP, vendor workflow, or accounting process, it produces a standardized document and structured
-            data model that can be inspected before release.
-          </p>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div>
-          <p class="eyebrow">The solution</p>
-          <h2>Extract, normalize, validate, compare, then hand off.</h2>
-        </div>
-        <div class="case-section-copy">
-          <ul class="outcome-list">
-            <li>Native PDF text extraction with OCR fallback for image-only pages</li>
-            <li>Position-aware field extraction for labeled values, addresses, and ship-to blocks</li>
-            <li>Shared normalization rules with isolated customer-specific exceptions</li>
-            <li>Conservative catalog matching that routes unresolved values to <strong>Item Hold</strong> instead of guessing</li>
-            <li>Fixed-geometry normalized PDF output for consistent downstream capture</li>
-            <li>Side-by-side source and normalized document review</li>
-            <li>Audited field overrides with source-page evidence and regeneration</li>
-            <li>Exception, retry, rejection, approval, and archive workflows</li>
-            <li>Isolated onboarding for new document layouts before profile activation</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="case-gallery ocr-gallery" id="workflow">
-        <div class="gallery-heading">
-          <p class="eyebrow">Application workflow</p>
-          <h2>A reviewable bridge between dirty documents and clean automation.</h2>
-          <p>
-            The portfolio walkthrough uses fictional records but mirrors the application's operational boundaries:
-            source evidence is retained, normalization decisions are visible, and automation is downstream of validation rather than upstream of it.
-          </p>
-        </div>
-        <div class="gallery-grid">
-          <figure class="gallery-item gallery-wide">
-            <div class="app-frame ocr-frame"><iframe src="../demos/ocr-document-normalizer/index.html?view=dashboard" title="OCR normalization dashboard" loading="lazy"></iframe></div>
-            <figcaption><strong>01 · Normalization control point</strong>Shows the complete document-to-automation sequence and makes the approval boundary explicit.</figcaption>
-          </figure>
-          <figure class="gallery-item gallery-wide">
-            <div class="app-frame ocr-frame"><iframe src="../demos/ocr-document-normalizer/index.html?view=compare" title="Side-by-side document review" loading="lazy"></iframe></div>
-            <figcaption><strong>02 · Side-by-side review</strong>The original customer document remains visible next to the fixed normalized output so a person can verify the transformation.</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <div class="app-frame ocr-frame"><iframe src="../demos/ocr-document-normalizer/index.html?view=fields" title="Extracted normalized data" loading="lazy"></iframe></div>
-            <figcaption><strong>03 · Extraction &amp; normalization</strong>Source values, standardized fields, and catalog decisions remain inspectable. Unsupported item matches are placed on hold.</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <div class="app-frame ocr-frame"><iframe src="../demos/ocr-document-normalizer/index.html?view=audit" title="Audit and exception controls" loading="lazy"></iframe></div>
-            <figcaption><strong>04 · Audit &amp; recovery</strong>Overrides require evidence and a reason. Retry, rejection, regeneration, and transaction state changes remain traceable.</figcaption>
-          </figure>
-          <figure class="gallery-item gallery-wide">
-            <div class="app-frame ocr-frame"><iframe src="../demos/ocr-document-normalizer/index.html?view=invoice" title="Proposed vendor invoice ingestion walkthrough" loading="lazy"></iframe></div>
-            <figcaption><strong>05 · Vendor invoice ingestion concept</strong>An original PO and a disputed invoice show the $120 versus $130 unit prices. Request a correction, inspect a revised $120 invoice, and keep the first version marked as superseded. The review records the decision before a local AP payload export. This is a synthetic prototype, not a deployed invoice parser.</figcaption>
-          </figure>
-          <figure class="gallery-item gallery-wide">
-            <div class="app-frame ocr-frame"><iframe src="../demos/ocr-document-normalizer/index.html?view=profiles" title="Customer profile approval queue" loading="lazy"></iframe></div>
-            <figcaption><strong>06 · New-layout onboarding</strong>New customer/document layouts stay isolated until sample comparisons and candidate rules have been reviewed and explicitly approved.</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section class="case-section" id="vendor-invoices">
-        <div>
-          <p class="eyebrow">Vendor invoice lane</p>
-          <h2>Match the vendor bill to the PO before AP export.</h2>
-        </div>
-        <div class="case-section-copy">
-          <p>
-            The newer inbox provides a vendor-invoice entry point and a link to restocking POs. The <a href="../demos/ocr-document-normalizer/index.html?view=invoice" target="_blank" rel="noreferrer">interactive synthetic invoice walkthrough</a>
-            illustrates the review decision by linking original PO-3017 to vendor invoice SS-2048. Both source records stay visible: CAM-100 is 2 × $120 on the PO
-            and 2 × $130 on the invoice, creating a $10 per unit and $20 total variance. A vendor invoice arriving by PDF or email attachment would enter a separate invoice profile;
-            extraction would retain the original file and capture vendor, invoice number and date, purchase-order reference,
-            line items, tax, freight, and total in a structured record.
-          </p>
-          <p>
-            Before accounts payable automation, checks would flag duplicate vendor-and-invoice-number combinations, reconcile
-            line totals with the invoice total, and compare the invoice against the purchase order and receipt where available.
-            Missing references, quantity or price differences, and uncertain matches would enter a review queue. In the local walkthrough,
-            a disputed $272 invoice stays on hold while the vendor sends a corrected $252 version. The reviewer sees both invoice versions,
-            confirms that the revision matches the original $252 PO and the receipt, then approves one AP-ready payload. The alternate path
-            for accepting the $20 variance requires vendor confirmation, an explanation, and receipt verification. A production integration
-            would require persisted source files, correspondence, audit history, and an authorized ERP or accounting handoff.
-          </p>
-          <p><strong>Evidence boundary:</strong> The new inbox screenshot shows the three intake paths and export-oriented workflow. The linked invoice comparison is an interactive, browser-only simulation with fictional records. The previously verified clean-room package and its 186 tests cover customer purchase-order PDF normalization. This portfolio review has not yet verified the newer app's live parsing, persisted matching, receipt checks, email intake, or AP posting.</p>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div>
-          <p class="eyebrow">Safety by design</p>
-          <h2>The parser is deliberately conservative where certainty matters.</h2>
-        </div>
-        <div class="case-section-copy">
-          <p>
-            Catalog resolution moves from strongest evidence to weaker evidence: exact canonical identifiers, exact display or vendor identifiers,
-            unique compact matches, tightly bounded decorations, and only then narrowly controlled transformations. Ambiguous or conflicting results
-            do not silently resolve.
-          </p>
-          <p>
-            The source item number is preserved even when the normalized output uses <strong>Item Hold</strong>. That separation is important because
-            cleanup should never erase the evidence needed to understand what the sender actually supplied.
-          </p>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div>
-          <p class="eyebrow">Architecture</p>
-          <h2>A reusable normalization layer rather than a one-document script.</h2>
-        </div>
-        <div class="case-section-copy">
-          <p>
-            A shared default profile contains standard extraction and normalization behavior. Customer-specific profiles layer only the exceptions
-            needed for a particular document layout. JSON Schema validation keeps those rules explicit, while SQLite stores transaction state,
-            audit history, profile requests, and unmatched-item events.
-          </p>
-          <p>
-            The generated output uses a fixed field map and item-table geometry so downstream capture receives a predictable format regardless of how
-            inconsistent the original PDF was.
-          </p>
-          <ul class="tag-list" aria-label="Project capabilities">
-            <li>Python</li><li>FastAPI</li><li>OCR</li><li>SQLite</li><li>PDF Parsing</li><li>Data Validation</li><li>Workflow Controls</li><li>Auditability</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div>
-          <p class="eyebrow">Verified clean-room build</p>
-          <h2>Portfolio-safe without reducing the project to a mockup.</h2>
-        </div>
-        <div class="case-section-copy">
-          <p>
-            The shared package removes production customer profiles, catalog exports, databases, credentials, deployment state, source documents,
-            generated production outputs, and organization-specific identifiers. The included scanner reported zero findings against the supplied
-            clean-room identifier set.
-          </p>
-          <p>
-            I also ran the included regression suite against this uploaded portfolio package: <strong>186 tests passed</strong>. The synthetic smoke
-            workflow processed a fictional purchase order successfully and demonstrated both a valid catalog normalization and a deliberately unresolved item.
-          </p>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div>
-          <p class="eyebrow">Current boundary</p>
-          <h2>Verified parser baseline and newer inbox interface.</h2>
-        </div>
-        <div class="case-section-copy">
-          <p>
-            The verified clean-room package demonstrates customer purchase-order PDF normalization. The newer inbox screen presents vendor invoice and customer credit paths, while the linked invoice demo simulates a specific approval decision. The new app's processing and storage behavior needs a current build review before this case study can claim those paths are implemented end to end.
-          </p>
-          <p>
-            The broader operating pattern is document-agnostic: turn variable incoming business data into a clean, validated contract before it is
-            allowed to trigger vendor ordering, ERP entry, accounts-payable processing, or another automated workflow.
-          </p>
-        </div>
-      </section>
-
-      <section class="case-next">
-        <p class="eyebrow">Portfolio note</p>
-        <h2>Designed to make document automation safer by putting evidence, normalization, and human review ahead of system action.</h2>
-        <div class="project-links case-next-links">
-          <a class="button button-primary" href="../demos/ocr-document-normalizer/index.html" target="_blank" rel="noreferrer">Launch interactive walkthrough ↗</a>
-          <a class="button button-secondary" href="../index.html#work">View more work</a>
-        </div>
-      </section>
-    </main>
-    <footer><p>Brian Welk · Business Systems &amp; Data Portfolio</p><p>Colorado, United States</p></footer>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="OCR Automation case study by Brian Welk: a local document inbox that reviews customer purchase orders, matches vendor invoices to restocking POs, checks customer credits against original ERP invoices, and produces reviewed PDF and CSV outputs." />
+  <meta name="theme-color" content="#101a24" />
+  <title>OCR Automation Case Study | Brian Welk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header case-header">
+    <a class="nameplate" href="../index.html" aria-label="Return to Brian Welk's portfolio"><span class="nameplate-mark" aria-hidden="true">BW</span><span>Brian Welk</span></a>
+    <nav aria-label="Case study navigation"><a href="../index.html">← Portfolio</a><a href="#workflow">Workflow</a><a href="#controls">Controls</a><a href="../demos/ocr-document-normalizer/index.html" target="_blank" rel="noreferrer">Interactive walkthrough ↗</a></nav>
+  </header>
+  <main class="case-main" id="main">
+    <section class="case-hero"><div><p class="eyebrow">Document intelligence &amp; ERP preparation</p><h1>OCR Automation</h1><p class="case-hero-summary">A local document inbox that turns customer purchase orders, vendor invoices, and customer credit documents into reviewed, structured outputs. Each path retains the source, compares it with a populated template and its business reference, then requires an explicit acceptance before a PDF or CSV is released.</p></div><dl class="case-facts"><div><dt>Role</dt><dd>Workflow designer, application developer, data normalization architect</dd></div><div><dt>Platform</dt><dd>Python, FastAPI, SQLite, PyMuPDF, ReportLab, OCR support</dd></div><div><dt>Evidence</dt><dd>Current app run locally from a clean-room source export with fictional documents and references</dd></div></dl></section>
+    <figure class="case-cover ocr-real-cover"><img src="../assets/ocr/current/inbox.svg" alt="Actual OCR Automation document inbox showing customer PO, vendor invoice, and customer credit paths with fictional examples awaiting review" loading="eager" /><figcaption>The current application inbox, captured October 10, 2026 from the uploaded source package using its built-in fictional examples.</figcaption></figure>
+    <div class="case-actions"><a class="button button-primary" href="../demos/ocr-document-normalizer/index.html" target="_blank" rel="noreferrer">Launch current app walkthrough ↗</a><a class="button button-secondary" href="#workflow">Explore the workflow</a></div>
+    <section class="case-section"><div><p class="eyebrow">The operational problem</p><h2>A readable document is not yet a safe ERP transaction.</h2></div><div class="case-section-copy"><p>Business documents arrive in different formats and refer to different records. A customer PO must become sales-order data, a supplier invoice must be checked against the PO the business issued, and a customer credit must be limited by the original sale and prior credits. Sending captured text straight to the ERP would hide errors in quantities, prices, line identity, and remaining balances.</p><p>The inbox makes those distinctions explicit. The operator sees the original beside the proposed output and the matching reference before accepting a local handoff file.</p></div></section>
+    <section class="case-section" id="workflow"><div><p class="eyebrow">Three review paths</p><h2>One intake, different evidence for each decision.</h2></div><div class="case-section-copy"><ul class="outcome-list"><li><strong>Customer PO → sales order:</strong> compare the original order with a normalized template, correct captured values, and review item mappings. Accepted values create a PDF and sales-order CSV. Unresolved items stay at ITEM-HOLD for ERP catalog resolution.</li><li><strong>Vendor invoice → AP bill:</strong> import an issued restocking PO, retain and review the supplier invoice, match each invoice line to the PO, and check vendor, currency, quantity, unit cost, totals, and remaining balance. Acceptance prepares a bill PDF; a separate action generates an AP CSV.</li><li><strong>Customer credit document:</strong> retain the customer's credit memo, deduction, or return claim; compare it to a proposed credit and the original ERP customer invoice. Prior credited quantities, net amounts, and tax restrict what can be accepted. A reviewed credit PDF and CSV are local outputs.</li></ul></div></section>
+    <section class="case-gallery ocr-real-gallery" aria-labelledby="screens-heading"><div class="gallery-heading"><p class="eyebrow">Current application screens</p><h2 id="screens-heading">The source and its reference stay visible.</h2><p>These screenshots come from the running clean-room application and its fictional example buttons. Open the interactive walkthrough for the full nine-stage sequence.</p></div><div class="gallery-grid">
+      <figure class="gallery-item gallery-wide"><a href="../assets/ocr/current/customer-po.svg" target="_blank" rel="noreferrer"><img src="../assets/ocr/current/customer-po.svg" alt="Original fictional customer purchase order beside normalized order template and item hold checks" loading="lazy" /></a><figcaption><strong>01 · Customer order review</strong>The source PDF and populated order template sit side by side. Two sample items remain on ITEM-HOLD until their ERP catalog identities are resolved.</figcaption></figure>
+      <figure class="gallery-item gallery-wide"><a href="../assets/ocr/current/vendor-bill.svg" target="_blank" rel="noreferrer"><img src="../assets/ocr/current/vendor-bill.svg" alt="Original fictional vendor invoice beside populated AP bill template" loading="lazy" /></a><figcaption><strong>02 · Vendor bill comparison</strong>The retained invoice is compared with the AP bill preview. The sample shows four units at $8.50, totaling $34.</figcaption></figure>
+      <figure class="gallery-item gallery-wide"><a href="../assets/ocr/current/po-match.svg" target="_blank" rel="noreferrer"><img src="../assets/ocr/current/po-match.svg" alt="Fictional vendor invoice matched to issued restocking PO with line quantity, cost, and open balance" loading="lazy" /></a><figcaption><strong>03 · Original PO audit trail</strong>The approver sees RESTOCK-DEMO-1001, the exact reference line, ten ordered units, the agreed $8.50 cost, and the invoice's four-unit allocation before acceptance.</figcaption></figure>
+      <figure class="gallery-item"><a href="../assets/ocr/current/customer-credit.svg" target="_blank" rel="noreferrer"><img src="../assets/ocr/current/customer-credit.svg" alt="Original fictional customer credit memo beside customer credit template" loading="lazy" /></a><figcaption><strong>04 · Credit review</strong>A two-unit, $30 damage claim is compared with the retained customer document and proposed credit.</figcaption></figure>
+      <figure class="gallery-item"><a href="../assets/ocr/current/credit-match.svg" target="_blank" rel="noreferrer"><img src="../assets/ocr/current/credit-match.svg" alt="Customer credit mapped to original ERP customer invoice and remaining balances" loading="lazy" /></a><figcaption><strong>05 · Original sale reference</strong>The credit maps to an ERP invoice line with ten sold units at $15 each and visible remaining value.</figcaption></figure>
+    </div></section>
+    <section class="case-section" id="controls"><div><p class="eyebrow">Approval and audit</p><h2>Acceptance changes local balances only after review.</h2></div><div class="case-section-copy"><p>Saving a candidate or proposed match does not consume a reference balance. Acceptance checks it again inside a database transaction. In the fictional bill example, four of ten PO units become locally billed, leaving six units and $51 open. In the fictional credit example, two of ten sold units become locally credited, leaving eight units and $120 open.</p><p>Correcting an accepted document clears its current match and requires another review and acceptance. Earlier PDFs, CSVs, and audit events remain available. Duplicate accepted document numbers are blocked. The displayed balances represent local reviewed documents and imported opening ERP balances; they do not confirm that an export was imported by the ERP.</p></div></section>
+    <section class="case-gallery ocr-real-gallery" aria-labelledby="handoff-heading"><div class="gallery-heading"><p class="eyebrow">Controlled handoff</p><h2 id="handoff-heading">PDF and CSV output with a visible history.</h2></div><div class="gallery-grid"><figure class="gallery-item"><a href="../assets/ocr/current/po-balance.svg" target="_blank" rel="noreferrer"><img src="../assets/ocr/current/po-balance.svg" alt="Restocking PO after bill acceptance showing four billed units and six open" loading="lazy" /></a><figcaption><strong>06 · Restocking balance</strong>The accepted fictional invoice makes the local PO partially billed.</figcaption></figure><figure class="gallery-item"><a href="../assets/ocr/current/bill-audit.svg" target="_blank" rel="noreferrer"><img src="../assets/ocr/current/bill-audit.svg" alt="AP bill export and audit history showing received, matched, approved, and CSV exported events" loading="lazy" /></a><figcaption><strong>07 · Export and history</strong>An accepted PDF, generated AP CSV, and receipt, match, approval, and export events remain visible.</figcaption></figure></div></section>
+    <section class="case-section"><div><p class="eyebrow">ERP boundary</p><h2>Reviewed files are ready for a mapped importer.</h2></div><div class="case-section-copy"><p>Export profiles configure column names, source fields, order, dates, delimiter, and encoding. Generic layouts are available for sales orders, AP bills, and customer credits. A retained QuickBooks customer-invoice mapping belongs to an earlier prototype and does not establish QuickBooks bill or credit import support.</p><p>The application does not post bills, pay vendors, ship goods, issue refunds, or update inventory in the ERP. Each destination's import contract must be verified before the corresponding CSV is used. Direct accounting API writes, receipt matching, and email intake are future work.</p><ul class="tag-list" aria-label="Project capabilities"><li>Python</li><li>FastAPI</li><li>OCR</li><li>SQLite</li><li>PDF Review</li><li>PO Matching</li><li>Customer Credits</li><li>CSV Export</li></ul></div></section>
+    <section class="case-section"><div><p class="eyebrow">Verification</p><h2>Inspected from the current source package.</h2></div><div class="case-section-copy"><p>I ran the uploaded clean-room build locally, opened each fictional path, accepted and exported the vendor bill and customer credit examples, and inspected the resulting reference balances and audit history. The portfolio images are captures of that running application, not recreated mockups. The customer PO example was reviewed as the current comparison screen.</p><p>The uploaded source export contains no production customer documents or runtime records. Its standalone README identifies a planned Windows server deployment; this review used the local app and does not claim a live hosted service.</p></div></section>
+    <section class="case-next"><p class="eyebrow">Portfolio note</p><h2>Document capture becomes useful when the original, the reference, the review decision, and the export remain connected.</h2><div class="project-links case-next-links"><a class="button button-primary" href="../demos/ocr-document-normalizer/index.html" target="_blank" rel="noreferrer">Explore the current walkthrough ↗</a><a class="button button-secondary" href="../index.html#work">View more work</a></div></section>
+  </main>
+  <footer><p>Brian Welk · Business Systems &amp; Data Portfolio</p><p>Colorado, United States</p></footer>
+</body>
 </html>
