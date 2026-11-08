@@ -59,3 +59,19 @@ release.
 - All six new screenshots uploaded to Wix Media and reported READY. The prior
   media mappings and earlier prototype walkthrough are retained.
 - Capture provenance and scope are recorded in `northstar-capture-notes.md`.
+- Final upload package: 26 public files, 13 HTML documents, and 109 valid local
+  references; all six tour-stage screenshot paths map to Wix Media.
+
+## Wix delivery
+
+Published to the site recorded in `deployment/wix.json`. Read back the saved
+homepage, Northstar case study, current tour, and sitemap through Wix's file
+helpers: story, current cover/tour links, six stages, mapped media, fictional-data
+disclosure, preserved history, and Wix-origin metadata all matched.
+
+Opened the live Wix homepage and walkthrough in the in-app browser. The current
+overview and Ask Northstar screenshots loaded, stage four rendered, the homepage
+served the expected story/title and Wix-hosted current cover, and no broken
+homepage images were observed. The native Wix preview was refreshed after upload.
+The site is a static presentation; the tour does not run Northstar's private
+application or send AI, supplier, or notification requests.

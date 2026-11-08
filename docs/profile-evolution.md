@@ -1,6 +1,6 @@
 # Personal profile evolution
 
-Status: agreed discovery direction; first local revision for review.
+Status: implemented, checked, and published to Wix on November 8, 2026.
 
 ## Purpose and audience
 
