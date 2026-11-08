@@ -81,8 +81,8 @@
       </section>
 
       <figure class="case-cover northstar-current-cover">
-        <a href="../demos/northstar/index.html"><img src="../assets/northstar/operations/executive-overview.png" alt="Northstar executive overview showing the same fictional inventory, purchasing plans, and regional stock used throughout the application" /></a>
-        <figcaption>Current Northstar application · fictional records captured November 8, 2026. Explore 49 screens across planning, operations, AI, data controls, and network intelligence.</figcaption>
+        <a href="../demos/northstar/index.html"><img src="../assets/northstar/live-20261108/executive-overview.jpg" alt="Newest running Northstar app showing the current six-product CONKLY workspace with 80 units in stock" /></a>
+        <figcaption>Current BNT development app · captured directly November 8, 2026. The CONKLY workspace has six products, 80 units in stock, and no units on order. Explore 51 stops across the whole app.</figcaption>
       </figure>
       <div class="case-actions">
         <a class="button button-primary" href="../demos/northstar/index.html">Tour the full application →</a>
@@ -130,9 +130,9 @@
               movement history, and reconciliation handoff. Recalculate report fields when
               internal calculations are enabled.</li>
           </ol>
-          <p>In the fictional tour, confirming put-away moves 1,460 units from on order into
-            sellable stock: 3,424 becomes 4,884. The application retains the package, delivery
-            references, confirmations, and earlier source versions behind that change.</p>
+          <p>The current Conkly order is complete: 80 individual bands, with 20/10/10 units
+            for each connector family. Its timeline retains the separate receipt and ready-for-sale
+            milestones. Inventory and the assistant now show 80 units in stock and zero on order.</p>
         </div>
       </section>
 
@@ -205,12 +205,11 @@
             business rules, checking whether information has changed, and making the
             approval and outcome visible.</p>
           <p class="development-note"><strong>Current development stage:</strong>
-            Supplier, carrier, warehouse, and notification connections use test adapters.
-            They exercise the application workflow without placing real partner orders
-            or sending live notifications. The full tour uses captures of the actual
-            application in isolated fictional workspaces. Its receipt and put-away sequence
-            exercises the persisted workflow. Live AI is disabled during capture; the question
-            interface is shown before submission, with no invented assistant answer.</p>
+            The selected workspace uses temporary records and simulated partner events.
+            Supplier, carrier, warehouse, Amazon, and upstream connections are not established
+            by these records. Every tour image was captured directly from the newest running
+            BNT app. Its assistant reports available; no AI question, purchase approval,
+            receipt, or put-away was submitted to create the captures.</p>
         </div>
       </section>
 
@@ -218,200 +217,18 @@
         <div class="gallery-heading">
           <p class="eyebrow">Current application</p>
           <h2>Inspect the decision. Follow its effect.</h2>
-          <p>Four stops from the full 49-screen tour. Every capture uses fictional records;
-            partner activity remains labeled as simulated.</p>
+          <p>Four stops from the full 51-stop tour, all captured directly from the current app.
+            The same CONKLY workspace is used throughout; legacy network examples are labeled separately.</p>
         </div>
         <div class="gallery-grid">
-          <figure class="gallery-item"><a href="../demos/northstar/index.html?screen=monthly-preview"><img src="../assets/northstar/operations/monthly-preview.png" alt="Northstar monthly plan review with draft quantities and regional allocation" loading="lazy" /></a><figcaption><strong>Plan and allocation</strong>Review reported need, minimum/rounding extras, regional choices, and the shared-plan boundary.</figcaption></figure>
-          <figure class="gallery-item"><a href="../demos/northstar/index.html?screen=shipments-map"><img src="../assets/northstar/operations/shipments-map.png" alt="Northstar shipment map connected to fictional order milestones" loading="lazy" /></a><figcaption><strong>Order and shipment progress</strong>Routes lead back to their order evidence. The illustrated map is not live GPS.</figcaption></figure>
-          <figure class="gallery-item"><a href="../demos/northstar/index.html?screen=putaway-preview"><img src="../assets/northstar/operations/putaway-preview.png" alt="Northstar put-away review showing stock and on-order quantities before and after confirmation" loading="lazy" /></a><figcaption><strong>Receiving and put-away</strong>A warehouse count and ready-for-sale stock have separate confirmations and consequences.</figcaption></figure>
-          <figure class="gallery-item"><a href="../demos/northstar/index.html?screen=assistant-batch"><img src="../assets/northstar/operations/assistant-batch.png" alt="Northstar assistant batch review with selected quantities, regions, vendor terms, warnings, and an explicit approval button" loading="lazy" /></a><figcaption><strong>AI-assisted review</strong>Prepared actions retain clear scope and application verification. This capture stops before purchase approval.</figcaption></figure>
+          <figure class="gallery-item"><a href="../demos/northstar/index.html?screen=monthly-preview"><img src="../assets/northstar/live-20261108/monthly-preview.jpg" alt="Northstar monthly plan review with draft quantities and regional allocation" loading="lazy" /></a><figcaption><strong>Plan and allocation</strong>Review reported need, minimum/rounding extras, regional choices, and the shared-plan boundary.</figcaption></figure>
+          <figure class="gallery-item"><a href="../demos/northstar/index.html?screen=shipments-map"><img src="../assets/northstar/live-20261108/shipments-map.jpg" alt="Northstar shipment map connected to fictional order milestones" loading="lazy" /></a><figcaption><strong>Order and shipment progress</strong>Routes lead back to their order evidence. The illustrated map is not live GPS.</figcaption></figure>
+          <figure class="gallery-item"><a href="../demos/northstar/index.html?screen=putaway-preview"><img src="../assets/northstar/live-20261108/receiving-review.jpg" alt="Current completed order showing 80 accepted units and 80 units ready for sale" loading="lazy" /></a><figcaption><strong>Receiving and put-away</strong>The completed 80-unit order retains separate warehouse-count and ready-for-sale quantities.</figcaption></figure>
+          <figure class="gallery-item"><a href="../demos/northstar/index.html?screen=assistant-batch"><img src="../assets/northstar/live-20261108/assistant-batch.jpg" alt="Current purchase review with the 80-band request, estimated costs, saved timing, and earlier actions" loading="lazy" /></a><figcaption><strong>AI-assisted review</strong>Inspect the actual request, estimated costs, timing, and earlier actions. Current pending purchases are zero.</figcaption></figure>
         </div>
       </section>
 
-      <details class="prototype-details">
-        <summary>Earlier prototype: workflow, screens, and system design</summary>
-      <figure class="case-cover control-tower-cover" id="prototype">
-        <iframe
-          src="../demos/replenishment-control-tower/index.html?view=overview"
-          title="Earlier Multichannel Replenishment Control Tower prototype with synthetic data"
-          loading="eager"
-        ></iframe>
-        <figcaption>Earlier prototype · interactive walkthrough with synthetic data. The current Northstar assistant is not included.</figcaption>
-      </figure>
-
-      <div class="case-actions">
-        <a class="button button-primary" href="../demos/replenishment-control-tower/index.html" target="_blank" rel="noreferrer">Open earlier prototype ↗</a>
-        <a class="button button-secondary" href="#screens">Explore earlier prototype details</a>
-      </div>
-
-      <section class="case-section">
-        <div>
-          <p class="eyebrow">Original design challenge</p>
-          <h2>Turn fragmented inventory signals into controlled replenishment decisions.</h2>
-        </div>
-        <div class="case-section-copy">
-          <p>
-            A multichannel operation can hold inventory across regional 3PL locations and marketplace
-            fulfillment networks while supplier lead times, inbound shipments, reserved stock, demand
-            velocity, and receiving exceptions are changing at the same time.
-          </p>
-          <p>
-            The operating problem is not simply showing inventory. The system needs to explain why an
-            action is recommended, distinguish supplier purchasing from network transfers, preserve
-            human approval, and leave a traceable record of every decision.
-          </p>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div>
-          <p class="eyebrow">Original prototype</p>
-          <h2>One operating view from demand signal through approved replenishment action.</h2>
-        </div>
-        <div class="case-section-copy">
-          <p>
-            I designed the control tower as an offline demonstration environment with deterministic
-            synthetic data. The interface brings executive monitoring, inventory positions,
-            replenishment logic, purchase orders, FBA transfers, shipments, receiving, supplier
-            performance, marketplace issues, scenarios, automation controls, and audit history into
-            one workflow.
-          </p>
-          <ul class="outcome-list">
-            <li>144 synthetic products across four regional 3PLs and four Amazon FBA marketplaces</li>
-            <li>1,152 inventory positions with searchable position-level detail and risk classification</li>
-            <li>Separate supplier purchase-order and 3PL-to-FBA transfer recommendations</li>
-            <li>Explainable reorder point, safety stock, target inventory, MOQ, and case-pack logic</li>
-            <li>Approve, modify, reject, defer, and bulk-approve decision workflows</li>
-            <li>Shipment tracking, receiving discrepancy resolution, supplier performance, and marketplace issue handling</li>
-            <li>Adjustable growth, channel-mix, lead-time, service-level, and planning-horizon scenarios</li>
-            <li>Manual, assisted, and controlled-batch operating modes with dry-run safeguards and audit history</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="case-gallery control-tower-gallery" id="screens">
-        <div class="gallery-heading">
-          <p class="eyebrow">Earlier prototype walkthrough</p>
-          <h2>From inventory exposure to governed execution.</h2>
-          <p>
-            These views show the earlier synthetic control tower. They document the
-            planning and approval workflows that formed the starting point for Northstar;
-            they do not show its current operations assistant.
-          </p>
-        </div>
-        <div class="gallery-grid">
-          <figure class="gallery-item gallery-wide">
-            <div class="app-frame"><iframe src="../demos/replenishment-control-tower/index.html?view=inventory" title="Inventory control view" loading="lazy"></iframe></div>
-            <figcaption><strong>01 · Inventory control</strong>Position-level inventory, location, channel, inbound supply, projected coverage, and risk classification across the network.</figcaption>
-          </figure>
-          <figure class="gallery-item gallery-wide">
-            <div class="app-frame"><iframe src="../demos/replenishment-control-tower/index.html?view=replenishment" title="Replenishment planner view" loading="lazy"></iframe></div>
-            <figcaption><strong>02 · Replenishment planner</strong>Separates supplier POs from FBA transfers and exposes demand, lead time, safety stock, target stock, MOQ, and case-pack logic before approval.</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <div class="app-frame"><iframe src="../demos/replenishment-control-tower/index.html?view=purchase-orders" title="Purchase order view" loading="lazy"></iframe></div>
-            <figcaption><strong>03 · Purchase orders</strong>Tracks supplier commitments, approval status, units, value, destination, and expected receipt.</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <div class="app-frame"><iframe src="../demos/replenishment-control-tower/index.html?view=fba" title="FBA transfer view" loading="lazy"></iframe></div>
-            <figcaption><strong>04 · FBA transfers</strong>Rebalances regional 3PL stock into marketplace fulfillment before channel coverage breaks.</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <div class="app-frame"><iframe src="../demos/replenishment-control-tower/index.html?view=shipments" title="Shipment tracking view" loading="lazy"></iframe></div>
-            <figcaption><strong>05 · Shipments</strong>Follows supplier and network-transfer inventory through booked, in-transit, delayed, and receiving states.</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <div class="app-frame"><iframe src="../demos/replenishment-control-tower/index.html?view=receiving" title="Receiving exceptions view" loading="lazy"></iframe></div>
-            <figcaption><strong>06 · Receiving</strong>Closes the loop between expected and received inventory with discrepancy review before inventory is posted.</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <div class="app-frame"><iframe src="../demos/replenishment-control-tower/index.html?view=scenario" title="Growth scenario modeling view" loading="lazy"></iframe></div>
-            <figcaption><strong>07 · Growth scenarios</strong>Stress-tests transaction growth, marketplace mix, lead-time changes, and safety stock without changing operating data.</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <div class="app-frame"><iframe src="../demos/replenishment-control-tower/index.html?view=automation" title="Automation controls view" loading="lazy"></iframe></div>
-            <figcaption><strong>08 · Automation center</strong>Defines manual, assisted, and controlled-batch modes with dry-run and approver safeguards.</figcaption>
-          </figure>
-          <figure class="gallery-item gallery-wide">
-            <div class="app-frame"><iframe src="../demos/replenishment-control-tower/index.html?view=audit" title="Audit history view" loading="lazy"></iframe></div>
-            <figcaption><strong>09 · Audit history</strong>Preserves actor, source, action, entity, and timestamp so workflow decisions remain traceable.</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section class="case-section" id="system-design">
-        <div>
-          <p class="eyebrow">System design</p>
-          <h2>Production-style boundaries without pretending the prototype is production.</h2>
-        </div>
-        <div class="case-section-copy">
-          <p>
-            The source dataset is generated from a fixed seed into a normalized SQLite database, then
-            exported to browser-readable JavaScript and JSON snapshots. The UI reads through that data
-            adapter so the browser demonstration remains self-contained and makes no network calls.
-          </p>
-          <p>
-            Workflow decisions persist only in local browser storage. The source SQLite data remains
-            unchanged, allowing the operating dataset to be regenerated deterministically. That
-            separation mirrors a future architecture where the local adapter can be replaced by a
-            Flask service or authenticated API without redesigning the user workflow.
-          </p>
-          <ul class="tag-list" aria-label="Project capabilities">
-            <li>Inventory Planning</li>
-            <li>Supply Chain Operations</li>
-            <li>JavaScript</li>
-            <li>SQLite</li>
-            <li>Python</li>
-            <li>Scenario Modeling</li>
-            <li>Workflow Controls</li>
-            <li>Auditability</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div>
-          <p class="eyebrow">Decision logic</p>
-          <h2>Recommendations remain inspectable before they become actions.</h2>
-        </div>
-        <div class="case-section-copy">
-          <p>
-            Inventory details expose on-hand, reserved, damaged, quarantined, confirmed inbound,
-            current and projected days of supply, reorder point, target inventory, and net
-            requirement. Recommended quantities are then adjusted to supplier MOQ and case-pack rules.
-          </p>
-          <p>
-            The recommendation drawer explains the calculation in plain language before an analyst
-            approves or modifies it. Approved actions can then be grouped into a controlled review
-            batch. Release is simulated and audited, but no supplier, Amazon, freight, email, or
-            marketplace transaction is sent externally.
-          </p>
-        </div>
-      </section>
-
-      <section class="case-section">
-        <div>
-          <p class="eyebrow">Synthetic operating scale</p>
-          <h2>Large enough to expose real workflow and prioritization problems.</h2>
-        </div>
-        <div class="case-section-copy">
-          <p>
-            The demonstration dataset is calibrated to an established specialty-accessories business
-            with approximately 238,000 annual synthetic units, about $6.2 million in synthetic
-            revenue, and a channel mix weighted toward marketplace fulfillment.
-          </p>
-          <p>
-            Those values are planning assumptions rather than company claims. The purpose is to make
-            the interface behave like an operating system with enough volume, exceptions, and
-            competing priorities to demonstrate realistic decision support.
-          </p>
-        </div>
-      </section>
-
-      </details>
-
-      <section class="case-next">
+<section class="case-next">
         <p class="eyebrow">Portfolio note</p>
         <h2>Connected operations, with room to keep learning.</h2>
         <div class="project-links case-next-links">

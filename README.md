@@ -30,9 +30,10 @@ python -m http.server 8877 --bind 127.0.0.1
 
 Open `http://127.0.0.1:8877/` in the Codex in-app browser. The Northstar case study
 retains `projects/replenishment-control-tower.html`. Its full application tour is
-`demos/northstar/index.html`: 49 screens across six chapters, using current-interface
-captures with fictional records. Key decisions and AI controls receive additional
-detail. The earlier prototype remains in the case study's history disclosure.
+`demos/northstar/index.html`: 51 stops across six chapters, with screenshots captured
+directly from the running BNT app and its current six-product CONKLY workspace.
+Key decisions and AI controls receive additional detail. Earlier prototype links
+redirect to this current tour; Git history preserves the old source.
 See [capture provenance](docs/northstar-capture-notes.md) and
 [coverage inventory](docs/northstar-tour-coverage.md).
 
@@ -49,6 +50,7 @@ source is **GitHub Actions**. Local checks use only Python's standard library:
 ```powershell
 python scripts/build_pages.py
 python scripts/check_site.py _site
+python scripts/check_northstar.py _site
 python -m http.server 8877 --bind 127.0.0.1 --directory _site
 ```
 

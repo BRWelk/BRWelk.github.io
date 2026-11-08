@@ -21,7 +21,18 @@ def main():
     public_files = [ROOT / name for name in
                     ("index.html", "styles.css", "robots.txt", "sitemap.xml", ".nojekyll")]
     for directory in ("projects", "demos", "assets"):
-        public_files.extend(sorted(path for path in (ROOT / directory).rglob("*") if path.is_file()))
+        for path in sorted((ROOT / directory).rglob("*")):
+            if not path.is_file():
+                continue
+            relative = path.relative_to(ROOT).as_posix()
+            # Retain historical source in Git, but serve only the newest Northstar
+            # captures and the compatibility redirect at the old demo address.
+            if relative.startswith(("assets/northstar/current/", "assets/northstar/operations/",
+                                    "assets/replenishment-control-tower/")):
+                continue
+            if relative.startswith("demos/replenishment-control-tower/") and relative != "demos/replenishment-control-tower/index.html":
+                continue
+            public_files.append(path)
     for path in public_files:
         if path.is_symlink() or not path.resolve().is_relative_to(ROOT):
             parser.error(f"Public files must stay inside the repository: {path}")

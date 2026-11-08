@@ -152,3 +152,42 @@ GitHub's page says to allow 24 hours. Public DNS had the correct four A addresse
 and www CNAME, no conflicting AAAA, and no CAA restriction. DNS validation still
 reported stale non-GitHub routing in GitHub's own health result. Secure-domain
 verification and HTTPS enforcement therefore remain outstanding, not passed.
+
+## Corrected source: the actual current BNT application
+
+Brian clarified that the portfolio must remain and its entire Northstar entry
+must reflect the newest running app, not a generated operating example or a
+replacement operational site. This supersedes the earlier isolated-capture tour.
+
+- Captured every image directly from the running app using the CONKLY six-product
+  workspace: 80 units in stock, zero on order, one completed 80-unit order, and
+  the retained 20/10/10 split for each connector family. The question interface
+  reports available; no generated answer is shown. Planning shows 14 supplier
+  days, 40 days overall, and 60 days of coverage.
+- The tour has 51 stops and 48 JPEG capture files across six chapters, with extra
+  detail on decisions, AI, vendor minimums, and approval boundaries. Historical
+  receipt/readiness evidence is shown as completed history, not a pending action.
+  Legacy network examples are captured from the current app and labeled separately.
+- All 89 installed release entries matched before/after source hashes. Selected
+  dataset orders, positions, inputs, events, handoffs, pending counts, and shared
+  plans were unchanged. Planning/connection inspection submitted no order or AI
+  message. Private notification contact values are excluded from the images.
+- The homepage card, case-study cover, gallery, operating example, AI descriptions,
+  tour text, screenshot references, README, coverage inventory, and source notes
+  were reconciled. Old standalone prototype URLs now redirect to the latest tour;
+  historical images/scripts are excluded from the served artifact.
+- Staged 120 public files. All 13 HTML documents passed 175 local reference/anchor
+  checks, sitemap and metadata checks. The new capture-integrity check verified
+  every stop against the current source/capture manifest. JavaScript syntax and
+  whitespace checks passed.
+- Traversed all 51 final tour stops in the in-app browser: every image loaded;
+  the last Next control was disabled. Checked numeric legacy links and the old
+  prototype's inventory deep link. The same-origin 390px mobile frame had a 375px
+  content width after its scrollbar, with no horizontal overflow; Next advanced.
+  The case study also fit that width. At 200% text, the tour reflowed its image and
+  explanation into full-width rows, keeping the text readable without overflow.
+
+GitHub has now approved the custom-domain certificate and HTTPS enforcement is
+enabled. HTTPS on the domain returns 200; HTTP and www redirect to the secure apex.
+The original github.io address redirects to the custom domain: the portfolio and
+repository were not lost. The actual BNT app and Cloudflare routes were not changed.

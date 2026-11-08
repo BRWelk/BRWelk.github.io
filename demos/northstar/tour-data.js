@@ -34,6 +34,23 @@ window.NORTHSTAR_TOUR = {
   "stops": [
     {
       "chapter": "planning",
+      "id": "executive-overview",
+      "title": "Read the executive overview",
+      "summary": "Begin with the selected dataset: stock, inbound units, sales, replenishment need, and the shared monthly and launch plans.",
+      "points": [
+        "The current CONKLY workspace has six products, 80 units in stock, and no units on order.",
+        "Its 24 product/region positions reconcile to the same working report used by planning and inventory.",
+        "Revenue, margin, live supplier performance, and demand history are not invented when absent."
+      ],
+      "detail": "The dashboard distinguishes reported need, included need, deferred need, and minimum or rounding extras. It does not invent channel splits or delivery dates absent from the source report.",
+      "key": true,
+      "image": "../../assets/northstar/live-20261108/executive-overview.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/index.html",
+      "capturedAt": "2026-11-08T21:43:12.951Z"
+    },
+    {
+      "chapter": "planning",
       "id": "workflow-guide",
       "title": "Start with the operating workflow",
       "summary": "Northstar is a connected inventory and ordering application. The guide explains where to start, what each stage changes, and which workspace owns the next decision.",
@@ -44,23 +61,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/operations/workflow-guide.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
-    },
-    {
-      "chapter": "planning",
-      "id": "executive-overview",
-      "title": "Read the executive overview",
-      "summary": "Begin with the selected dataset: stock, inbound units, sales, replenishment need, and the shared monthly and launch plans.",
-      "points": [
-        "The fictional operating example starts with 21 products across four regions.",
-        "Regional figures reconcile to the same report used by planning and inventory.",
-        "Unavailable revenue, margin, and live supplier performance remain unavailable."
-      ],
-      "detail": "The dashboard distinguishes reported need, included need, deferred need, and minimum or rounding extras. It does not invent channel splits or delivery dates absent from the source report.",
-      "key": true,
-      "image": "../../assets/northstar/operations/executive-overview.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/workflow-guide.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/index.html#guide",
+      "capturedAt": "2026-11-08T21:43:54.377Z"
     },
     {
       "chapter": "planning",
@@ -74,8 +78,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/operations/inventory.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/inventory.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/index.html#inventory",
+      "capturedAt": "2026-11-08T21:43:26.883Z"
     },
     {
       "chapter": "planning",
@@ -87,10 +93,12 @@ window.NORTHSTAR_TOUR = {
         "Demand and projected cover provide context for the suggested order.",
         "Source records and explanatory help stay available beside the decision."
       ],
-      "detail": "The purpose is an inspectable recommendation: an operator can explain which source facts and rules produced it, rather than approving an unexplained number.",
+      "detail": "The inspected smaller-connector black variation has 20 units in US stock and no on-order units or positive demand. The detail exposes the actual source quantities and the resulting zero monthly recommendation.",
       "key": true,
-      "image": "../../assets/northstar/operations/inventory-detail.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/inventory-detail.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/index.html#inventory",
+      "capturedAt": "2026-11-08T21:43:27.414Z"
     },
     {
       "chapter": "planning",
@@ -104,8 +112,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/operations/replenishment.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/replenishment.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/index.html#replenishment",
+      "capturedAt": "2026-11-08T21:43:36.748Z"
     },
     {
       "chapter": "planning",
@@ -117,10 +127,12 @@ window.NORTHSTAR_TOUR = {
         "Inspect the allocation across regions rather than only its grand total.",
         "The existing calculation engine supplies quantities; AI does not invent them."
       ],
-      "detail": "A minimum order quantity is a supplier constraint. Northstar makes the effect of minimums and pack increments visible so the user can understand why an order differs from raw reported need.",
+      "detail": "The current groups show no replenishment need. Supplier minimums and rounding remain inspectable rules, rather than a reason to create an order when demand is zero.",
       "key": true,
-      "image": "../../assets/northstar/operations/replenishment-detail.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/replenishment-detail.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/index.html#replenishment",
+      "capturedAt": "2026-11-08T21:43:43.848Z"
     },
     {
       "chapter": "planning",
@@ -134,8 +146,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/operations/monthly-plan.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/monthly-plan.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/?mode=standard",
+      "capturedAt": "2026-11-08T21:44:26.681Z"
     },
     {
       "chapter": "planning",
@@ -149,8 +163,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/operations/planning-rules.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/planning-rules.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/?mode=standard#settings",
+      "capturedAt": "2026-11-08T21:44:26.914Z"
     },
     {
       "chapter": "decisions",
@@ -158,14 +174,16 @@ window.NORTHSTAR_TOUR = {
       "title": "Review and publish the shared plan",
       "summary": "The local review reconciles draft units to reported need, extras, and deferred quantities before the user saves a shared revision.",
       "points": [
-        "This fictional preview contains 16,645 units, including 132 units of minimum/rounding extras.",
-        "Regional allocation explains where those quantities go.",
-        "Save shared plan updates the dashboard and enables approval against that exact revision."
+        "The current local monthly preview is zero units, with zero extras and no production order requested.",
+        "The preview still reconciles regional need, minimums, rounding, and deferred quantities.",
+        "Saving a shared revision and approving its package remain separate explicit actions."
       ],
       "detail": "Approval checks the selected source versions, settings, date, and saved shared revision again. A stale plan is not silently approved against newer data.",
       "key": true,
-      "image": "../../assets/northstar/operations/monthly-preview.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/monthly-preview.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/?mode=standard#review",
+      "capturedAt": "2026-11-08T21:44:41.366Z"
     },
     {
       "chapter": "decisions",
@@ -173,14 +191,16 @@ window.NORTHSTAR_TOUR = {
       "title": "Plan an initial product launch",
       "summary": "Initial launch has its own product selection and destination choices. Established products provide comparison history rather than being silently added to the launch.",
       "points": [
-        "Choose the new color/product groups to introduce.",
-        "Set the comparison demand and coverage assumptions explicitly.",
-        "Only selected new products and enabled launch destinations receive launch units."
+        "The current report and template contain no eligible zero-history launch products.",
+        "The actual app keeps launch selection and destination controls available without inventing new products.",
+        "Established products are not silently treated as a new launch."
       ],
-      "detail": "This capture uses a separate fresh fictional dataset, created from retained opening files. The already-received launch in the main operating example is not ordered again.",
+      "detail": "This is the same six-product workspace shown throughout the tour. It was not replaced by a fresh generated dataset to manufacture a launch result.",
       "key": true,
-      "image": "../../assets/northstar/operations/launch-plan.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/launch-plan.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/?mode=launch#settings",
+      "capturedAt": "2026-11-08T21:45:09.551Z"
     },
     {
       "chapter": "decisions",
@@ -188,14 +208,16 @@ window.NORTHSTAR_TOUR = {
       "title": "Compare minimum and coverage approaches",
       "summary": "Compare a minimum initial order with a comparable-demand coverage plan before deciding how much to commit.",
       "points": [
-        "The fictional example compares 500 minimum-launch units with 1,460 coverage-based units.",
-        "Regional quantities and expected coverage explain the consequence of each choice.",
-        "Changing the comparison card recalculates the local draft; approval is still separate."
+        "The current form provides Minimum initial order and Comparable-demand coverage choices.",
+        "Coverage days, comparable-demand percentage, and launch destinations remain explicit inputs.",
+        "Changing an option marks a local change; preview and shared-plan approval are still required."
       ],
-      "detail": "",
+      "detail": "The current form shows the real controls and the no-eligible-products state. A calculated launch requires eligible products and a reviewed local preview.",
       "key": true,
-      "image": "../../assets/northstar/operations/launch-comparison.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/launch-comparison.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/?mode=launch#settings",
+      "capturedAt": "2026-11-08T21:45:09.745Z"
     },
     {
       "chapter": "decisions",
@@ -207,10 +229,12 @@ window.NORTHSTAR_TOUR = {
         "An email draft is a handoff for review, not evidence that a supplier received an order.",
         "Preview copies are distinct from the package saved by approval."
       ],
-      "detail": "The app verifies that the workbook attached to the retained email matches the order workbook. It preserves the files, inputs, and settings as a traceable decision package.",
+      "detail": "These are current local preview outputs, not a new saved order or a sent email. The retained 80-unit package is shown in the next stop; its original files and source versions remain available.",
       "key": true,
-      "image": "../../assets/northstar/operations/order-files.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/order-files.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/?mode=standard#review",
+      "capturedAt": "2026-11-08T21:44:41.914Z"
     },
     {
       "chapter": "decisions",
@@ -218,14 +242,16 @@ window.NORTHSTAR_TOUR = {
       "title": "Return to approved package history",
       "summary": "Monthly and initial-launch packages share retained history, including their source versions and selection decisions.",
       "points": [
-        "Download the exact original package or its individual outputs.",
-        "Open the associated operational timeline when tracking begins.",
+        "The current saved monthly package contains the original 80-unit purchase.",
+        "Its workbook, unsent email, proposed upstream request, and manual CSV remain downloadable.",
         "Internal approval, email transport, and supplier confirmation remain distinct."
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/operations/approved-packages.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/approved-packages.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/?mode=standard#orders-history",
+      "capturedAt": "2026-11-08T21:44:53.185Z"
     },
     {
       "chapter": "operations",
@@ -239,8 +265,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/operations/orders.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/orders.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:45:26.743Z"
     },
     {
       "chapter": "operations",
@@ -248,14 +276,16 @@ window.NORTHSTAR_TOUR = {
       "title": "Inspect one order’s complete timeline",
       "summary": "Keep acknowledgement, production, shipping, warehouse receipt, put-away, and the original package attached to one tracked order.",
       "points": [
-        "Ordered, shipped, accepted, damaged, and ready-for-sale quantities stay separate.",
-        "Delivery references connect updates for the same physical delivery.",
-        "The fictional launch order shown here has completed all 1,460 units."
+        "All six variations retain their ordered, shipped, accepted, damaged, and ready-for-sale quantities.",
+        "The two connector families each retain the 20/10/10 variation split.",
+        "The current Conkly order is complete: 80 ordered and 80 ready for sale."
       ],
       "detail": "Source, event date, confirmation status, and revision history make the transition explainable. Missing milestones are identified as missing rather than invented.",
       "key": true,
-      "image": "../../assets/northstar/operations/order-timeline.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/order-timeline.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:45:50.131Z"
     },
     {
       "chapter": "operations",
@@ -269,98 +299,112 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/operations/shipments-map.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/shipments-map.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:46:02.732Z"
     },
     {
       "chapter": "operations",
       "id": "operations-inbox",
       "title": "Review incoming partner updates",
-      "summary": "Supplier, carrier, warehouse, and manual updates enter a verification inbox before a consequential posting.",
+      "summary": "The current Needs review inbox has no pending updates. Future manual or connector updates enter this verification workflow.",
       "points": [
-        "See the order, destination, event date, and source together.",
-        "Open the update deliberately to inspect its evidence and quantities.",
-        "The example uses test partner feeds; no external partner message was sent."
+        "The empty state remains visible instead of presenting fabricated outstanding work.",
+        "Updates are inspected with their source, order, destination, and quantities before posting.",
+        "The current order history labels its partner feed events as simulated; no external partner contact is claimed."
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/operations/operations-inbox.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/operations-inbox.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:45:18.449Z"
     },
     {
       "chapter": "operations",
       "id": "receiving",
       "title": "Manage receiving and put-away",
-      "summary": "The receiving view distinguishes goods in transit, goods counted at the dock, and stock that is ready for sale.",
+      "summary": "The current workspace has no delivery waiting for receipt or put-away; its 80-unit order is already complete.",
       "points": [
-        "Arrival is not a verified quantity count.",
-        "Accepted units can remain unavailable while awaiting put-away.",
-        "Partial deliveries and damaged quantities remain visible rather than disappearing into a single complete status."
+        "Arrival, verified count, and ready-for-sale put-away remain different confirmations.",
+        "The current receiving empty state is shown without replaying or changing the completed order.",
+        "Its saved package links back to the completed order and retained quantities."
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/operations/receiving.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/receiving.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:46:15.598Z"
     },
     {
       "chapter": "operations",
       "id": "receiving-review",
-      "title": "Verify the warehouse count",
-      "summary": "Review each SKU and destination against the delivery evidence before confirming accepted and damaged quantities.",
+      "title": "Inspect the retained warehouse quantities",
+      "summary": "The completed order retains accepted-at-dock, damaged, and ready-for-sale quantities for every variation.",
       "points": [
-        "The same delivery reference connects shipment and receipt.",
-        "Previously confirmed counts are accounted for to prevent duplicate posting.",
-        "Confirming this warehouse count records the milestone; good units still await put-away."
+        "All 80 units are accepted and ready for sale; damaged and closed quantities are zero.",
+        "The order reference and retained package connect the receipt evidence to the original purchase.",
+        "This is inspection of existing history; no receipt was confirmed during capture."
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/operations/receiving-review.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/receiving-review.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:46:16.448Z"
     },
     {
       "chapter": "operations",
       "id": "awaiting-putaway",
-      "title": "Keep dock stock separate from sellable stock",
-      "summary": "After the fictional warehouse receipt, 1,460 accepted units are awaiting the shelf. Sellable stock has not increased.",
+      "title": "Distinguish the receipt and put-away milestones",
+      "summary": "The saved order timeline contains separate confirmed Warehouse receipt and Ready for sale milestones.",
       "points": [
-        "The order timeline records what was confirmed.",
-        "The operation explicitly shows accepted units awaiting put-away.",
-        "Ready-for-sale stock requires its own reviewed confirmation."
+        "The current awaiting-shelf count is zero because this order is complete.",
+        "A warehouse count and sellable stock remain separate events in the retained timeline.",
+        "The source labels the events as simulated API/webhook updates."
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/operations/awaiting-putaway.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/order-events.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:46:16.950Z"
     },
     {
       "chapter": "operations",
       "id": "putaway-preview",
-      "title": "Review the inventory change before confirming",
-      "summary": "Put-away presents the before-and-after stock and on-order quantities for every selected line.",
+      "title": "Reconcile the completed put-away",
+      "summary": "The current order lines reconcile all 80 received units to 80 units ready for sale.",
       "points": [
-        "Good accepted units move from on order into sellable stock.",
-        "The operator verifies quantities and destinations before confirming.",
-        "The app retains a new report version and a simulation-only reconciliation handoff."
+        "Ordered, shipped, accepted, damaged, and ready quantities remain separate columns.",
+        "A completed order is inspected through its history rather than posted a second time.",
+        "The same result appears in Inventory control and the assistant overview."
       ],
-      "detail": "",
+      "detail": "This capture shows the actual completed record. It does not pretend the app is currently waiting on a before/after approval dialog.",
       "key": true,
-      "image": "../../assets/northstar/operations/putaway-preview.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/receiving-review.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:46:16.448Z"
     },
     {
       "chapter": "operations",
       "id": "updated-inventory",
       "title": "Close the loop in the same inventory",
-      "summary": "The confirmed fictional put-away raises sellable stock from 3,424 to 4,884 and reduces on-order units from 20,105 to 18,645.",
+      "summary": "Inventory control now shows 80 units in stock and zero on order, matching the completed Conkly order.",
       "points": [
-        "Those are the same 1,460 units from the tracked launch order.",
-        "The dashboard and inventory read the resulting working report.",
-        "Earlier reports, packages, and movement history remain retained."
+        "The six variations retain 20/10/10 units for each connector family.",
+        "The dashboard, inventory, and assistant refer to the same selected workspace.",
+        "Original files, the approved package, and movement history remain retained."
       ],
-      "detail": "These changes were exercised in the isolated capture workspace through the application’s receipt and put-away controls. They describe fictional inventory, not physical goods or a live warehouse integration.",
+      "detail": "These are the current development workspace balances after Brian completed the process. Portfolio capture did not create an order, repeat a receipt, or change stock.",
       "key": true,
-      "image": "../../assets/northstar/operations/updated-inventory.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/inventory.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/index.html#inventory",
+      "capturedAt": "2026-11-08T21:43:26.883Z"
     },
     {
       "chapter": "operations",
@@ -374,8 +418,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/operations/transfer-review.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/transfer-review.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:46:24.449Z"
     },
     {
       "chapter": "assistant",
@@ -383,44 +429,50 @@ window.NORTHSTAR_TOUR = {
       "title": "Use the operations assistant as a starting point",
       "summary": "The assistant summarizes the selected operation, the next purchase review, important exceptions, and recent order progress.",
       "points": [
-        "The captured summary uses the same 4,884 sellable units and 18,645 on-order units as the completed operating example.",
-        "Approvals and supporting records are one deliberate step away.",
-        "Routine activity is grouped rather than overwhelming decisions."
+        "The overview reads the current workspace: 80 units in stock, zero on order, and the completed purchase.",
+        "Approvals, Activity, Ask Northstar, and Settings remain separate views.",
+        "Recent progress is grouped by order rather than mixed with unrelated reference data."
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/operations/assistant-overview.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/assistant-overview.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/assistant.html",
+      "capturedAt": "2026-11-08T21:47:02.104Z"
     },
     {
       "chapter": "assistant",
       "id": "assistant-approvals",
-      "title": "Select purchase groups without executing them",
-      "summary": "Review complete purchase groups, inspect their evidence separately, and select the scope of a batch.",
+      "title": "Review current purchase readiness",
+      "summary": "The current approval view shows zero variations and zero units available for a new purchase: the 80-unit request has already completed.",
       "points": [
-        "Ten actions are displayed per page in this example.",
-        "Select all states its full cross-page scope and selected count.",
-        "Checkboxes select; approval remains a separate action."
+        "Prepare purchase is disabled when there is no current action to approve.",
+        "The entered request remains 80 individual bands with a $320 estimated landed/prepped total.",
+        "Selection and approval remain separate controls when eligible actions exist."
       ],
       "detail": "The deterministic engine supplies the allocations. The assistant can inspect and explain supported records and prepare actions, while the application validates source context and preserves the explicit approval boundary.",
       "key": true,
-      "image": "../../assets/northstar/operations/assistant-approvals.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/assistant-approvals.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/assistant.html#approvals",
+      "capturedAt": "2026-11-08T21:47:02.270Z"
     },
     {
       "chapter": "assistant",
       "id": "assistant-batch",
-      "title": "See every consequence beside approval",
-      "summary": "The selected batch shows total units, complete groups, destination allocations, sourcing/timing, vendor terms, and the approval effect together.",
+      "title": "Inspect request costs and earlier actions",
+      "summary": "The current expanded review retains the purchase assumptions and six previous variation actions without presenting them as pending purchases.",
       "points": [
-        "This fictional batch selects 18 groups and 16,645 units.",
-        "Warnings and the unconfigured email status remain visible at the decision point.",
-        "The capture stops before Approve purchase batch; selecting these groups did not purchase anything."
+        "The request is 80 individual bands at an estimated $4 landed/prepped per band.",
+        "The timing review shows 14 supplier days, 40 calendar days overall, and 60 days of coverage.",
+        "Earlier actions are marked expired or changed; the current order history records what actually completed."
       ],
-      "detail": "Approval creates the canonical package and tracking record, initially approved but not sent. Changed sources, expired reviews, duplicate group claims, and mismatched quantities are checked by application code. The model cannot approve its own proposal.",
+      "detail": "The $320 estimate separates bands, branded packaging, freight, duties, and prep/inbound costs. Supplier terms are estimates requiring confirmation. The assistant cannot approve its own proposed changes.",
       "key": true,
-      "image": "../../assets/northstar/operations/assistant-batch.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/assistant-batch.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/assistant.html#approvals",
+      "capturedAt": "2026-11-08T21:47:10.304Z"
     },
     {
       "chapter": "assistant",
@@ -428,14 +480,16 @@ window.NORTHSTAR_TOUR = {
       "title": "Review grouped order activity",
       "summary": "Open the latest meaningful status by order or batch, with detailed timelines available when needed.",
       "points": [
-        "The same fictional launch order is complete while the monthly order needs attention.",
-        "Groups and pagination bound the visible history.",
-        "Audit events remain retained behind the summary."
+        "The current workspace has one grouped completed order, with 80 units ready for sale.",
+        "Open its retained timeline for the underlying transitions and quantities.",
+        "Pagination and grouped history remain available as the number of records grows."
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/operations/assistant-activity.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/assistant-activity.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/assistant.html#activity",
+      "capturedAt": "2026-11-08T21:47:10.505Z"
     },
     {
       "chapter": "assistant",
@@ -449,8 +503,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "The implemented assistant uses bounded tools and scoped records from the selected workspace. Quantity calculations remain with the existing engine. An exact operational update still requires application verification and human approval.",
       "key": true,
-      "image": "../../assets/northstar/current/ask-northstar.jpg",
-      "note": "Isolated interface fixture with six fictional products; captured before question submission. No live AI or partner request."
+      "image": "../../assets/northstar/live-20261108/ask-northstar.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/assistant.html#ask",
+      "capturedAt": "2026-11-08T21:47:10.673Z"
     },
     {
       "chapter": "assistant",
@@ -462,40 +518,63 @@ window.NORTHSTAR_TOUR = {
         "Unrelated network simulations are not used as evidence of the working vendor inventory.",
         "Missing connections or records are reported as unavailable."
       ],
-      "detail": "The assistant can review a bounded set of observed records and prepare supported actions. Evidence selection, action preparation, and approval remain separate. In this capture, live AI is disabled while the deterministic records remain accessible.",
+      "detail": "The current Ask Northstar screen reports that the assistant is available. Supporting records belong to the selected six-product workspace. No AI question or action-preparation request was submitted to create these captures.",
       "key": true,
-      "image": "../../assets/northstar/operations/assistant-evidence.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/assistant-evidence.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/assistant.html#ask",
+      "capturedAt": "2026-11-08T21:47:22.470Z"
+    },
+    {
+      "chapter": "assistant",
+      "id": "assistant-boundaries",
+      "title": "Keep evidence and approval explicit",
+      "summary": "The current Sources and approval disclosure explains what the assistant can know and what still needs verification.",
+      "points": [
+        "Answers use the selected workspace; missing sources are identified as unavailable.",
+        "A saved purchase does not prove supplier placement, and delivery does not prove readiness for sale.",
+        "Calculations and approved changes are retained by the application rather than asserted by a chat answer."
+      ],
+      "detail": "",
+      "key": true,
+      "image": "../../assets/northstar/live-20261108/assistant-boundaries.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/assistant.html#ask",
+      "capturedAt": "2026-11-08T21:47:21.738Z"
     },
     {
       "chapter": "assistant",
       "id": "assistant-offline",
-      "title": "Keep operating when AI is unavailable",
-      "summary": "The capture workspace deliberately disables live AI. Northstar keeps the briefing, deterministic purchase review, records, and existing operational workflow available.",
+      "title": "Keep external connections distinct from AI",
+      "summary": "The current Data & connections view distinguishes operational files, simulated partner feeds, unsent drafts, and an unconnected upstream system.",
       "points": [
-        "The question view states that AI answers are unavailable.",
-        "No answer or successful model call is fabricated for the tour.",
-        "A provider problem does not erase operational facts or approve an action."
+        "The AI interface reports available; that does not connect suppliers, carriers, warehouses, or Amazon.",
+        "Amazon tracking separately reports not connected in Settings.",
+        "The portfolio does not fabricate an outage or successful external API call."
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/operations/assistant-offline.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/connections.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/operations.html?view=sources",
+      "capturedAt": "2026-11-08T21:49:13.748Z"
     },
     {
       "chapter": "assistant",
       "id": "assistant-settings",
       "title": "Manage planning and notification preferences",
-      "summary": "Business planning settings sit beside notification preferences and connection status, away from the everyday overview.",
+      "summary": "The current Planning panel owns sourcing, lead time, coverage, and the explicit choice to seed vendor defaults for future workspaces.",
       "points": [
-        "Retained profiles can keep their recorded combined duration and coverage.",
-        "Email and text are shown as not connected in this capture.",
-        "Saving preferences is separate from sending a notification or ordering stock."
+        "This workspace retains 14 supplier days and a 60-day coverage target.",
+        "Notification preferences are managed separately; saving them does not send an email or text.",
+        "The capture includes only the Planning panel, excluding private notification addresses and phone numbers."
       ],
-      "detail": "",
+      "detail": "Vendor identity, commercial terms, minimums, and pack increments live on Vendor & products. The current app has no simulation checkbox in this business-settings form.",
       "key": false,
-      "image": "../../assets/northstar/operations/assistant-settings.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/assistant-settings.jpg",
+      "note": "Current BNT app, November 8, 2026. The planning section is shown with private notification contact fields excluded. No settings were saved.",
+      "sourcePath": "/ordering/assistant.html#settings",
+      "capturedAt": "2026-11-08T21:59:35.193319+00:00"
     },
     {
       "chapter": "assistant",
@@ -503,14 +582,16 @@ window.NORTHSTAR_TOUR = {
       "title": "Separate supplier and logistics timing",
       "summary": "Newer sourcing profiles distinguish supplier lead time, dispatch, shipping, inspection, receiving, and the resulting coverage target.",
       "points": [
-        "Supplier lead time ends when goods are ready to ship at the factory.",
-        "Business-day and calendar-day stages avoid counting the same interval twice.",
-        "Unknown stages remain unknown; these settings are estimates rather than delivery promises."
+        "The current profile has 14 supplier calendar days and 3 dispatch business days.",
+        "Shipping is 14 calendar days, inspection is 2 business days, and additional Amazon receiving is 7 calendar days.",
+        "The app derives 40 calendar days overall and 60 days of coverage without treating a business day as a calendar day."
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/current/planning-settings.jpg",
-      "note": "Isolated six-product interface fixture showing the separate timing fields and disconnected notification services."
+      "image": "../../assets/northstar/live-20261108/planning-stages.jpg",
+      "note": "Current BNT app, November 8, 2026. The planning section is shown with private notification contact fields excluded. No settings were saved.",
+      "sourcePath": "/ordering/assistant.html#settings",
+      "capturedAt": "2026-11-08T21:59:35.193319+00:00"
     },
     {
       "chapter": "assistant",
@@ -518,14 +599,33 @@ window.NORTHSTAR_TOUR = {
       "title": "Maintain vendor identity and commercial terms",
       "summary": "Vendor & products owns vendor identity/reference, estimated or confirmed terms, purchasing minimums, and pack increments.",
       "points": [
-        "Example Components is a fictional vendor in the capture.",
+        "Conkly is the vendor shown in the actual selected workspace.",
         "Estimated terms are distinct from confirmed terms backed by a supplier reference.",
-        "An explicit defaults choice can seed future workspaces without rewriting existing orders."
+        "Updating preferred-vendor defaults is explicit and does not rewrite existing approved orders."
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/operations/vendor-settings.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/vendor-settings.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/vendor.html",
+      "capturedAt": "2026-11-08T21:48:17.448Z"
+    },
+    {
+      "chapter": "assistant",
+      "id": "vendor-minimums",
+      "title": "Maintain minimums and packing with the vendor",
+      "summary": "Minimums and packing are part of Vendor & products, separate from everyday assistant planning settings.",
+      "points": [
+        "Review group and SKU minimums plus order increments before purchasing.",
+        "Supplier terms remain estimated until a quote or availability reference confirms them.",
+        "Saving vendor defaults for new workspaces is explicit; this capture does not save changes."
+      ],
+      "detail": "",
+      "key": true,
+      "image": "../../assets/northstar/live-20261108/vendor-minimums.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/vendor.html",
+      "capturedAt": "2026-11-08T21:48:17.864Z"
     },
     {
       "chapter": "assistant",
@@ -539,8 +639,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/operations/vendor-products.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/vendor-products.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/vendor.html",
+      "capturedAt": "2026-11-08T21:48:18.281Z"
     },
     {
       "chapter": "data",
@@ -548,14 +650,16 @@ window.NORTHSTAR_TOUR = {
       "title": "Keep separate datasets and histories",
       "summary": "Each dataset retains its own opening files, plans, approved packages, movements, and working balances.",
       "points": [
-        "Switching changes this browser; stale open pages must reload.",
-        "A fresh dataset is different from updating the current source report.",
-        "The earlier operating example remains available after creating a launch example."
+        "The CONKLY starter remains selected, with its files, order, and movements retained.",
+        "Switching changes the browser context; other open pages must reload.",
+        "Creating a new dataset differs from importing an updated report into an existing dataset."
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/operations/datasets.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/datasets.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/datasets.html",
+      "capturedAt": "2026-11-08T21:48:38.889Z"
     },
     {
       "chapter": "data",
@@ -567,10 +671,12 @@ window.NORTHSTAR_TOUR = {
         "Opening source files are retained and identified.",
         "Creating a separate dataset starts new plans and movements without clearing the selected one."
       ],
-      "detail": "",
+      "detail": "The preview uses the selected dataset’s retained opening files and shows six products, 24 positions, zero opening stock, and zero opening on order. It also exposes current vendor defaults, which differ from this workspace’s saved settings. Create dataset was not confirmed.",
       "key": false,
-      "image": "../../assets/northstar/operations/dataset-preview.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/dataset-preview.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/datasets.html",
+      "capturedAt": "2026-11-08T21:48:45.718Z"
     },
     {
       "chapter": "data",
@@ -584,8 +690,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/operations/reports.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/reports.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/reports.html",
+      "capturedAt": "2026-11-08T21:49:03.185Z"
     },
     {
       "chapter": "data",
@@ -599,8 +707,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/operations/imports.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/imports.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/reports.html#import-workspace",
+      "capturedAt": "2026-11-08T21:49:03.383Z"
     },
     {
       "chapter": "data",
@@ -614,8 +724,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/operations/report-calculations.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/report-calculations.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:46:34.408Z"
     },
     {
       "chapter": "data",
@@ -629,8 +741,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/operations/reconciliation-handoff.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/reconciliation-handoff.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:46:34.855Z"
     },
     {
       "chapter": "data",
@@ -644,8 +758,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/operations/operational-history.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/operational-history.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/operations.html?view=history",
+      "capturedAt": "2026-11-08T21:49:04.165Z"
     },
     {
       "chapter": "data",
@@ -659,8 +775,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/operations/connections.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/connections.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/operations.html?view=sources",
+      "capturedAt": "2026-11-08T21:49:13.748Z"
     },
     {
       "chapter": "data",
@@ -674,8 +792,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/operations/manual-receipt.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/manual-receipt.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/receipts.html",
+      "capturedAt": "2026-11-08T21:49:35.417Z"
     },
     {
       "chapter": "data",
@@ -689,8 +809,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/operations/sage-evaluation.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/sage-evaluation.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/ordering/?mode=sage",
+      "capturedAt": "2026-11-08T21:49:28.384Z"
     },
     {
       "chapter": "data",
@@ -704,8 +826,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/operations/context-help.png",
-      "note": "Actual application interface with fictional records in an isolated capture workspace."
+      "image": "../../assets/northstar/live-20261108/context-help.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "sourcePath": "/index.html#guide",
+      "capturedAt": "2026-11-08T21:43:55.001Z"
     },
     {
       "chapter": "intelligence",
@@ -719,8 +843,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/operations/supplier-performance.png",
-      "note": "Separate synthetic network example; these figures are not company results."
+      "image": "../../assets/northstar/live-20261108/supplier-performance.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. This is the app’s separately labeled legacy synthetic network example, not the CONKLY operating records.",
+      "sourcePath": "/index.html#suppliers",
+      "capturedAt": "2026-11-08T21:49:36.516Z"
     },
     {
       "chapter": "intelligence",
@@ -734,8 +860,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/operations/amazon-health.png",
-      "note": "Separate synthetic network example; these figures are not company results."
+      "image": "../../assets/northstar/live-20261108/amazon-health.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. This is the app’s separately labeled legacy synthetic network example, not the CONKLY operating records.",
+      "sourcePath": "/index.html#amazon",
+      "capturedAt": "2026-11-08T21:49:37.067Z"
     },
     {
       "chapter": "intelligence",
@@ -749,8 +877,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/operations/returns-quality.png",
-      "note": "Separate synthetic network example; these figures are not company results."
+      "image": "../../assets/northstar/live-20261108/returns-quality.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. This is the app’s separately labeled legacy synthetic network example, not the CONKLY operating records.",
+      "sourcePath": "/index.html#returns",
+      "capturedAt": "2026-11-08T21:49:37.702Z"
     },
     {
       "chapter": "intelligence",
@@ -764,8 +894,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/operations/growth-scenarios.png",
-      "note": "Separate synthetic network example; these figures are not company results."
+      "image": "../../assets/northstar/live-20261108/growth-scenarios.jpg",
+      "note": "Captured directly from the running Northstar app, November 8, 2026. This is the app’s separately labeled legacy synthetic network example, not the CONKLY operating records.",
+      "sourcePath": "/index.html#scenario",
+      "capturedAt": "2026-11-08T21:49:38.183Z"
     }
   ],
   "legacy": [
@@ -775,5 +907,14 @@ window.NORTHSTAR_TOUR = {
     "ask-northstar",
     "planning-stages",
     "vendor-products"
-  ]
+  ],
+  "source": {
+    "label": "Current BNT development app",
+    "capturedDate": "2026-11-08",
+    "dataset": "CONKLY starter - 80 individual bands",
+    "products": 6,
+    "stock": 80,
+    "onOrder": 0,
+    "readyForSale": 80
+  }
 };

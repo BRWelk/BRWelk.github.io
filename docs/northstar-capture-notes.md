@@ -1,45 +1,55 @@
-# Current Northstar screenshots
+# Current Northstar portfolio captures
 
-Captured November 8, 2026 from the current application's assistant and vendor UI.
-The original application files were copied unchanged into an isolated capture folder.
-Its existing UI fixture intercepted every API request; no private storage, credentials,
-live model request, partner action, or purchase approval was used.
+## Source of truth
 
-The capture fixture uses one coherent fictional operations dataset. Supplier identity
-is generalized to Example Components. Its development toolbar is omitted from the
-capture harness. Application HTML/CSS/JavaScript were not changed for the screenshots.
+Confirmed November 8, 2026: keep Brian's portfolio on GitHub Pages and update its
+Northstar entry from the actual app at http://192.168.0.70:8769. Do not replace the
+portfolio with the operational app. GitHub Pages remains the host for the portfolio;
+BNT remains the host for the Python/database application.
 
-Six original JPEG captures are retained in assets/northstar/current. They show the
-overview, selected purchase batch before approval, grouped activity, Ask Northstar
-before submission with supporting records open, planning settings, and vendor/products.
-The guided tour labels its capture method and sample data. It is not a live app or
-proof of a generated answer. The earlier prototype remains available as history.
+All 48 screenshots in the current 51-stop tour were captured directly from that
+running app, not from GitHub's earlier portfolio, an isolated fixture, or a rebuilt
+application. The selected workspace is CONKLY starter - 80 individual bands:
+six products, 24 regional positions, 80 units in stock, zero on order, and one
+completed 80-unit purchase. Each connector family retains the 20/10/10 split.
 
-## Expanded application capture
+The current request is estimated at $320 landed/prepped. Its planning settings
+are 14 supplier calendar days, 3 dispatch business days, 14 shipping calendar days,
+2 inspection business days, 7 additional Amazon receiving days, 40 calendar days
+overall, and 60 days of coverage. These are saved assumptions, not verified supplier
+promises. New-workspace defaults are shown separately and are not claimed to equal
+the selected workspace's saved preferences.
 
-The full application tour now uses 49 stops across planning, purchasing decisions,
-tracking and receiving, AI/business controls, supporting tools, and separately
-labeled network intelligence. See `northstar-tour-coverage.md` for the navigation
-inventory and the current destinations of older menu entries.
+## Capture boundaries
 
-New PNG captures in `assets/northstar/operations` come from an isolated copy of
-the current application. Only application source and generated fictional input
-were copied. Credentials, private reports, production databases, and live partner
-connections were excluded. The capture server explicitly disabled AI and rejected
-outbound network connections. Business identity labels were generalized in the
-isolated copy; the original application was not changed.
+Only navigation, inspection, local planning preview, and an unsaved dataset preview
+were used. No order was approved or sent, no stock update or shared plan saved,
+no dataset created or switched, and no AI question or notification submitted.
+The existing completed order supplies the retained receipt and put-away evidence;
+its current receiving queue is empty. No pending receipt was fabricated.
 
-The main fictional dataset contains 21 products and four regions. Through the
-actual UI, receipt of 1,460 units was verified and then put away: total stock
-increased from 3,424 to 4,884 while on-order fell from 20,105 to 18,645. Receipt
-verification alone left stock unchanged. A fresh fictional dataset illustrates
-launch planning. Selected assistant purchase groups were captured before approval.
-No supplier email was sent, no purchase batch was approved during capture, and no
-AI request was submitted. Generated seed packages establish the fictional starting
-orders, rather than demonstrating a live supplier transaction.
+The assistant reports available. The portfolio shows its current question UI and
+supporting records before a message is submitted. Amazon tracking is explicitly
+not connected. Partner events remain labeled as simulated in the application.
 
-Two earlier JPEG captures remain in the full tour: the question workspace and
-separate planning-time fields. Their six-product fixture is disclosed separately
-from the newer 21-product operating example. Other original captures are retained
-for provenance. Supplier, Amazon, returns, and scenario screens use the app's
-separate synthetic network examples, not company results.
+The Planning captures are cropped directly by the browser to include sourcing and
+logistics fields while excluding private notification email and phone values. All other
+captures preserve the actual page viewport. No source labels or image content were
+rewritten. The final chapter shows the current app's separately labeled legacy
+synthetic network examples; those figures are not CONKLY operational evidence.
+
+## Version and integrity
+
+The installed source's 89 release entries were hashed before and after capture and
+matched. Orders, positions, input versions, events, handoffs, pending counts, and
+shared planning state were unchanged. The source fingerprint is
+94b8e833d3c493dade7d9799c3199076b30c349dc34fac9de92dff2c2af03860.
+
+The public `demos/northstar/capture-manifest.json` records the installed release,
+source fingerprint, capture time, source route, privacy crops, and SHA-256 of each
+image. It contains no workspace database, credentials, or notification contacts.
+`check_northstar.py` verifies every tour reference against that capture record.
+
+Older 21-product operating examples and six-product interface fixtures are no
+longer served. Git history retains earlier versions. Old prototype URLs redirect
+to the current tour instead of exposing an outdated interface.

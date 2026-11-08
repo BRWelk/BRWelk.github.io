@@ -12,18 +12,18 @@ and previous/next navigation through the full tour. Each stop explains the user'
 task, what the screen shows, and its consequence. Give key decisions and the
 assistant deeper explanations; use shorter stops for supporting features.
 
-Use captures of the actual current application, running in an isolated workspace
-with generated fictional records. Do not load private vendor inputs, credentials,
-production storage, live AI, mail, or partner connections. Keep generated actions
-inside that capture workspace. Captions distinguish implemented local behavior,
-test partner updates, separate network simulations, and future connections.
-Generalize business identities if needed for public screenshots and disclose that
-in capture notes. Do not invent assistant answers or live integration outcomes.
+Capture directly from the running BNT development app, using its current selected
+CONKLY six-product, 80-band workspace. Keep every screenshot and explanation tied
+to that version. Do not substitute generated datasets or older fixture images.
+Capture existing order history instead of changing live balances to stage pending
+receiving states. Local previews are allowed; no shared mutation, order approval,
+AI message, notification, or dataset creation is needed for the portfolio capture.
+Crop private notification contacts out of public screenshots. Keep legacy network
+examples distinctly labeled according to their actual source.
 
-Keep the current case-study URL and tour URL. Keep older synthetic prototype
-material available as history, while documenting current implemented operations
-in the main case study. Preserve existing numeric tour links through legacy
-mapping and use stable screen IDs for new deep links.
+Keep the portfolio, current case-study URL, and current tour URL. Old prototype
+addresses must route visitors to the newest tour. Preserve numeric tour links and
+stable screen IDs. Record source/capture hashes and check them in every release.
 
 ## Required coverage inventory
 
@@ -49,7 +49,7 @@ mapping and use stable screen IDs for new deep links.
 
 Every current navigation item must map to a tour stop or an explicit supporting
 feature note in a coverage table. Confirm every screenshot loads and comes from
-the captured application with fictional data. Check chapter selection, next and
+the captured application with the actual current temporary workspace records. Check chapter selection, next and
 previous boundaries, stable deep links, legacy links, keyboard controls, mobile
 layout, and 200% text. Run the public-site link/resource and domain-metadata checks,
 review the full affected case study, and verify the published release.

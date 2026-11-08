@@ -1,0 +1,307 @@
+{
+  "sourceApp": "Northstar BNT development",
+  "sourceRelease": "20261101-050008-78a374-sidebar-20261101-053205-help-20261101-054712-overview-help-20261101-060424-launch-selection-20261101-063217-helfen-parity-20261101-064710-tower-vendor-20261101-070550-vendor-documentation-20261101-072829-card-layout-20261101-073239-supplier-mail-20261101-074019-unified-planning-20261101-075711-report-library-20261101-091427-report-csv-context-20261101-091908-mail-status-20261101-092120-report-history-source-20261101-092253-record-receipt-20261102-050333-operational-flow-20261102-054619-regional-review-20261102-055034-operations-view-20261102-055209-briefing-scenario-20261102-064601-datasets-20261103-054350-recalculation-20261103-060020-operations-assistant-20261107-151640-operations-assistant-20261107-152440-operations-assistant-20261107-152726-operations-assistant-20261107-154315-operations-assistant-20261107-154633-assistant-batch-approvals-20261107-161954-approval-ui-20261107-162103-replenishment-mock-20261107-170618-batch-selection-20261108-065159-assistant-ux-20261108-075414-641f44-ready-coverage-20261108-085144-d25a51-source-switch-usability-fixes-20261108-093049-7b33d6-conkly-master-20261108-100558-0c0212-conkly-master-20261108-101307-42aa11-conkly-master-20261108-101730-c4430f-product-settings-20261108-124917-d58a3a-product-settings-20261108-125328-1ac76e",
+  "sourceFingerprint": "94b8e833d3c493dade7d9799c3199076b30c349dc34fac9de92dff2c2af03860",
+  "workspace": {
+    "label": "Current BNT development app",
+    "capturedDate": "2026-11-08",
+    "dataset": "CONKLY starter - 80 individual bands",
+    "products": 6,
+    "stock": 80,
+    "onOrder": 0,
+    "readyForSale": 80
+  },
+  "ordersAndInventoryUnchanged": true,
+  "captures": [
+    {
+      "path": "assets/northstar/live-20261108/amazon-health.jpg",
+      "sourcePath": "/index.html#amazon",
+      "capturedAt": "2026-11-08T21:49:37.067Z",
+      "sha256": "475ea5f6888bc698459aae18a847f0cd505513e6df6caad2a72ca0f0f9178d94"
+    },
+    {
+      "path": "assets/northstar/live-20261108/approved-packages.jpg",
+      "sourcePath": "/ordering/?mode=standard#orders-history",
+      "capturedAt": "2026-11-08T21:44:53.185Z",
+      "sha256": "4e9078ecf19c63ff25bb640dd4335f2b51ec10a3d52ddc2282cb3699fa10ef3d"
+    },
+    {
+      "path": "assets/northstar/live-20261108/ask-northstar.jpg",
+      "sourcePath": "/ordering/assistant.html#ask",
+      "capturedAt": "2026-11-08T21:47:10.673Z",
+      "sha256": "69d778ca25c159d4e759e6eb590bec584ce00fc9f4f04af1afd936d7d76bd31f"
+    },
+    {
+      "path": "assets/northstar/live-20261108/assistant-activity.jpg",
+      "sourcePath": "/ordering/assistant.html#activity",
+      "capturedAt": "2026-11-08T21:47:10.505Z",
+      "sha256": "59ae87e6c805b5ac9d8537c0010624caa5af4909fd2819bc07bbf64be4979175"
+    },
+    {
+      "path": "assets/northstar/live-20261108/assistant-approvals.jpg",
+      "sourcePath": "/ordering/assistant.html#approvals",
+      "capturedAt": "2026-11-08T21:47:02.270Z",
+      "sha256": "c9b9f1dde68a33a686b421a742ad2c46d3639798f25b96a002322fe8d4721f3b"
+    },
+    {
+      "path": "assets/northstar/live-20261108/assistant-batch.jpg",
+      "sourcePath": "/ordering/assistant.html#approvals",
+      "capturedAt": "2026-11-08T21:47:10.304Z",
+      "sha256": "c2343d232d407e0a6173b2d7727c5f7f16e796c334901b6bd9d77e6cb88ec6f6"
+    },
+    {
+      "path": "assets/northstar/live-20261108/assistant-boundaries.jpg",
+      "sourcePath": "/ordering/assistant.html#ask",
+      "capturedAt": "2026-11-08T21:47:21.738Z",
+      "sha256": "fe2d0c4eeee60923d64ed0d007b751bad2c43ac369b8b817297b57d6aea1da8f"
+    },
+    {
+      "path": "assets/northstar/live-20261108/assistant-evidence.jpg",
+      "sourcePath": "/ordering/assistant.html#ask",
+      "capturedAt": "2026-11-08T21:47:22.470Z",
+      "sha256": "c49144ccd4b3e435a399a8f5290c7935c4ad068f28a62673f54e1e525fe7fbab"
+    },
+    {
+      "path": "assets/northstar/live-20261108/assistant-overview.jpg",
+      "sourcePath": "/ordering/assistant.html",
+      "capturedAt": "2026-11-08T21:47:02.104Z",
+      "sha256": "8c59d7f42167b99c8c82f6e93e49a1b42a080f3a483e9f6d8b13ed060ff7b907"
+    },
+    {
+      "path": "assets/northstar/live-20261108/assistant-settings.jpg",
+      "sourcePath": "/ordering/assistant.html#settings",
+      "capturedAt": "2026-11-08T21:59:35.193319+00:00",
+      "sha256": "aecf826ede0287a7f785e5c71478efc34865f66e4af3fdbd583304f761b75916",
+      "privacyCrop": "Current planning section; private notification contact fields excluded."
+    },
+    {
+      "path": "assets/northstar/live-20261108/connections.jpg",
+      "sourcePath": "/ordering/operations.html?view=sources",
+      "capturedAt": "2026-11-08T21:49:13.748Z",
+      "sha256": "53e30d8308d26709af0690e30c986685c118703a5fd4f48b97a794e1d0cc4bac"
+    },
+    {
+      "path": "assets/northstar/live-20261108/context-help.jpg",
+      "sourcePath": "/index.html#guide",
+      "capturedAt": "2026-11-08T21:43:55.001Z",
+      "sha256": "e6f6cdd443e515fbca47cd467e0cb77373054e7812089f1720961e0dd7e65f29"
+    },
+    {
+      "path": "assets/northstar/live-20261108/dataset-preview.jpg",
+      "sourcePath": "/ordering/datasets.html",
+      "capturedAt": "2026-11-08T21:48:45.718Z",
+      "sha256": "3ca8d5239580a5e210f711e1e28c564b1a27752c8916904535b0428ec9c2b8e7"
+    },
+    {
+      "path": "assets/northstar/live-20261108/datasets.jpg",
+      "sourcePath": "/ordering/datasets.html",
+      "capturedAt": "2026-11-08T21:48:38.889Z",
+      "sha256": "8c10d753982395a083d2288d22aad86723e3dd005d6a0485f03a876f22dfa0a7"
+    },
+    {
+      "path": "assets/northstar/live-20261108/executive-overview.jpg",
+      "sourcePath": "/index.html",
+      "capturedAt": "2026-11-08T21:43:12.951Z",
+      "sha256": "1c14fc6052adb31b1822ce51d3a040813e9e62e69352ae363375c76bf303a8c8"
+    },
+    {
+      "path": "assets/northstar/live-20261108/growth-scenarios.jpg",
+      "sourcePath": "/index.html#scenario",
+      "capturedAt": "2026-11-08T21:49:38.183Z",
+      "sha256": "9e24d43e9f208fd0afd1d4025b4d548985181f8907eb02a1eca6bc7c1f9de3e7"
+    },
+    {
+      "path": "assets/northstar/live-20261108/imports.jpg",
+      "sourcePath": "/ordering/reports.html#import-workspace",
+      "capturedAt": "2026-11-08T21:49:03.383Z",
+      "sha256": "aca78108573093824c28189a72db765cd90a76f14ac4f395b474eea38c312369"
+    },
+    {
+      "path": "assets/northstar/live-20261108/inventory-detail.jpg",
+      "sourcePath": "/index.html#inventory",
+      "capturedAt": "2026-11-08T21:43:27.414Z",
+      "sha256": "fb94a4bfa64159f480c3671ea950ba30d55d6149adcceb17b7fe7ca793463042"
+    },
+    {
+      "path": "assets/northstar/live-20261108/inventory.jpg",
+      "sourcePath": "/index.html#inventory",
+      "capturedAt": "2026-11-08T21:43:26.883Z",
+      "sha256": "0dc09ef604a0c2f9cf3d159473783ebe14a824e4789b2be924845d807fb9bfc9"
+    },
+    {
+      "path": "assets/northstar/live-20261108/launch-comparison.jpg",
+      "sourcePath": "/ordering/?mode=launch#settings",
+      "capturedAt": "2026-11-08T21:45:09.745Z",
+      "sha256": "169bfc9a201bcd20d10ad5894fe30a9ccd60f24310a576ee13f5b32918aa1dac"
+    },
+    {
+      "path": "assets/northstar/live-20261108/launch-plan.jpg",
+      "sourcePath": "/ordering/?mode=launch#settings",
+      "capturedAt": "2026-11-08T21:45:09.551Z",
+      "sha256": "c0d98e5622762d3081a09a8a048a40c5c1f59c236f771573a3fb9c27f8110dcd"
+    },
+    {
+      "path": "assets/northstar/live-20261108/manual-receipt.jpg",
+      "sourcePath": "/ordering/receipts.html",
+      "capturedAt": "2026-11-08T21:49:35.417Z",
+      "sha256": "e455773eaab81b372b327553e510a1c0ebf5a0605dc8fe6c6e79ec17dbf86c8c"
+    },
+    {
+      "path": "assets/northstar/live-20261108/monthly-plan.jpg",
+      "sourcePath": "/ordering/?mode=standard",
+      "capturedAt": "2026-11-08T21:44:26.681Z",
+      "sha256": "c4738504543cebfc16305a48c90bbfb5df80644e9c8b39529359a529d49d7420"
+    },
+    {
+      "path": "assets/northstar/live-20261108/monthly-preview.jpg",
+      "sourcePath": "/ordering/?mode=standard#review",
+      "capturedAt": "2026-11-08T21:44:41.366Z",
+      "sha256": "a6349b420b19c9abc86d3c96cff27de8f2b0009d7f66f8930b54100f981fec7b"
+    },
+    {
+      "path": "assets/northstar/live-20261108/operational-history.jpg",
+      "sourcePath": "/ordering/operations.html?view=history",
+      "capturedAt": "2026-11-08T21:49:04.165Z",
+      "sha256": "e82d1d28a54ba89ac2442feb0114384c1cc230ae1290a66957afacabc5d0af85"
+    },
+    {
+      "path": "assets/northstar/live-20261108/operations-inbox.jpg",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:45:18.449Z",
+      "sha256": "e46cea75bdf4b91f8ef20d5e4564b93fdc9ebb5752fa919d6806ad4eb732a0e1"
+    },
+    {
+      "path": "assets/northstar/live-20261108/order-events.jpg",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:46:16.950Z",
+      "sha256": "e87aeef9dee29d76fa6c0ab3ff9885f1194e68572557a328751428dec29a43d8"
+    },
+    {
+      "path": "assets/northstar/live-20261108/order-files.jpg",
+      "sourcePath": "/ordering/?mode=standard#review",
+      "capturedAt": "2026-11-08T21:44:41.914Z",
+      "sha256": "cc85b7386ef6e8e2535585fa15e1da654d2ed089f07ef81111e85b70db4f4e37"
+    },
+    {
+      "path": "assets/northstar/live-20261108/order-timeline.jpg",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:45:50.131Z",
+      "sha256": "f5826f0e47c5175c9f8a410a4f4088f43879a4ad26470df4a25b52fe7f4b6919"
+    },
+    {
+      "path": "assets/northstar/live-20261108/orders.jpg",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:45:26.743Z",
+      "sha256": "d88fc0de6ee150b66e42daf6f4674d0cbba736ef1c880284bdf2efe01cd83195"
+    },
+    {
+      "path": "assets/northstar/live-20261108/planning-rules.jpg",
+      "sourcePath": "/ordering/?mode=standard#settings",
+      "capturedAt": "2026-11-08T21:44:26.914Z",
+      "sha256": "5fab7494ff9e6e08851d419fc5d8e5565961a41a72ffe71a96b2cc7cd3de98f4"
+    },
+    {
+      "path": "assets/northstar/live-20261108/planning-stages.jpg",
+      "sourcePath": "/ordering/assistant.html#settings",
+      "capturedAt": "2026-11-08T21:59:35.193319+00:00",
+      "sha256": "aecf826ede0287a7f785e5c71478efc34865f66e4af3fdbd583304f761b75916",
+      "privacyCrop": "Current planning section; private notification contact fields excluded."
+    },
+    {
+      "path": "assets/northstar/live-20261108/receiving-review.jpg",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:46:16.448Z",
+      "sha256": "a791ed6b7dcd2da600db3496b2142c04e388d4db9d0cd44bffdaf3ea82b33b46"
+    },
+    {
+      "path": "assets/northstar/live-20261108/receiving.jpg",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:46:15.598Z",
+      "sha256": "e32abe97f96e241307ef6212d60ef653992c49058d6849f1c8025f86c32bae94"
+    },
+    {
+      "path": "assets/northstar/live-20261108/reconciliation-handoff.jpg",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:46:34.855Z",
+      "sha256": "fd90d2a6a1496fbb2408bd0e3c1d4431b1692b5be88f5d5a75474cc73d5987e8"
+    },
+    {
+      "path": "assets/northstar/live-20261108/replenishment-detail.jpg",
+      "sourcePath": "/index.html#replenishment",
+      "capturedAt": "2026-11-08T21:43:43.848Z",
+      "sha256": "fea52c28d896346f3bef76faa3aa2491467df5b73083b4fb9351ce80eb500cb1"
+    },
+    {
+      "path": "assets/northstar/live-20261108/replenishment.jpg",
+      "sourcePath": "/index.html#replenishment",
+      "capturedAt": "2026-11-08T21:43:36.748Z",
+      "sha256": "454054d5c02b566f2f0c2321e2545d3a4c468e97f18d69c8610c81f607aca5c0"
+    },
+    {
+      "path": "assets/northstar/live-20261108/report-calculations.jpg",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:46:34.408Z",
+      "sha256": "ba9d6e364e25c05bd93ae15a30d9176fc69088725838c08f8c8694d334687dd6"
+    },
+    {
+      "path": "assets/northstar/live-20261108/reports.jpg",
+      "sourcePath": "/ordering/reports.html",
+      "capturedAt": "2026-11-08T21:49:03.185Z",
+      "sha256": "6edd7ebbdef70e56cd3e87b34ee8e927f7bdfa238aa23f658d226ef44688d079"
+    },
+    {
+      "path": "assets/northstar/live-20261108/returns-quality.jpg",
+      "sourcePath": "/index.html#returns",
+      "capturedAt": "2026-11-08T21:49:37.702Z",
+      "sha256": "811a8af06395dc5aba7a900300f44d2338e260d6194aa04ddcad877cdd995e79"
+    },
+    {
+      "path": "assets/northstar/live-20261108/sage-evaluation.jpg",
+      "sourcePath": "/ordering/?mode=sage",
+      "capturedAt": "2026-11-08T21:49:28.384Z",
+      "sha256": "ccc0fdc4273aeb4db09110da51be3b6a548124e2b12d2d220762bf6b7e390c7b"
+    },
+    {
+      "path": "assets/northstar/live-20261108/shipments-map.jpg",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:46:02.732Z",
+      "sha256": "bf13e20c8b13e27c71f2228f1182148fe57fd8edc4e5ef04a91fa28cb5fcfaa4"
+    },
+    {
+      "path": "assets/northstar/live-20261108/supplier-performance.jpg",
+      "sourcePath": "/index.html#suppliers",
+      "capturedAt": "2026-11-08T21:49:36.516Z",
+      "sha256": "39e7a8320ec5021bf4d3fc2bd95626bb48a678464c8406891d2e973e6a53148b"
+    },
+    {
+      "path": "assets/northstar/live-20261108/transfer-review.jpg",
+      "sourcePath": "/ordering/operations.html",
+      "capturedAt": "2026-11-08T21:46:24.449Z",
+      "sha256": "fa48b805e21f16a06ca45c237e0556824c70070c71cec68773a23a09d21cb3d8"
+    },
+    {
+      "path": "assets/northstar/live-20261108/vendor-minimums.jpg",
+      "sourcePath": "/ordering/vendor.html",
+      "capturedAt": "2026-11-08T21:48:17.864Z",
+      "sha256": "b42ff73aa5ac413c6478b97fe1978a1beb1a77376b65c0db1481d820e998560c"
+    },
+    {
+      "path": "assets/northstar/live-20261108/vendor-products.jpg",
+      "sourcePath": "/ordering/vendor.html",
+      "capturedAt": "2026-11-08T21:48:18.281Z",
+      "sha256": "2aa7e13af2371c02af95279137276ec5ba14878c7b01942b6d8c4e6667ceb0d9"
+    },
+    {
+      "path": "assets/northstar/live-20261108/vendor-settings.jpg",
+      "sourcePath": "/ordering/vendor.html",
+      "capturedAt": "2026-11-08T21:48:17.448Z",
+      "sha256": "2273f65a6d8c77a065d01e41b96d90ea2d59a9fbb53da853853290af912467f7"
+    },
+    {
+      "path": "assets/northstar/live-20261108/workflow-guide.jpg",
+      "sourcePath": "/index.html#guide",
+      "capturedAt": "2026-11-08T21:43:54.377Z",
+      "sha256": "0223903173018939fbc6e19926146c671e9eb5b261c0304320d218126c82467f"
+    }
+  ]
+}
