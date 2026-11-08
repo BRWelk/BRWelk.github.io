@@ -1,6 +1,7 @@
 """Build a self-contained GitHub Pages release containing only public site files."""
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 import shutil
@@ -40,6 +41,14 @@ def main():
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(path, destination)
     (output / "CNAME").write_text(config["domain"] + "\n", encoding="utf-8")
+    # Give each published tour asset a content version so a returning visitor
+    # receives the matching current data and layout after a release.
+    tour_index = output / "demos/northstar/index.html"
+    html = tour_index.read_text(encoding="utf-8")
+    for name in ("tour.css", "tour-data.js", "tour.js"):
+        digest = hashlib.sha256((tour_index.parent / name).read_bytes()).hexdigest()[:12]
+        html = html.replace('"' + name + '"', '"' + name + '?v=' + digest + '"')
+    tour_index.write_text(html, encoding="utf-8")
     print(json.dumps({"output": str(output), "files": len(public_files) + 1,
                       "url": config["url"]}))
 
