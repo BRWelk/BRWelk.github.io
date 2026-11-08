@@ -191,3 +191,18 @@ GitHub has now approved the custom-domain certificate and HTTPS enforcement is
 enabled. HTTPS on the domain returns 200; HTTP and www redirect to the secure apex.
 The original github.io address redirects to the custom domain: the portfolio and
 repository were not lost. The actual BNT app and Cloudflare routes were not changed.
+
+### Current-version production verification
+
+Published content commit `630a184`, followed by cache-versioning commit `208dbb9`.
+Actions run 42528585091 passed build, navigation checks, current-capture integrity,
+artifact upload, and deployment. All 119 checked public content files matched the
+staged release after newline normalization and matching content-version parameters;
+all three deployed CSS/JavaScript version hashes matched their actual bytes.
+Old fixture images, old prototype JavaScript, and repository-only paths returned 404.
+
+Opened the live HTTPS portfolio in the in-app browser, followed its Northstar entry,
+and verified the new cover, six-product/80-unit caption, 51-stop tour, and rendered
+current request/cost review. The live browser loaded the matching current image.
+The original github.io redirect chain finished at the secure portfolio with 200.
+HTTP and www redirect to the secure apex. No certificate issuance step remains.
