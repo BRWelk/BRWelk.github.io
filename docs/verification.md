@@ -97,3 +97,43 @@ with domain registration and DNS retained at Wix.
 
 Production deployment, DNS routing, certificate issuance, HTTPS enforcement,
 and live-domain browser checks are recorded after their actual results below.
+
+The updated approved site was published to `main` at `78be006`; Actions run
+42520725184 completed successfully. Wix DNS was changed to GitHub's four apex
+addresses and `www` CNAME, preserving nameservers, DNSSEC, and the ownership TXT.
+Public resolvers confirmed the records. The custom domain served the deployment
+over HTTP: all 74 public content files matched the artifact after newline
+normalization, and repository-only paths returned 404. GitHub's certificate
+remained `authorization_created` at the last check; HTTPS enforcement and a
+successful live HTTPS browser visit are not yet verified.
+
+## Full Northstar application showcase
+
+Brian confirmed that visitors should see the entire app, with greater depth at
+key decisions and the AI assistant. `northstar-tour-spec.md` records that scope;
+`northstar-tour-coverage.md` maps current navigation and supporting tasks.
+
+- Built 129 public files; all 13 HTML documents passed 187 local references,
+  anchors, domain metadata, sitemap, and structured-data checks.
+- `node --check` passed for both new tour scripts; `git diff --check` passed.
+- In the in-app browser, traversed all 49 stops through the Next control. Every
+  screenshot loaded and each screen rendered its three explanatory points.
+  Checked first/last button boundaries, chapter selection, screen selection,
+  cross-chapter movement, arrow-key navigation, browser Back, stable screen URLs,
+  and legacy `?step=4` mapping to Ask Northstar.
+- Reviewed the affected case study from hero through workflow, app coverage,
+  assistant, limitations, current gallery, preserved collapsed prototype, and
+  footer. Its visible images loaded without failures. Homepage entry points also
+  loaded the current imagery and full-tour link.
+- Tested the actual tour inside a 390px iframe because viewport overrides did
+  not resize the existing in-app tab. The content viewport was 375px after the
+  scrollbar, with no horizontal overflow. Reviewed stacked controls and screen
+  explanations. At 200% text, controls reflowed and the page had no horizontal
+  overflow. Screenshot content remains available through a full-size image link.
+- Fictional receipt and put-away were exercised in an isolated copy of the
+  application; this does not certify live partner integrations. Capture details
+  and the two retained older fixture screenshots are disclosed in capture notes.
+
+The full tour is a static public showcase. It does not run the private app or
+allow visitors to approve purchases. Brian's judgment of emphasis and storytelling
+remains a useful final editorial review.

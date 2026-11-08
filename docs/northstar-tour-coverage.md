@@ -1,0 +1,53 @@
+# Northstar tour coverage
+
+Verified against the current application's navigation and connected-workspace
+redirects on November 8, 2026. The tour contains 49 stops in six chapters.
+Screens use fictional records; they do not publish the application or its storage.
+
+| Current navigation / task | Tour screen IDs |
+| --- | --- |
+| Start here & workflows; printable workflow guidance | workflow-guide, context-help |
+| Executive overview | executive-overview |
+| Inventory control; search, region/health filters, CSV export, product detail | inventory, inventory-detail, updated-inventory |
+| Replenishment planner; regional quantities and group calculations | replenishment, replenishment-detail |
+| Monthly plan; rules, saved shared revisions, preview | monthly-plan, planning-rules, monthly-preview |
+| Launch plan; fresh dataset, selection, minimum versus coverage comparison | launch-plan, launch-comparison |
+| Supplier spreadsheet, unsent email, proposed Sage request, manual CSV | order-files |
+| Approved packages; exact revision and generated outputs | approved-packages |
+| Orders & movements; order states and details | orders, order-timeline |
+| Shipments & map | shipments-map |
+| Partner updates / verification inbox | operations-inbox |
+| Receiving; quantity and discrepancy review | receiving, receiving-review |
+| Awaiting put-away; posting preview and inventory consequence | awaiting-putaway, putaway-preview, updated-inventory |
+| Transfers; route and destination review | transfer-review |
+| Operational history | operational-history, assistant-activity |
+| Reports & imports; working versions, validated import preview | reports, imports |
+| Mock sales and internal report calculations | report-calculations |
+| Reconciliation and Inventory Planner handoff | reconciliation-handoff |
+| Data & connections; inactive live adapters | connections |
+| Dataset create, preview, confirmation, switch | datasets, dataset-preview, launch-plan |
+| Manual receipt fallback | manual-receipt |
+| Sage evaluation; proposed request, no connected write | sage-evaluation, order-files |
+| Help and field explanations | context-help, workflow-guide |
+| Assistant Overview | assistant-overview |
+| Assistant Approvals; bounded lists, selection scope, review consequences | assistant-approvals, assistant-batch |
+| Assistant Activity; grouped history and retained timelines | assistant-activity |
+| Ask Northstar; selected records, evidence, unavailable-provider behavior | ask-northstar, assistant-evidence, assistant-offline |
+| Assistant Settings; coverage and distinct timing stages | assistant-settings, planning-stages |
+| Vendor & products; identity, estimated/confirmed terms, minima, pack sizes | vendor-settings, vendor-products |
+| Supplier performance (separate synthetic network) | supplier-performance |
+| Amazon health (separate synthetic network) | amazon-health |
+| Returns & quality (separate synthetic network) | returns-quality |
+| Growth scenarios (separate synthetic network) | growth-scenarios |
+
+The connected workspace redirects these older menu entries in
+`static/vendor-dashboard.js`: Purchase orders → Orders; Stock transfers →
+Transfers; Shipments → Shipments & map; Receiving simulation → Receiving;
+Automation center → Partner updates; Audit history → Operational history;
+Data & sync status → Data & connections. Each destination is covered above.
+The earlier standalone portfolio prototype remains linked as project history.
+
+The public presentation demonstrates implemented controls and explains supporting
+features. It does not claim that every possible input, failure branch, or live
+integration has been executed. AI is disabled during this capture; the question
+screen is before submission, and no model answer is fabricated.
