@@ -907,18 +907,6 @@ footer p {
 .work-planned .status {
   flex-shrink: 0;
 }
-.control-tower-card-preview {
-  position: relative;
-}
-.preview-label {
-  position: absolute;
-  inset: auto 0 0;
-  z-index: 1;
-  padding: 0.7rem 1rem;
-  background: var(--surface);
-  color: var(--ink);
-  font-size: 0.85rem;
-}
 .development-note {
   padding: 1.25rem 1.5rem;
   border-left: 3px solid var(--orange);
@@ -936,6 +924,24 @@ footer p {
 }
 .prototype-details[open] > summary {
   margin-bottom: 4rem;
+}
+.northstar-card-cover {
+  object-fit: cover;
+  object-position: top left;
+}
+.northstar-current-cover a,
+.northstar-current-gallery a {
+  display: block;
+}
+.northstar-current-cover img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top left;
+}
+.northstar-current-cover figcaption {
+  padding: 0.9rem 1.2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 .connect-section .button {
   gap: 0.5rem;

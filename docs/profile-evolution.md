@@ -34,7 +34,9 @@ endorsements, or new performance claims are inferred.
 3. Update the existing control-tower case study in place to explain its evolution
    into Northstar. Preserve its URL and the earlier synthetic walkthrough. Clearly
    label that walkthrough as the earlier prototype; do not present it as the
-   current AI assistant.
+   current AI assistant. Following Brian's request, lead with six new current-UI
+   screenshots and a guided tour using fictional sample records. Show Ask
+   Northstar before submission rather than supplying a fictional AI answer.
 4. Describe Northstar's scoped record review, action preparation, existing
    calculation engine, explicit application approval, and test partner adapters.
    Do not publish private operational records, credentials, or internal documents.

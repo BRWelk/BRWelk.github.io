@@ -41,3 +41,21 @@ Brian's judgment of the personal voice and project emphasis remains useful revie
 feedback. Search indexing, rich-result eligibility, and AI citation behavior are
 not established by these local checks. Wix delivery is verified separately at
 release.
+
+## Current Northstar screenshot revision
+
+- Captured six original JPEGs from the current assistant/vendor interface using
+  the existing isolated preview and one coherent fictional dataset. The capture
+  stopped before purchase approval and AI question submission.
+- Created a six-stage guided tour; all six images loaded in the in-app browser.
+  Next/previous boundaries, a deep link to stage four, and right-arrow keyboard
+  navigation worked. The case-study navigation opens the current tour.
+- Reviewed the tour in a measured 390px iframe at standard and 200% base text.
+  Its main element's content width equaled its 375px client width in both cases.
+  Used this isolated frame after the browser viewport override did not resize
+  an existing tab consistently.
+- All 13 source HTML documents passed 170 local reference/anchor checks. The new
+  tour's inline JavaScript passed `node --check`.
+- All six new screenshots uploaded to Wix Media and reported READY. The prior
+  media mappings and earlier prototype walkthrough are retained.
+- Capture provenance and scope are recorded in `northstar-capture-notes.md`.
