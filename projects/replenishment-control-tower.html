@@ -5,10 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Multichannel Replenishment Control Tower case study by Brian Welk, demonstrating inventory planning, supplier purchasing, FBA transfers, workflow controls, and auditability with synthetic data."
+      content="Northstar Control Tower by Brian Welk: the evolution from replenishment planning into connected operations, AI record review, and actions prepared for human approval."
     />
     <meta name="theme-color" content="#101a24" />
-    <title>Multichannel Replenishment Control Tower Case Study | Brian Welk</title>
+    <title>Northstar Control Tower | Brian Welk</title>
+    <link rel="canonical" href="https://brwelk.github.io/projects/replenishment-control-tower.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Northstar Control Tower | Brian Welk" />
+    <meta property="og:description" content="From replenishment planning to connected operations and an AI assistant. A project in development by Brian Welk." />
+    <meta property="og:url" content="https://brwelk.github.io/projects/replenishment-control-tower.html" />
+    <meta name="twitter:card" content="summary" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Northstar Control Tower",
+      "url": "https://brwelk.github.io/projects/replenishment-control-tower.html",
+      "description": "An evolving operations application connecting replenishment planning, order tracking, receiving, inventory, and AI-assisted record review with human approval. Partner connections currently use test adapters.",
+      "creator": {"@type": "Person", "@id": "https://brwelk.github.io/#brian-welk", "name": "Brian Welk", "url": "https://brwelk.github.io/"}
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,20 +43,20 @@
       </a>
       <nav aria-label="Case study navigation">
         <a href="../index.html">← Portfolio</a>
-        <a href="#screens">Screens</a>
-        <a href="../demos/replenishment-control-tower/index.html" target="_blank" rel="noreferrer">Interactive walkthrough ↗</a>
+        <a href="#assistant">AI integration</a>
+        <a href="../demos/replenishment-control-tower/index.html" target="_blank" rel="noreferrer">Earlier walkthrough ↗</a>
       </nav>
     </header>
 
     <main class="case-main" id="main">
       <section class="case-hero">
         <div>
-          <p class="eyebrow">Supply chain planning &amp; workflow control</p>
-          <h1>Multichannel Replenishment Control Tower</h1>
+          <p class="eyebrow">In development · Automation &amp; agentic integration</p>
+          <h1>Northstar Control Tower</h1>
           <p class="case-hero-summary">
-            A local HTML proof of concept for monitoring demand, inventory, supplier purchasing,
-            regional replenishment, Amazon FBA transfers, inbound logistics, receiving exceptions,
-            marketplace health, governed automation, and growth scenarios.
+            An evolving operations application connecting planning, approved purchases, order
+            progress, receiving, inventory, and an AI assistant. Built to make operational
+            work understandable, reviewable, and traceable.
           </p>
         </div>
         <dl class="case-facts">
@@ -50,32 +66,94 @@
           </div>
           <div>
             <dt>Platform</dt>
-            <dd>HTML, CSS, JavaScript, Python-generated synthetic data, and SQLite</dd>
+            <dd>JavaScript, Python, SQLite, and AI integration</dd>
           </div>
           <div>
-            <dt>Portfolio data</dt>
-            <dd>Fully synthetic company, SKU, supplier, inventory, order, shipment, and marketplace records</dd>
+            <dt>Current stage</dt>
+            <dd>Local application with an operations assistant and test partner adapters</dd>
+          </div>
+          <div>
+            <dt>Public demo</dt>
+            <dd>Earlier control tower prototype using fully synthetic records</dd>
           </div>
         </dl>
       </section>
 
-      <figure class="case-cover control-tower-cover">
-        <iframe
-          src="../demos/replenishment-control-tower/index.html?view=overview"
-          title="Interactive executive overview from the Multichannel Replenishment Control Tower"
-          loading="eager"
-        ></iframe>
-        <figcaption>Executive overview · live portfolio walkthrough using synthetic demonstration data.</figcaption>
-      </figure>
+      <section class="case-section" id="evolution">
+        <div>
+          <p class="eyebrow">Project evolution</p>
+          <h2>From replenishment planning to connected operations.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>Northstar grew from my Multichannel Replenishment Control Tower: a prototype
+            for connecting demand, inventory, purchasing, and receiving decisions. As the
+            work developed, I began connecting those decisions into a shared operating workflow.</p>
+          <p>The current application carries saved orders through tracking, receiving,
+            and inventory updates. An operations assistant adds a way to ask questions,
+            inspect supporting records, and prepare supported next steps.</p>
+          <p>This is how I learn: build around a practical problem, test the workflow,
+            refine it, and use what I learn to explore what could come next.</p>
+        </div>
+      </section>
 
-      <div class="case-actions">
-        <a class="button button-primary" href="../demos/replenishment-control-tower/index.html" target="_blank" rel="noreferrer">Launch interactive walkthrough ↗</a>
-        <a class="button button-secondary" href="#screens">Explore the operating workflow</a>
-      </div>
+      <section class="case-section" id="assistant">
+        <div>
+          <p class="eyebrow">AI integration</p>
+          <h2>An assistant grounded in the work.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>I’m exploring agentic integration through an assistant that works with
+            selected operational records and the application’s existing tools.</p>
+          <ul class="outcome-list">
+            <li><strong>Review the evidence.</strong> Explain records and flag issues using
+              the selected workspace’s supporting information.</li>
+            <li><strong>Prepare a next step.</strong> Run supported checks and prepare
+              actions while the existing planning engine supplies purchasing quantities.</li>
+            <li><strong>Keep approval explicit.</strong> A person approves through the
+              application. The assistant cannot approve its own proposals.</li>
+            <li><strong>Follow the outcome.</strong> Keep order progress, receiving,
+              inventory updates, and audit history connected in the operating workflow.</li>
+          </ul>
+        </div>
+      </section>
 
       <section class="case-section">
         <div>
-          <p class="eyebrow">The challenge</p>
+          <p class="eyebrow">What I’m learning</p>
+          <h2>Useful automation needs context and clear controls.</h2>
+        </div>
+        <div class="case-section-copy">
+          <p>The interesting challenge is making AI useful inside a workflow people can
+            understand and trust. That means showing where an answer came from, preserving
+            business rules, checking whether information has changed, and making the
+            approval and outcome visible.</p>
+          <p class="development-note"><strong>Current development stage:</strong>
+            Supplier, carrier, warehouse, and notification connections use test adapters.
+            They exercise the application workflow without placing real partner orders
+            or sending live notifications. The public walkthrough below is the earlier
+            synthetic prototype and does not include the current AI assistant.</p>
+        </div>
+      </section>
+
+      <figure class="case-cover control-tower-cover" id="prototype">
+        <iframe
+          src="../demos/replenishment-control-tower/index.html?view=overview"
+          title="Earlier Multichannel Replenishment Control Tower prototype with synthetic data"
+          loading="eager"
+        ></iframe>
+        <figcaption>Earlier prototype · interactive walkthrough with synthetic data. The current Northstar assistant is not included.</figcaption>
+      </figure>
+
+      <div class="case-actions">
+        <a class="button button-primary" href="../demos/replenishment-control-tower/index.html" target="_blank" rel="noreferrer">Open earlier prototype ↗</a>
+        <a class="button button-secondary" href="#screens">Explore earlier prototype details</a>
+      </div>
+
+      <details class="prototype-details">
+        <summary>Earlier prototype: workflow, screens, and system design</summary>
+      <section class="case-section">
+        <div>
+          <p class="eyebrow">Original design challenge</p>
           <h2>Turn fragmented inventory signals into controlled replenishment decisions.</h2>
         </div>
         <div class="case-section-copy">
@@ -94,7 +172,7 @@
 
       <section class="case-section">
         <div>
-          <p class="eyebrow">The solution</p>
+          <p class="eyebrow">Original prototype</p>
           <h2>One operating view from demand signal through approved replenishment action.</h2>
         </div>
         <div class="case-section-copy">
@@ -120,12 +198,12 @@
 
       <section class="case-gallery control-tower-gallery" id="screens">
         <div class="gallery-heading">
-          <p class="eyebrow">Application walkthrough</p>
+          <p class="eyebrow">Earlier prototype walkthrough</p>
           <h2>From inventory exposure to governed execution.</h2>
           <p>
-            These are functional views from the portfolio walkthrough, not generic dashboard art.
-            Each panel can be opened as an interactive screen and follows the same operating model
-            as the working local prototype.
+            These views show the earlier synthetic control tower. They document the
+            planning and approval workflows that formed the starting point for Northstar;
+            they do not show its current operations assistant.
           </p>
         </div>
         <div class="gallery-grid">
@@ -237,18 +315,20 @@
         </div>
       </section>
 
+      </details>
+
       <section class="case-next">
         <p class="eyebrow">Portfolio note</p>
-        <h2>Designed to make replenishment decisions explainable, reviewable, and operationally traceable.</h2>
+        <h2>Curiosity, automation, and the next step with AI.</h2>
         <div class="project-links case-next-links">
-          <a class="button button-primary" href="../demos/replenishment-control-tower/index.html" target="_blank" rel="noreferrer">Launch interactive walkthrough ↗</a>
+          <a class="button button-primary" href="../demos/replenishment-control-tower/index.html" target="_blank" rel="noreferrer">Open earlier prototype ↗</a>
           <a class="button button-secondary" href="../index.html#work">View more work</a>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>Brian Welk · Business Systems &amp; Data Portfolio</p>
+      <p>Brian Welk · Business Systems, Automation &amp; AI</p>
       <p>Colorado, United States</p>
     </footer>
   </body>
