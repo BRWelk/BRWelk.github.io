@@ -29,10 +29,12 @@ python -m http.server 8877 --bind 127.0.0.1
 ```
 
 Open `http://127.0.0.1:8877/` in the Codex in-app browser. The Northstar case study
-retains `projects/replenishment-control-tower.html`. Its current six-stage tour is
-`demos/northstar/index.html`, using new current-interface captures with fictional
-records. The earlier prototype remains in the case study's history disclosure.
-See [capture provenance](docs/northstar-capture-notes.md).
+retains `projects/replenishment-control-tower.html`. Its full application tour is
+`demos/northstar/index.html`: 49 screens across six chapters, using current-interface
+captures with fictional records. Key decisions and AI controls receive additional
+detail. The earlier prototype remains in the case study's history disclosure.
+See [capture provenance](docs/northstar-capture-notes.md) and
+[coverage inventory](docs/northstar-tour-coverage.md).
 
 Before deploying to a different origin, update canonical, Open Graph, JSON-LD,
 sitemap, and robots URLs together. Keep private notes, Git history, and verification

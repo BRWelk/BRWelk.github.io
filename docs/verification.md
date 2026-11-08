@@ -137,3 +137,18 @@ key decisions and the AI assistant. `northstar-tour-spec.md` records that scope;
 The full tour is a static public showcase. It does not run the private app or
 allow visitors to approve purchases. Brian's judgment of emphasis and storytelling
 remains a useful final editorial review.
+
+Published `7f56df6` to `main`; Actions run 42524794479 passed both build and deploy.
+All 128 checked public files matched the domain's HTTP release after text newline
+normalization; repository-only documentation, settings, and scripts returned 404.
+The case study also had no horizontal overflow in the 390px mobile frame.
+The tour's 49-item coverage map, coverage jump, invalid-link fallback, and disabled
+first Previous control were checked in the browser.
+
+At 2:23 PM MST, GitHub Pages visibly reported the latest successful deployment,
+the configured domain, and certificate provisioning at stage 1 of 3,
+"Authorization created". Enforce HTTPS remained disabled pending issuance;
+GitHub's page says to allow 24 hours. Public DNS had the correct four A addresses
+and www CNAME, no conflicting AAAA, and no CAA restriction. DNS validation still
+reported stale non-GitHub routing in GitHub's own health result. Secure-domain
+verification and HTTPS enforcement therefore remain outstanding, not passed.
