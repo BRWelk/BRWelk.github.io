@@ -75,3 +75,25 @@ served the expected story/title and Wix-hosted current cover, and no broken
 homepage images were observed. The native Wix preview was refreshed after upload.
 The site is a static presentation; the tour does not run Northstar's private
 application or send AI, supplier, or notification requests.
+
+## GitHub Pages custom-domain migration
+
+November 8, 2026: Brian chose GitHub Pages hosting and `builtbybrianwelk.com`,
+with domain registration and DNS retained at Wix.
+
+- Compared the visible text of all 13 HTML documents against source commit
+  `815d155`: all match the updated site previously published to Wix.
+- Built a self-contained release of 75 files, including all screenshots, with
+  repository documentation, build scripts, workflows, and deployment settings
+  excluded from the served files.
+- The generated release passed checks for all 13 HTML documents, 170 local
+  references and anchors, duplicate IDs, JSON-LD parsing, canonical URLs, the
+  eight-page sitemap, robots.txt, and domain configuration.
+- In-app local preview loaded the current homepage and Northstar walkthrough.
+  Homepage images loaded, there was no horizontal overflow at the desktop
+  viewport, and the homepage canonical URL uses the new domain.
+- Added the GitHub-provided TXT record through Wix and completed profile-level
+  ownership verification. GitHub reported the domain successfully verified.
+
+Production deployment, DNS routing, certificate issuance, HTTPS enforcement,
+and live-domain browser checks are recorded after their actual results below.

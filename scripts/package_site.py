@@ -8,7 +8,7 @@ from urllib.parse import urlsplit
 from zipfile import ZIP_DEFLATED, ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE_ORIGIN = "https://brwelk.github.io"
+SOURCE_ORIGIN = "https://builtbybrianwelk.com"
 
 
 def main():

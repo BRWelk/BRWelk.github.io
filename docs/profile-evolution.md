@@ -2,6 +2,11 @@
 
 Status: implemented, checked, and published to Wix on November 8, 2026.
 
+Hosting update, November 8, 2026: Brian chose GitHub Pages for the same updated
+portfolio, with `builtbybrianwelk.com` registered and managed through Wix. This
+supersedes the Wix release workflow below; it does not change the approved story
+or project scope. See [the deployment spec](github-pages.md).
+
 ## Purpose and audience
 
 Evolve Brian Welk's existing GitHub Pages portfolio at https://brwelk.github.io/.
