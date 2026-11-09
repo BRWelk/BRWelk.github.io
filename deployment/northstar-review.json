@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceFingerprint": "5c618dd8f51452d9546d898c6bf5550b4ea5033959cacb84aae2f6035a92edfd",
-  "contentDigest": "8d92cba353c205276fbd4f33681faeed584a0c7852f781b55a87d8d31f25e5b8",
-  "reviewedAt": "2026-11-09T13:01:25.530697+00:00",
+  "contentDigest": "95141993cc1b5e5309d790df8bc2c4cd95565e94eda6ffb74e6b9922d10e6e59",
+  "reviewedAt": "2026-11-09T14:16:17.148473+00:00",
   "stopIds": [
     "approved-packages",
     "ask-northstar",
@@ -61,6 +61,6 @@
     "privacy"
   ],
   "evidence": "docs/northstar-stage-review.md",
-  "evidenceSha256": "5fc008e0000771334e3dfe0a8685e7405791eece05d333aa754e5a5bbcd170ed",
+  "evidenceSha256": "dd2925a81c5b7a556b2dfd3ee430b5d8822d551462f08176bdbae0c31cc879c1",
   "reviewer": "Codex browser QA; Brian's production approval is still required"
 }

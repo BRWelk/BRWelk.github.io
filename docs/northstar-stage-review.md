@@ -81,3 +81,39 @@ gate is already active. Future app releases must run the documented source
 registration/staging handoff; GitHub cannot discover unreported private LAN edits.
 
 Brian still needs to judge the staged presentation and approve publication.
+
+
+## Invite-only customer link candidate, November 9, 2026
+
+Candidate content digest: `95141993cc1b5e5309d790df8bc2c4cd95565e94eda6ffb74e6b9922d10e6e59`.
+BNT source fingerprint remains `5c618dd8f51452d9546d898c6bf5550b4ea5033959cacb84aae2f6035a92edfd`.
+
+Added an Invited customer login link to the homepage card and both case-study
+action groups. The case-study facts now distinguish the public walkthrough from
+invite-only sample workspaces. All existing tour content, captures and original
+capture provenance remain unchanged. The customer service is separately live at
+https://northstar-demo.gopanamaliving.com/; this portfolio change does not publish it.
+
+Built 117 public files in `.qa/northstar-stage-20261109-070636-653900`. Static
+checks passed for 13 HTML pages, 175 local references, eight sitemap entries,
+47 stops and 44 captures. In the exact staged artifact, revisited all 47 unique
+screens through Next; every displayed image completed loading, and the last
+Next control was disabled. Retained privacy crops and capture provenance were
+not altered or replaced. The added links contain only the public protected URL;
+no account roster, business files, credentials or raw app observations are served.
+
+Checked the homepage and case study, including the new links and updated stage
+facts. At 390px the document content width was 375px with its scrollbar and no
+horizontal overflow. The new case-study login action remained readable and
+separate from the public tour action. Clicking it opened the expected protected
+Cloudflare sign-in. Also inspected the unmodified case-study artifact inside a
+QA-only iframe at CSS zoom 2, equivalent to a 640px layout doubled into a 1280px
+viewport: the new actions wrapped cleanly and keyboard focus was visible. This
+harness did not change the staged bytes. Browser viewport overrides were reset.
+
+Rechecked old `demos/replenishment-control-tower/?view=amazon` navigation to the
+current executive overview and the old `?step=2` tour link to `assistant-batch`.
+The current 47-stop navigation and case-study/portfolio links remain available.
+
+This extends the existing review candidate. Brian's staging approval and the
+GitHub Pages environment approval are still required before publication.
