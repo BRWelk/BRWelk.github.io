@@ -39,7 +39,9 @@ def payload_digest(root):
     """Bind paths and exact bytes; include additions, exclude only this metadata."""
     root = Path(root).resolve()
     records = []
-    for path in sorted(root.rglob("*")):
+    # WindowsPath sorts case-insensitively; PosixPath does not. Hash the same
+    # canonical relative string order on both hosts (not native Path ordering).
+    for path in sorted(root.rglob("*"), key=lambda item: item.relative_to(root).as_posix()):
         if path.is_symlink():
             raise ValueError("Release files may not be symbolic links.")
         if path.is_file() and path.relative_to(root).as_posix() != RELEASE_FILE:

@@ -63,6 +63,16 @@ class ReleaseTests(unittest.TestCase):
         self.evidence.write_bytes(self.evidence.read_bytes().replace(b"\n", b"\r\n"))
         self.assertEqual(self.verify(), self.release)
 
+    def test_mixed_case_filenames_hash_in_canonical_order_on_every_host(self):
+        root = self.repo / "case-order"
+        root.mkdir()
+        (root / "a.txt").write_bytes(b"lowercase")
+        (root / "Z.txt").write_bytes(b"uppercase")
+        expected = [["Z.txt", hashlib.sha256(b"uppercase").hexdigest()],
+                    ["a.txt", hashlib.sha256(b"lowercase").hexdigest()]]
+        digest = hashlib.sha256(json.dumps(expected, separators=(",", ":")).encode()).hexdigest()
+        self.assertEqual(payload_digest(root), digest)
+
     def test_expired_or_future_source_observation_is_rejected(self):
         for observed in [NOW - timedelta(hours=25), NOW + timedelta(minutes=6)]:
             with self.subTest(observed=observed), self.assertRaises(ValueError):

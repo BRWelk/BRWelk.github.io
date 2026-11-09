@@ -62,10 +62,12 @@ outside the served site and Git commit.
 
 ## Release protection evidence
 
-Ten release tests passed, including changed source while waiting for approval,
+Eleven release tests passed, including changed source while waiting for approval,
 expired/future observations, altered/injected artifact files, partial/wrong review,
 changed evidence, capture provenance and cross-platform line endings. Public
-generated text bytes are normalized so Windows review and Linux CI match.
+generated text bytes and mixed-case filename ordering are normalized so Windows
+review and Linux CI match. The downloaded GitHub preview was compared against the
+local review: identical public files and matching canonical content digest.
 
 An actual build of the older portfolio was rejected by the source guard after the
 BNT release changed. GitHub's github-pages environment requires BRWelk approval,
