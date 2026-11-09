@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "repository": "BRWelk/BRWelk.github.io",
+  "sourceBranch": "codex/northstar-source",
+  "sourceRecordPath": "northstar-source.json",
+  "sshTarget": "brian@192.168.0.70",
+  "sourceRoot": "C:/Users/brian/Desktop/APPS/Northstar_Control_Tower",
+  "remotePython": "C:/Program Files/Python313/python.exe",
+  "maxObservationHours": 24,
+  "requiredReviewChecks": [
+    "all-tour-stops",
+    "homepage-and-case-study",
+    "navigation-and-legacy-links",
+    "mobile",
+    "enlarged-text",
+    "privacy"
+  ]
+}

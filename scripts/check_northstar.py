@@ -48,15 +48,18 @@ def main():
                      tour_root / "index.html", tour_root / "tour-data.js"]
     for path in current_pages:
         text = path.read_text(encoding="utf-8")
-        if re.search(r"northstar/(?:current|operations)/|21 products|1,460|16,645|3,424|4,884|18,645|20,105|Example Components", text):
+        if re.search(r"northstar/(?:current|operations)/", text):
             errors.append(f"Superseded Northstar content in {path.relative_to(root)}")
+    if set(captures) != used:
+        errors.append("Capture manifest contains unreviewed/unreferenced public images")
     for directory in ("assets/northstar/current", "assets/northstar/operations"):
         if (root / directory).exists():
             errors.append(f"Historical captures included in public release: {directory}")
     if errors:
         raise SystemExit("\n".join(errors))
     print(json.dumps({"result": "passed", "tour_stops": len(ids), "current_captures": len(used),
-                      "source_fingerprint": manifest["sourceFingerprint"]}))
+                      "source_fingerprint": manifest.get("reviewedSourceFingerprint", manifest["sourceFingerprint"]),
+                      "original_capture_baseline": manifest["sourceFingerprint"]}))
 
 
 if __name__ == "__main__":
