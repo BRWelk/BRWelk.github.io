@@ -30,7 +30,7 @@ python -m http.server 8877 --bind 127.0.0.1
 
 Open `http://127.0.0.1:8877/` in the Codex in-app browser. The Northstar case study
 retains `projects/replenishment-control-tower.html`. Its full application tour is
-`demos/northstar/index.html`: 51 stops across six chapters, with screenshots captured
+`demos/northstar/index.html`: 47 stops across five chapters, with screenshots captured
 directly from the running BNT app and its current six-product CONKLY workspace.
 Key decisions and AI controls receive additional detail. Earlier prototype links
 redirect to this current tour; Git history preserves the old source.
@@ -43,9 +43,11 @@ artifacts out of the public upload.
 
 ## GitHub Pages release
 
-The workflow in `.github/workflows/pages.yml` builds and checks the public release
-on pushes to `main`, then deploys that release to GitHub Pages. The Pages publishing
-source is **GitHub Actions**. Local checks use only Python's standard library:
+The workflow in `.github/workflows/pages.yml` validates feature-branch PRs and
+uploads a staging preview. Main candidates require matching Northstar source,
+completed browser QA and Brian’s approval in the `github-pages` environment.
+Administrator bypass is disabled. Follow [the staging flow](docs/northstar-source-sync.md).
+The publishing source is **GitHub Actions**. Local checks use Python’s standard library:
 
 ```powershell
 python scripts/build_pages.py

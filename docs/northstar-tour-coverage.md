@@ -1,12 +1,12 @@
 # Northstar tour coverage
 
 Verified against the current application's navigation and connected-workspace
-redirects on November 8, 2026. The tour contains 51 stops in six chapters.
+redirects on November 9, 2026. The tour contains 47 stops in five chapters.
 Every screenshot comes directly from the current BNT app. The CONKLY workspace uses temporary records; the portfolio does not publish the app or its storage.
 
 | Current navigation / task | Tour screen IDs |
 | --- | --- |
-| Start here & workflows; printable workflow guidance | workflow-guide, context-help |
+| Start here & workflows; current workflow guidance | workflow-guide, context-help |
 | Executive overview | executive-overview |
 | Inventory control; search, region/health filters, CSV export, product detail | inventory, inventory-detail, updated-inventory |
 | Replenishment planner; regional quantities and group calculations | replenishment, replenishment-detail |
@@ -35,10 +35,6 @@ Every screenshot comes directly from the current BNT app. The CONKLY workspace u
 | Ask Northstar; selected records, evidence, unavailable-provider behavior | ask-northstar, assistant-evidence, assistant-boundaries, assistant-offline (current connection status) |
 | Assistant Settings; coverage and distinct timing stages | assistant-settings, planning-stages |
 | Vendor & products; identity, estimated/confirmed terms, minima, pack sizes | vendor-settings, vendor-minimums, vendor-products |
-| Supplier performance (separate synthetic network) | supplier-performance |
-| Amazon health (separate synthetic network) | amazon-health |
-| Returns & quality (separate synthetic network) | returns-quality |
-| Growth scenarios (separate synthetic network) | growth-scenarios |
 
 The connected workspace redirects these older menu entries in
 `static/vendor-dashboard.js`: Purchase orders → Orders; Stock transfers →
@@ -53,3 +49,7 @@ integration has been executed. The current AI interface reports available; the q
 and no model answer is fabricated. The receiving queue is currently empty; the
 completed 80-unit timeline supplies receipt and readiness evidence. There is no
 claim that an old before/after dialog is a current pending action.
+
+Conkly is the sole active existing dataset. The four retired network-intelligence
+stops are removed. Fresh sessions and archived cookies resolve to Conkly, while
+archived selections and stale pinned writes are rejected.

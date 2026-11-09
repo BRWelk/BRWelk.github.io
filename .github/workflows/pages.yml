@@ -1,7 +1,9 @@
-name: Publish portfolio
+name: Stage and publish portfolio
 
 on:
   push:
+    branches: [main]
+  pull_request:
     branches: [main]
   workflow_dispatch:
 
@@ -9,35 +11,77 @@ permissions:
   contents: read
 
 concurrency:
-  group: github-pages
-  cancel-in-progress: false
+  group: portfolio-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
+    name: Validate and stage portfolio
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Test release protections
+        run: python3 -m unittest discover -s tests -p 'test_release*.py' -v
       - uses: actions/configure-pages@v5
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+      - name: Read latest registered Northstar release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/northstar_release.py fetch-current --output .qa/ci-source.json
       - name: Build public site
         run: python3 scripts/build_pages.py
       - name: Check public site
         run: |
           python3 scripts/check_site.py _site
           python3 scripts/check_northstar.py _site
+          python3 scripts/northstar_release.py check _site --source-record .qa/ci-source.json
+      - name: Check completed browser review for production candidates
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        run: python3 scripts/northstar_release.py check _site --source-record .qa/ci-source.json --require-review
+      - name: Upload staging preview for review
+        id: preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-preview
+          path: _site
+          include-hidden-files: true
+          retention-days: 14
+      - name: Write staging review summary
+        env:
+          PREVIEW_URL: ${{ steps.preview.outputs.artifact-url }}
+        run: python3 scripts/northstar_release.py summary _site
       - uses: actions/upload-pages-artifact@v4
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         with:
           path: _site
 
   deploy:
+    name: Publish approved staging
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
     permissions:
+      contents: read
+      actions: read
       pages: write
       id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - uses: actions/checkout@v6
+      - uses: actions/download-artifact@v4
+        with:
+          name: portfolio-preview
+          path: _site
+      - name: Recheck source after Brian's approval
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 scripts/northstar_release.py fetch-current --output .qa/production-source.json
+          python3 scripts/northstar_release.py check _site --source-record .qa/production-source.json --require-review
       - name: Deploy portfolio
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify published version and content
+        run: python3 scripts/verify_live_release.py _site

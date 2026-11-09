@@ -7,7 +7,7 @@ Northstar entry from the actual app at http://192.168.0.70:8769. Do not replace 
 portfolio with the operational app. GitHub Pages remains the host for the portfolio;
 BNT remains the host for the Python/database application.
 
-All 48 screenshots in the current 51-stop tour were captured directly from that
+All 44 screenshots in the current 47-stop tour were captured directly from that
 running app, not from GitHub's earlier portfolio, an isolated fixture, or a rebuilt
 application. The selected workspace is CONKLY starter - 80 individual bands:
 six products, 24 regional positions, 80 units in stock, zero on order, and one
@@ -35,8 +35,10 @@ not connected. Partner events remain labeled as simulated in the application.
 The Planning captures are cropped directly by the browser to include sourcing and
 logistics fields while excluding private notification email and phone values. All other
 captures preserve the actual page viewport. No source labels or image content were
-rewritten. The final chapter shows the current app's separately labeled legacy
-synthetic network examples; those figures are not CONKLY operational evidence.
+rewritten. The four legacy network-example screens are retired. On November 9 the BNT app
+archived and disconnected the three older datasets and reference-data bootstrap.
+Conkly is the only active existing dataset. Affected screens were recaptured;
+unchanged screens retain their original capture timestamps/source fingerprint.
 
 ## Version and integrity
 
@@ -53,3 +55,11 @@ image. It contains no workspace database, credentials, or notification contacts.
 Older 21-product operating examples and six-product interface fixtures are no
 longer served. Git history retains earlier versions. Old prototype URLs redirect
 to the current tour instead of exposing an outdated interface.
+
+## November 9 staging update
+
+The manifest’s reviewedSourceFingerprint identifies the current Conkly-only app
+release. Its original sourceFingerprint remains the November 8 capture baseline.
+Each capture records its own source fingerprint. App archival verification found
+all Conkly business tables unchanged and verified fresh/archived-cookie behavior.
+This update is staged for Brian’s review and is not yet published.

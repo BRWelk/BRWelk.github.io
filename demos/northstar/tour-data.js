@@ -24,11 +24,6 @@ window.NORTHSTAR_TOUR = {
       "id": "data",
       "title": "Data & supporting tools",
       "description": "Manage datasets, reports, imports, calculations, reconciliation, and help."
-    },
-    {
-      "id": "intelligence",
-      "title": "Network intelligence",
-      "description": "Explore the separately labeled supplier, marketplace, quality, and scenario simulations."
     }
   ],
   "stops": [
@@ -44,10 +39,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "The dashboard distinguishes reported need, included need, deferred need, and minimum or rounding extras. It does not invent channel splits or delivery dates absent from the source report.",
       "key": true,
-      "image": "../../assets/northstar/live-20261108/executive-overview.jpg",
-      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "image": "../../assets/northstar/live-20261109/executive-overview.jpg",
+      "note": "Captured directly from the running Northstar app, November 9, 2026. Conkly is the only active existing dataset. No order, stock change or AI message submitted for capture.",
       "sourcePath": "/index.html",
-      "capturedAt": "2026-11-08T21:43:12.951Z"
+      "capturedAt": "2026-11-09T12:36:08.333Z"
     },
     {
       "chapter": "planning",
@@ -55,16 +50,16 @@ window.NORTHSTAR_TOUR = {
       "title": "Start with the operating workflow",
       "summary": "Northstar is a connected inventory and ordering application. The guide explains where to start, what each stage changes, and which workspace owns the next decision.",
       "points": [
-        "Follow data → plan → approval → supplier progress → shipment → receiving → put-away → inventory → reconciliation.",
-        "Page help and field explanations remain available throughout the app.",
-        "Working records and the separate network examples are labeled according to their source."
+        "Follow inventory and source versions through planning, approval, shipment, receiving and put-away.",
+        "Use the operations assistant alongside the underlying records and explicit approval controls.",
+        "Vendor terms, planning preferences, imports, connections and help remain available."
       ],
-      "detail": "",
+      "detail": "The guide links to current workspace tasks. Archived network examples have been removed from the app and this tour.",
       "key": false,
-      "image": "../../assets/northstar/live-20261108/workflow-guide.jpg",
-      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "image": "../../assets/northstar/live-20261109/workflow-guide.jpg",
+      "note": "Captured directly from the running Northstar app, November 9, 2026. Conkly is the only active existing dataset. No order, stock change or AI message submitted for capture.",
       "sourcePath": "/index.html#guide",
-      "capturedAt": "2026-11-08T21:43:54.377Z"
+      "capturedAt": "2026-11-09T12:35:47.058Z"
     },
     {
       "chapter": "planning",
@@ -78,10 +73,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/live-20261108/inventory.jpg",
-      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "image": "../../assets/northstar/live-20261109/inventory.jpg",
+      "note": "Captured directly from the running Northstar app, November 9, 2026. Conkly is the only active existing dataset. No order, stock change or AI message submitted for capture.",
       "sourcePath": "/index.html#inventory",
-      "capturedAt": "2026-11-08T21:43:26.883Z"
+      "capturedAt": "2026-11-09T12:36:17.665Z"
     },
     {
       "chapter": "planning",
@@ -95,10 +90,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "The inspected smaller-connector black variation has 20 units in US stock and no on-order units or positive demand. The detail exposes the actual source quantities and the resulting zero monthly recommendation.",
       "key": true,
-      "image": "../../assets/northstar/live-20261108/inventory-detail.jpg",
-      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "image": "../../assets/northstar/live-20261109/inventory-detail.jpg",
+      "note": "Captured directly from the running Northstar app, November 9, 2026. Conkly is the only active existing dataset. No order, stock change or AI message submitted for capture.",
       "sourcePath": "/index.html#inventory",
-      "capturedAt": "2026-11-08T21:43:27.414Z"
+      "capturedAt": "2026-11-09T12:36:26.002Z"
     },
     {
       "chapter": "planning",
@@ -112,10 +107,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": true,
-      "image": "../../assets/northstar/live-20261108/replenishment.jpg",
-      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "image": "../../assets/northstar/live-20261109/replenishment.jpg",
+      "note": "Captured directly from the running Northstar app, November 9, 2026. Conkly is the only active existing dataset. No order, stock change or AI message submitted for capture.",
       "sourcePath": "/index.html#replenishment",
-      "capturedAt": "2026-11-08T21:43:36.748Z"
+      "capturedAt": "2026-11-09T12:37:24.349Z"
     },
     {
       "chapter": "planning",
@@ -129,10 +124,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "The current groups show no replenishment need. Supplier minimums and rounding remain inspectable rules, rather than a reason to create an order when demand is zero.",
       "key": true,
-      "image": "../../assets/northstar/live-20261108/replenishment-detail.jpg",
-      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "image": "../../assets/northstar/live-20261109/replenishment-detail.jpg",
+      "note": "Captured directly from the running Northstar app, November 9, 2026. Conkly is the only active existing dataset. No order, stock change or AI message submitted for capture.",
       "sourcePath": "/index.html#replenishment",
-      "capturedAt": "2026-11-08T21:43:43.848Z"
+      "capturedAt": "2026-11-09T12:37:30.509Z"
     },
     {
       "chapter": "planning",
@@ -401,10 +396,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "These are the current development workspace balances after Brian completed the process. Portfolio capture did not create an order, repeat a receipt, or change stock.",
       "key": true,
-      "image": "../../assets/northstar/live-20261108/inventory.jpg",
-      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "image": "../../assets/northstar/live-20261109/inventory.jpg",
+      "note": "Captured directly from the running Northstar app, November 9, 2026. Conkly is the only active existing dataset. No order, stock change or AI message submitted for capture.",
       "sourcePath": "/index.html#inventory",
-      "capturedAt": "2026-11-08T21:43:26.883Z"
+      "capturedAt": "2026-11-09T12:36:17.665Z"
     },
     {
       "chapter": "operations",
@@ -648,18 +643,18 @@ window.NORTHSTAR_TOUR = {
       "chapter": "data",
       "id": "datasets",
       "title": "Keep separate datasets and histories",
-      "summary": "Each dataset retains its own opening files, plans, approved packages, movements, and working balances.",
+      "summary": "Open the current Conkly workspace. Older business and practice datasets are archived outside the active application.",
       "points": [
-        "The CONKLY starter remains selected, with its files, order, and movements retained.",
-        "Switching changes the browser context; other open pages must reload.",
-        "Creating a new dataset differs from importing an updated report into an existing dataset."
+        "Conkly is the only active existing dataset and opens by default.",
+        "Old dataset cookies return to Conkly. Archived IDs cannot be selected or used for changes.",
+        "A new dataset requires an explicit preview and confirmation using current files or a new upload."
       ],
-      "detail": "",
+      "detail": "The old original dataset, Workflow practice and Select all demo have been archived with their records intact. Their files and the legacy network-data bootstrap are disconnected from the running app. Conkly’s orders, movements, source versions and balances are preserved.",
       "key": false,
-      "image": "../../assets/northstar/live-20261108/datasets.jpg",
-      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "image": "../../assets/northstar/live-20261109/datasets.jpg",
+      "note": "Captured directly from the running Northstar app, November 9, 2026. Conkly is the only active existing dataset. No order, stock change or AI message submitted for capture.",
       "sourcePath": "/ordering/datasets.html",
-      "capturedAt": "2026-11-08T21:48:38.889Z"
+      "capturedAt": "2026-11-09T12:35:46.019Z"
     },
     {
       "chapter": "data",
@@ -673,10 +668,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "The preview uses the selected dataset’s retained opening files and shows six products, 24 positions, zero opening stock, and zero opening on order. It also exposes current vendor defaults, which differ from this workspace’s saved settings. Create dataset was not confirmed.",
       "key": false,
-      "image": "../../assets/northstar/live-20261108/dataset-preview.jpg",
-      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "image": "../../assets/northstar/live-20261109/dataset-preview.jpg",
+      "note": "Captured directly from the running Northstar app, November 9, 2026. Conkly is the only active existing dataset. No order, stock change or AI message submitted for capture.",
       "sourcePath": "/ordering/datasets.html",
-      "capturedAt": "2026-11-08T21:48:45.718Z"
+      "capturedAt": "2026-11-09T12:37:52.224Z"
     },
     {
       "chapter": "data",
@@ -809,16 +804,16 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/live-20261108/sage-evaluation.jpg",
-      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "image": "../../assets/northstar/live-20261109/sage-evaluation.jpg",
+      "note": "Captured directly from the running Northstar app, November 9, 2026. Evaluation uses current workspace exports; no legacy data kit or live write-back is connected.",
       "sourcePath": "/ordering/?mode=sage",
-      "capturedAt": "2026-11-08T21:49:28.384Z"
+      "capturedAt": "2026-11-09T12:45:24.127Z"
     },
     {
       "chapter": "data",
       "id": "context-help",
       "title": "Keep smaller actions understandable",
-      "summary": "Page help, field-level explanations, the workflow guide, and a printable guide support the user throughout the application.",
+      "summary": "Page help, field-level explanations and the current workflow guide support the user throughout the application.",
       "points": [
         "Explain the scope, calculation, and next useful action for a metric.",
         "Keep help available on request instead of crowding everyday decisions.",
@@ -826,78 +821,10 @@ window.NORTHSTAR_TOUR = {
       ],
       "detail": "",
       "key": false,
-      "image": "../../assets/northstar/live-20261108/context-help.jpg",
-      "note": "Captured directly from the running Northstar app, November 8, 2026. Current CONKLY workspace with temporary records; no order, inventory change, or AI message submitted for capture.",
+      "image": "../../assets/northstar/live-20261109/context-help.jpg",
+      "note": "Captured directly from the running Northstar app, November 9, 2026. Conkly is the only active existing dataset. No order, stock change or AI message submitted for capture.",
       "sourcePath": "/index.html#guide",
-      "capturedAt": "2026-11-08T21:43:55.001Z"
-    },
-    {
-      "chapter": "intelligence",
-      "id": "supplier-performance",
-      "title": "Review supplier performance in the network simulation",
-      "summary": "Explore supplier capacity and performance signals in the separate synthetic network dataset.",
-      "points": [
-        "The figures are fictional scenario inputs, not measured vendor service levels.",
-        "Supplier planning can be considered alongside network inventory and demand.",
-        "The current vendor report does not acquire unavailable performance facts from this simulation."
-      ],
-      "detail": "",
-      "key": false,
-      "image": "../../assets/northstar/live-20261108/supplier-performance.jpg",
-      "note": "Captured directly from the running Northstar app, November 8, 2026. This is the app’s separately labeled legacy synthetic network example, not the CONKLY operating records.",
-      "sourcePath": "/index.html#suppliers",
-      "capturedAt": "2026-11-08T21:49:36.516Z"
-    },
-    {
-      "chapter": "intelligence",
-      "id": "amazon-health",
-      "title": "Inspect marketplace issues",
-      "summary": "The marketplace-health simulation groups Amazon-related issues and their review/assignment workflow.",
-      "points": [
-        "Prioritize an issue and inspect its product or marketplace context.",
-        "Issue handling is distinct from a supplier purchase or warehouse receipt.",
-        "No live Amazon connection or marketplace write is claimed."
-      ],
-      "detail": "",
-      "key": false,
-      "image": "../../assets/northstar/live-20261108/amazon-health.jpg",
-      "note": "Captured directly from the running Northstar app, November 8, 2026. This is the app’s separately labeled legacy synthetic network example, not the CONKLY operating records.",
-      "sourcePath": "/index.html#amazon",
-      "capturedAt": "2026-11-08T21:49:37.067Z"
-    },
-    {
-      "chapter": "intelligence",
-      "id": "returns-quality",
-      "title": "Connect returns with quality decisions",
-      "summary": "Explore return reasons, dispositions, recovery, and product/supplier quality signals using fictional network records.",
-      "points": [
-        "Returned units do not automatically become sellable stock.",
-        "Inspection and disposition control the next inventory decision.",
-        "Cost, recovery, and opportunity figures remain synthetic planning signals."
-      ],
-      "detail": "",
-      "key": false,
-      "image": "../../assets/northstar/live-20261108/returns-quality.jpg",
-      "note": "Captured directly from the running Northstar app, November 8, 2026. This is the app’s separately labeled legacy synthetic network example, not the CONKLY operating records.",
-      "sourcePath": "/index.html#returns",
-      "capturedAt": "2026-11-08T21:49:37.702Z"
-    },
-    {
-      "chapter": "intelligence",
-      "id": "growth-scenarios",
-      "title": "Stress-test the operating assumptions",
-      "summary": "Change growth, channel mix, lead time, and safety-stock assumptions to explore their implications for the network.",
-      "points": [
-        "Compare scenarios without rewriting operating inventory.",
-        "Inspect purchases, transfers, stock exposure, capacity, and working capital together.",
-        "Scenario outputs are hypothetical, not forecasts of actual business results."
-      ],
-      "detail": "",
-      "key": false,
-      "image": "../../assets/northstar/live-20261108/growth-scenarios.jpg",
-      "note": "Captured directly from the running Northstar app, November 8, 2026. This is the app’s separately labeled legacy synthetic network example, not the CONKLY operating records.",
-      "sourcePath": "/index.html#scenario",
-      "capturedAt": "2026-11-08T21:49:38.183Z"
+      "capturedAt": "2026-11-09T12:37:38.410Z"
     }
   ],
   "legacy": [
@@ -915,6 +842,8 @@ window.NORTHSTAR_TOUR = {
     "products": 6,
     "stock": 80,
     "onOrder": 0,
-    "readyForSale": 80
+    "readyForSale": 80,
+    "reviewedDate": "2026-11-09",
+    "activeDatasetCount": 1
   }
 };
