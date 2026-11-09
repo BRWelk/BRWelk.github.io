@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "sourceFingerprint": "94b8e833d3c493dade7d9799c3199076b30c349dc34fac9de92dff2c2af03860",
+  "sourceVersion": "northstar-94b8e833d3c4",
+  "sourceRelease": "20261101-050008-78a374-sidebar-20261101-053205-help-20261101-054712-overview-help-20261101-060424-launch-selection-20261101-063217-helfen-parity-20261101-064710-tower-vendor-20261101-070550-vendor-documentation-20261101-072829-card-layout-20261101-073239-supplier-mail-20261101-074019-unified-planning-20261101-075711-report-library-20261101-091427-report-csv-context-20261101-091908-mail-status-20261101-092120-report-history-source-20261101-092253-record-receipt-20261102-050333-operational-flow-20261102-054619-regional-review-20261102-055034-operations-view-20261102-055209-briefing-scenario-20261102-064601-datasets-20261103-054350-recalculation-20261103-060020-operations-assistant-20261107-151640-operations-assistant-20261107-152440-operations-assistant-20261107-152726-operations-assistant-20261107-154315-operations-assistant-20261107-154633-assistant-batch-approvals-20261107-161954-approval-ui-20261107-162103-replenishment-mock-20261107-170618-batch-selection-20261108-065159-assistant-ux-20261108-075414-641f44-ready-coverage-20261108-085144-d25a51-source-switch-usability-fixes-20261108-093049-7b33d6-conkly-master-20261108-100558-0c0212-conkly-master-20261108-101307-42aa11-conkly-master-20261108-101730-c4430f-product-settings-20261108-124917-d58a3a-product-settings-20261108-125328-1ac76e",
+  "observedAt": "2026-11-09T12:04:41.000343+00:00",
+  "fileCount": 89
+}
